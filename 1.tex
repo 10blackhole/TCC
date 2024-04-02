@@ -1,0 +1,34 @@
+\section{Clase 1}
+\subsection{Mecánica de Newton}
+Posición, velocidad, aceleración, fuerza.
+
+Si consideramos un sistema de partículas de masa $m$
+\begin{equation}
+  \vec{p}_\alpha =m_\alpha \vec{\dot{x}}_\alpha,\qquad \vec{p}=\sum_\alpha \vec{p}_\alpha,\qquad \alpha=1,...,k
+\end{equation}
+\begin{equation}
+  T=\frac{1}{2}\sum_\alpha m_\alpha \vec{\dot{x}}^2,\qquad \vec{L}=\sum_\alpha \vec{x}_\alpha\times \vec{p}_\alpha
+\end{equation}
+Newton estableció que a dinámica de un sistema mecánico queda	determinada por tres leyes fundamentales.
+
+
+
+
+
+
+\subsection{Acerca de la matriz Hessiana de las ecuaciones de Euler-Lagrange}
+\begin{equation}
+  \dv{t}\pdv{L'}{\dot{q}'_k}=\pdv{L'}{q'_k}-[L]_k\pdv{q_l}{\dot{q}_k}
+\end{equation}
+\begin{equation}
+  \Rightarrow \pdv{L'}{q'_k}=\dv{t}\pdv{L'}{\dot{q}_k}=[L]_l\pdv	{q_l}{q'_k}
+\end{equation}
+\begin{equation}
+\boxed{[L']_k=[L]_l\pdv{q_l}{q'_k}}
+\end{equation}
+La derivada de Euler-Lagrange transforma como un vector covariante bajo una transformación de coordenadas
+\begin{equation}
+  \mbox{Si }[L]_l=0 \Rightarrow [L']_k=0
+\end{equation}
+
+

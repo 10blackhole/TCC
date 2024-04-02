@@ -1,0 +1,167 @@
+\section{Clase 2}
+\begin{enumerate}
+	\item Las ecuaciones de Newton son invariantes en forma bajo las transformaciones de Galileo.
+	\item Las ecuaciones de Newton sn ecuaciones de segundo orden en $\vb*{x}_\alpha$. Es bueno recalcar que \textit{todas las ecuaciones dinámicas de la física fundamental son de segundo orden}. Las ecuaciones de orden mayor al segundo, tienden a tener inestabilidades.
+	\item Si $L=L(q_i,\dot{q}_i,t)$ es la función de Lagrange para un sistema mecánico, entonces la dinámica del sistema es gobernada por las ecuaciones de Euler-Lagrange,
+	\begin{equation}\label{eqs EL}
+  [L]_i=\pdv{L}{q_i}-\dv{t}\pdv{L}{\dot{q}_i}=0
+\end{equation}
+Estas ecuaciones no cambian si la función de Lagrange es modificada a la forma
+\begin{equation}
+  \tilde{L}=L+\dv{t}B(q,t)
+\end{equation}
+con $L=L(q_i,\dot{q}_i,t)$ y $\bar{L}=\bar{L}(q_i,\dot{q}_i,t)$
+\item La libertad en la elección de las coordenadas generalizadas implica que las ecuaciones de Euler-Lagrange son estructuralmente invariantes bajo un cambio de coordenadas:
+\begin{equation}\label{2.1}
+  q_i\to q'_i=q'_i(q_l)
+\end{equation}
+lo cual implica que
+\begin{equation}
+  \boxed{[L']_k=[L]_l\pdv{q_l}{q'_k}}
+\end{equation}
+que muestra que la derivada de Euler transforma como un vector covariante bajo la transformación \ref{2.1}
+\end{enumerate}
+\begin{equation}
+  \mbox{Si }[L]_l=0 \Rightarrow [L']_k=0.
+\end{equation}
+
+Es importante recalcar que la invariancia estructural es distinto a la invariancia en forma (covariancia).
+
+\textit{Todos los observadores observan la misma forma de las ecuaciones de los modelos de la naturaleza.}
+
+\begin{ej}
+	La ecuación de Newton en el SRI K toma la forma $\vb*{F}=m\vb*{a}$ mientras que en el SRI $K'$ toma la forma $\vb*{F'}=m'\vb*{a}'$.
+\end{ej}
+\begin{ej}
+	Las ecuaciones de Maxwell tendrán la misma forma en todos los SRI.
+\end{ej}
+
+Notemos son embargo, que en la mecánica de Newton las transformaciones son las transformaciones de Galileo y que en la electrodinámica de Maxwell son las transformaciones de Lorentz.
+
+La covariancia de las ecuaciones del movimiento bajo una transformación de coordenadas es la propiedad que define una \textbf{simetría de Lie}.
+
+\subsection{Acerca de la matriz Hessiana}
+Una característica básica de las ecuaciones de Newton $m\ddot{\vb*{r}}=\vb*{F}(\vb*{r},\dot{\vb*{r}},t)$ es que es posible expresar la aceleración $\ddot{\vb*{r}}$ en función de la posición $\vb*{r}$, de la velocidad $\dot{\vb*{r}}$ y de $t$,
+\begin{equation}
+  \ddot{\vb*{r}}(t)=\frac{1}{m}\vb*{F}(\vb*{r},\dot{\vb*{r}}(t))
+\end{equation}
+Esta es una formulación vectorial de la mecánica  es basada en el concepto d partícula material. Esto llevó a pensar que la naturaleza podría no ser contínua, sino que podría ser atómica (cuántica). Esto condujo a la formulación escalar de la mecánica representado de la introducción del concepto de energía.
+
+La formulación de Lagrange y de Hamilton fue el resultado de esta búsqueda. Sin embargo, de las ecuaciones de Euler-Lagrange \eqref{eqs EL} no es evidente cómo expresar la aceleración $\ddot{q}(t)$ en función de $q(t), \dot{q}(t)$ y $t$.
+
+Consideremos
+\begin{equation}
+	\dv{t}\pdv{L}{\dot{q}_n},\qquad L=L(q_n,\dot{q}_n,t)
+\end{equation}
+notemos que
+\begin{equation}
+  \dv{t}\pdv{L}{\dot{q}_n}=\pdv{L}{\dot{q}_n}{\dot{q}_m}\ddot{q}^m+\pdv{L}{\dot{q}_n}{q_m}\dot{q}^m
+\end{equation}
+luego
+\begin{equation}
+  [L]_n=\pdv{L}{q_n}-\pdv{L}{\dot{q}_n}{q_m}\dot{q}^m-\pdv{L}{\dot{q}_n}{\dot{q}_m}\ddot{q}^m=0
+\end{equation}
+así
+\begin{equation}
+  \boxed{\left(\pdv{L}{\dot{q}_n}{\dot{q}_m}\right)\ddot{q}^m=\pdv{L}{q_n}-\pdv{L}{\dot{q}_n}{q_m}\dot{q}^m}
+\end{equation}
+Notemos que para poder expresar $\ddot{q}$ como función de $q$ y $\dot{q}$ es necesario que la matriz $W_{nm}=\pdv*{L}{\dot{q}_n}{\dot{q}_m}$ sea invertible, es decir, $\det W_{nm}\neq 0$.
+
+Llamando 
+\begin{equation}
+V_n=\pdv{L}{q_n}-\pdv{L}{\dot{q}_n}{q_m}{\dot{q}^m}
+\end{equation}
+tenemos
+\begin{equation}\label{2.2}
+  W_{nm}\ddot{q}^{m}-V_n=0
+\end{equation}
+Si $\det W_{nm}\neq 0$ entonces existe una matriz inversa $W^{kn}\equiv (W_{kn})^{-1}$ tal que $W^{kn}W_{nm}=\delta ^k_m$. Luego, multiplicando \eqref{2.2} por $W^{km}$, tenemos
+\begin{align}
+ & W^{kn}W_{nm}\ddot{q}^m-W^{kn}V_n=0\\
+  \Rightarrow \ & \ddot{q}^k=W^{kn}V_n=F(q,\dot{q},t)
+\end{align}
+En la física fundamental, las teorías de gauge tales como la teoría electromagnética o las toerías de Yang-Mills (teoría electrodébil, cromonodinámica cuántica), las correspondientes funciones de Lagrange tienen sus matrices Hessianas singulares, es decir, $\det W_{nm}\neq 0$.
+
+\subsection{Formalismo de Hamilton}
+Consiste en pasarse de las coordenadas $\{q_i,\dot{q}_i,t\}$ a $\{q_i,p_i,t\}$, donde
+\begin{equation}\label{2.3}
+  p_i=\pdv{L}{\dot{q}_i}=f_i(q_i,\dot{q}_i,t)
+\end{equation}
+es el momentum generalizado.
+
+Para escribir explícitamente la función de Hamilton es necesario expresar por medio de \eqref{2.3} $\dot{q}_i=\bar{f}(q_i,p_i)$. Esto implica que la función $f_i$ sea invertible,
+\begin{equation}
+  \dot{q}_n\to p_n=f_n(q_m,\dot{q}_m,t)
+\end{equation}
+es decir, tenemos una transformación de coordenadas. Esta transformación tiene como matriz Jacobiana a 
+\begin{equation}
+  J_{nm}=\pdv{f_n}{\dot{q}_m}=\pdv{p_n}{\dot{q}_m}=\pdv{\dot{q}_m}\left(\pdv{L}{\dot{q}_n}\right)
+\end{equation}
+esto es
+\begin{equation}
+  \boxed{J_{nm}=\pdv{L}{\dot{q}_n}{\dot{q}_m}\equiv W_{nm}}
+\end{equation}
+
+Para clarificar esto calculemos $\dd p_n$ recordando que $p_n=f_n(q_m,\dot{q}_m,t)$,
+\begin{align}
+  \dd p_n&=\pdv{f_n}{t}\dd t+\pdv{f_n}{q_m}\dd q_m+\pdv{f_n}{\dot{q}_m}\dd \dot{q}_m\\
+  &=\pdv{f_n}{t}\dd t+\pdv{f_n}{q_m}\dd q_m+\pdv{L}{\dot{q}_n}{q_m}\dd \dot{q}_m
+\end{align}
+esto implica que
+\begin{equation}
+  \left(\pdv{L}{\dot{q}_n}{q_m}\right)\dd \dot{q}_m=\dd p_n-\pdv{p_n}{t}\dd t-\pdv{p_n}{q_m}\dd q_m
+\end{equation}
+De aquí vemos que para expresar $\dot{q}=\bar{f}(q,p,t)$ es necesario que
+\begin{equation}
+  \det W_{nm}=\det \left(\pdv{L}{\dot{q}_n}{q_m}\right)\neq 0
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
