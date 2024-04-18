@@ -1,0 +1,204 @@
+\section{Clase 6}
+\subsection{Continuación prueba del teorema de Noether}
+De la clase \ref{clase:5} vimos que
+\begin{equation}\label{6.1}
+    \boxed{[L]_i\db q_i+\dv{J}{t}=0}, \qquad [L]_i=0
+\end{equation}
+donde 
+\begin{equation}
+  J\equiv \sum_i\pdv{L}{\qd_i}\db q_i+L\d t+\d\Omega 
+\end{equation}
+con 
+\begin{equation}
+  \db q_i=\d q_i-\qd_i\d t
+\end{equation}
+\begin{align}
+  J&=\sum_i\pdv{L}{\qd_i}\l(\d q_i-\qd_i\d t\r)+L\d t+\d\Omega\\
+  &=\sum_i\pdv{L}{\qd_i}\d q_i-\sum_i\pdv{L}{\qd_i}\qd_i\d t+L\d t+\d\Omega
+\end{align}
+pero sabemos que 
+\begin{equation}
+  p_i=\pdv{L}{\qd^{i}},\qquad H_c=\sum_ip_i\qd^{i}-L
+\end{equation}
+así,
+\begin{equation}
+\boxed{J=\sum_i p_i\d q^{i}-H_c\d t+\d\Omega}
+\end{equation}
+donde $H_c$ es el usual Hamiltoniano en el caso de que la función de Lagrange sea regular, y es el llamado \textbf{Hamiltoniano canónico} en el caso de que la función de Lagrange $L$ sea de naturaleza singular.
+En \eqref{6.1} tenemos que
+\begin{align}
+  [L]_i&=\EL\\
+  &=\pdv{L}{q_i}-\pdv{L}{\qd_i}{q_j}\qd_j-\pdv{L}{\qd_i\qd_j}\ddot{q}_j=0
+\end{align}
+Definiendo
+\begin{align}
+  V_i&=\pdv{L}{q_i}-\pdv{L}{\qd_i}{q_j}\qd_j\\
+  W_{ij}&=\pdv{L}{\qd_i\qd_j}
+\end{align}
+se tiene\footnote{Abusando un poco de la posición de los índices, que para efecto des este cálculo no es tan relevante.}
+\begin{equation}
+  \implies [L]_i=V_i-W_{ij}\ddot{q}^j
+\end{equation}
+En el caso de que $L$ sea regular, podemos escribir
+\begin{align}
+  V_i-W_{ij}\ddot{q}^{j}&=0 \quad/ W^{ki}\\
+  W^{ki}V_i-W^{ki}W_{ij}\ddot{q}^j&=0\\
+  W^{ki}V_i-\delta^k_j\ddot{q}^j&=0
+\end{align}
+\begin{equation}\label{6.2}
+  \implies \boxed{\ddot{q}^k=W^{ki}V_i}
+\end{equation}
+Dado que la derivada de Euler-Lagrange es
+\begin{equation}
+  [L]_i=V_i-W_{ij}\ddot{q}^j
+\end{equation}
+tenemos que \eqref{6.1} toma la forma
+\begin{align}
+  (V_i-W_{ij}\ddot{q}^j)\db q^{i}+\dv{J}{t}&=0\\
+  V_i\db q^{i}-W_{ij}\ddot{q}^j\db q^{i}+\dv{J}{t}&=0
+\end{align}
+pero $J=J(q,\qd,t)$,
+\begin{equation}
+  \dv{J}{t}=\pdv{J}{q_i}\qd_i+\pdv{J}{\qd_i}\ddot{q}_i+\pdv{J}{t}
+\end{equation}
+\begin{align}
+  \implies V_i\db q^{i}-W_{ij}\ddot{q}^j\db q^{i}+\pdv{J}{q_i}\qd_i+\pdv{J}{\qd_i}\ddot{q}_i+\pdv{J}{t}&=0\\
+  V_i\db q^{i}+\pdv{J}{q_i}\qd_i+\pdv{J}{t}+\pdv{J}{\qd_i}\ddot{q}_i-W_{ji}\ddot{q}^i\db q^{j}&=0\\
+   V_i\db q^{i}+\pdv{J}{q_i}\qd_i+\pdv{J}{t}+\l(\pdv{J}{\qd_i}-W_{ij}\db q^j\r)\ddot{q}^{i}&=0
+\end{align}
+donde renombramos índices mudos y usado el hecho de que $W_{ij}=W_{ji}$ por como fue definido.
+
+Teniendo en cuenta que $J=J(q,\qd,t)$,
+\begin{align}
+  V_i\db q^{i}+\pdv{J}{q_i}\qd^{i}+\pdv{J}{t}&=0 \label{6.3}\\
+  \pdv{J}{\qd_i}-W_{ij}\db q^j&=0\label{6.4}
+\end{align}
+
+Multiplicando \eqref{6.4} por $W^{ki}$, se tiene,
+\begin{equation}\label{6.5}
+  \db q^k=W^{ki}\pdv{J}{\qd^{i}}
+\end{equation}
+Introduciendo \eqref{6.5} en \eqref{6.3}, tenemos
+\begin{equation}\label{6.6}
+  V_iW^{ij}\pdv{J}{\qd^j}+\pdv{J}{q_i}\qd_i+\pdv{J}{t}=0
+\end{equation}
+De \eqref{6.2}
+\begin{equation}
+  \ddot{q}^k=W^{ji}V_i=W^{ij}V_i
+\end{equation}
+reemplazando \eqref{6.6},
+\begin{align}
+  \ddot{q}^j\pdv{J}{\qd^j}+\pdv{J}{q_i}\qd_i+\pdv{J}{t}&=0\\
+  \pdv{J}{q_i}\qd_i+\ddot{q}^j\pdv{J}{\qd^j}+\pdv{J}{t}&=0
+\end{align}
+\begin{equation}
+  \implies\boxed{ \dv{J}{t}=0},\qquad J=\text{constante}
+\end{equation}
+\begin{equation}
+  J=\sum_i p_i\d q^{i}-H_c\d t+\d\Omega=\text{constante}
+\end{equation}
+
+\subsection{Grupos y álgebras de Lie}
+Sea $A$ un conjunto de elementos $\{a,b,...\}$ dotado de una operación binaria interna $\Box$ tal que $\forall a,b,c \in A \Box b=c\in A$ la operación $\Box$ es cerrada (en este caso tenemos un \textbf{magma}).
+
+Si la operación binaria interna tiene solo la propiedad asociativa entonces estamos en presencia de un \textbf{semigrupo}.
+
+\begin{defi}
+	Un \textbf{semigrupo} es una estructura algebraica dotada de una sola operación binaria interna que satisface la propiedad asociativa.
+\end{defi}
+\begin{ej}
+	Sea $A=\{a,b\}$ dotado de la operación $\diamond$. Una tabla de multiplicación es la siguiente.
+	\begin{center}
+	\begin{equation}\label{tab:6.1}
+  \begin{tabular}{l|cc}
+  $\diamond$& a & b\\
+  \hline
+  a&a &b \\
+  b&a &b
+\end{tabular}
+\end{equation}
+\end{center}
+\begin{equation}
+  (a\diamond b)\diamond a=b\diamond a=a
+\end{equation}
+\begin{equation}
+  a\diamond (b\diamond a)=a\diamond a=a
+\end{equation}
+Luego, la operación $\diamond$ es asociativa.
+Notemos que $a\diamond a=a$ y $a\diamond b=b$ pero $b\diamond a=a$ lo que implica que $a\diamond b\neq b\diamond a$. Luego el conjunto $A$ con la operación $\diamond$ dada en \eqref{tab:6.1} no tiene elemento unidad y correspode a un semigrupo.
+\end{ej}
+
+Si la operación binaria interna demás de ser asociativa admite un elemento unidad, entonces estamos en prsencia de un \textbf{monoide}.
+
+\begin{defi}
+	Un \textbf{monoide} es una estructura algebraca dotada de una operación binaria interna que admite la propiedad asociativa y de elemento unidad.
+\end{defi}
+
+Si sucediera que cada elemento del mnoide admitiera un elemento neutro, entonces estaos en presencia de un grupo.
+
+\begin{defi}
+	Un \textbf{grupo} es una estructura algebraica dotada de una operación binaria interna que satisface
+	\begin{enumerate}
+		\item asociatividad
+		\item tiene elemento unidad
+		\item cada elemento de la estructura admite un elemento inverso.
+	\end{enumerate}
+\end{defi}
+
+Hasta ahora hemos visto estructuras con solo una ley de composición interna. Una estructura que tiene dos leyes de composición interna es el \textbf{anillo}.
+
+\begin{defi}
+	Un \textbf{anillo} es una estructura algebraica dotada denotada por $(A,\Box,*)$ donde
+	\begin{enumerate}
+		\item $A$ con respecto a la operación $\Box$ es un grupo abeliano (conmutativo)
+		\item $A$ con respecto de $*$ es un semigrupo.
+	\end{enumerate}
+\end{defi}
+Normalmente la operación $\Box$ se denota por $+$ y se le llama adición, y $*$ se denota por $\cdot$ o solo por yuxtaposición.
+
+Así entonces una estructura \anillo se llama anillo si:
+\begin{enumerate}
+	\item $\forall a,b,c\in A, \, (a+b)+c=a+(b+c)$
+	\item $\forall a\in A, \exists \in A\,/ a+0=0+a=a$
+	\item $\forall a\in A, \exists (-a)\in A, / a+(-a)=(-a)+a=0$
+	\item $\forall a,b\in A,\, a+b=b+a$
+	\item $\forall a,b,c\in A,\, a(bc)=(ab)c$
+\end{enumerate}
+
+Su sucediera que $\forall a,b \in A, ab=ba$ el anillo se llamará \textbf{anillo conmutativo}.
+
+Si ocurriera que $\forall a\in A, \exists 1\in A\, /a1=1a=a$ el anillo se llamará \textbf{anillo con unidad}.
+
+\begin{defi}
+	Sea \anillo un anillo. Si ocuriera que $\forall a\in A$, existiera un $a^{-1}$, salo para el elemento $0$, entonces la estructura algebraica ser+a llamada un \textbf{campo}. 
+\end{defi}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

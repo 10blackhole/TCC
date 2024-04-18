@@ -1,0 +1,166 @@
+\section{Clase 4}\label{clase-4}
+\subsection{Teorema de Noether}
+\begin{tcolorbox}
+\begin{teor}
+Si las ecuaciones del movimiento son invariantes bajo una transformación de coordenadas tales como
+\begin{align}
+  t&\to t'=t'(t)\\
+  q_i&\to q'_i=q'_i(q_j,t)
+\end{align}
+entonces existe una cantidad conservada.
+\end{teor}
+\end{tcolorbox}
+
+\subsubsection{Análisis y prueba}
+Sea $\Lag$ la función de Lagrange de un sistema mecánico, donde $i=1,2,...,f$. $q_i$ son las coordenadas del espacio de configuraciones. Sean $\qp_i$ y $t'$ nuevas coordenadas relacionadas a las antiguas por medio de la transformación de coordenadas invertibles 
+\begin{align}
+  t\to t'&=t'(t)=t+\delta t\\
+  q_i\to \qp _i&=\qp_i(q_i,t)=q_i+\delta q_I
+\end{align}
+Las correspondientes velocidades generalizadas $\qd_i$ y $\qdp_i$ definidas como
+\begin{equation}
+  \qd_i=\dv{t}q_i,\qquad \qdp_i=\dv{t'}\qp_i
+\end{equation}
+\begin{equation}
+	\implies  \qdp_i=\dv{t}\qp_i\dv{t}{t'}=\dv{t}(q_i+\delta q_i)\dv{t}{t'}
+\end{equation}
+\begin{equation}
+  \implies \qdp_i=\left(\qd_i+\dv{\delta q_i}{t}\right)\dv{t}{t'}
+\end{equation}
+pero, 
+\begin{equation}
+  \tp=t+\delta t\implies \dv{t'}{t}=1+\dv{\delta t}{t}
+\end{equation}
+\begin{equation}
+  \implies \dv{t}{t'}=\frac{1}{1+\dv*{\delta t}{t}}
+\end{equation}
+Así,
+\begin{equation}
+  \qdp_I=(\qd_i+\dv{\delta q_i}{t})\frac{1}{1+\dv*{\delta t}{t}}
+\end{equation}
+\begin{equation}
+  \implies \boxed{\qdp_i=\frac{\qd_i+\dv*{\delta q_i}{t}}{1+\dv*{\delta t}{t}}}
+\end{equation}
+\begin{align}
+  \delta \qd_i&=\qdp_i(t')-\qd_i(t)\\
+  &=\dv{t'}\qdp_i(t')-\qd_i(t)\\
+  &=\dv{t}\qdp_i(t')\dv{t}{t'}-\qd_i(t)\\
+  &=\dv{t}(\qd_i+\delta q_i)\dv{t}{t'}-\qd_i(t)\\
+  &=\left(\qd_i+\dv{\delta q_i}{t}\right)\dv{t}{t'}-\qd_i(t)
+\end{align}
+pero
+\begin{equation}
+  \dv{t}{t'}=\frac{1}{1+\dv*{\delta t}{t}}=1-\dv{\d t}{t}+\cdots 
+\end{equation}
+\begin{align}
+  \delta \qd_i&=\left(\qd_i+\dv{\d q_i}{t}\right)\left(1-\dv{\d t}{t}\right)-\qd_i\\
+  &=\qd_i+\dv{\d q_i}{t}-\qd_i\dv{\d t}{t}-\dv{\d q_i}{t}\dv{\d t}{t}-\qd_i
+\end{align}
+\begin{equation}\label{clase5-4}
+  \implies \boxed{\d \qd_i=\dv{t}\d q-\qd_i\dv{t}\d t}
+\end{equation}
+
+\subsection{Transformaciones de simetría}
+Sabemos que las ecuaciones de Euler-Lagrange se obtienen al aplicar el principio de Hamilton a la acción
+\begin{equation}\label{4.1}
+  S(q_i,\qd_i,t)=\int_{t_q}^{t_2}\dd t L(q_i,\qd_i,t)
+\end{equation}
+Sean ahora $\qp_i$ y $t'$ otro sistema coordenado relacionado con $q_i$ t $t$ por medio de la transformación
+\begin{align}
+  q_i\to \qp_i&=\qp_i(q_i,t)\\
+  t\to t'&=t'(t)\quad \implies t=t(t')
+\end{align}
+Escribimos \eqref{4.1} en términos de las nuevas coordenadas
+\begin{equation}
+  \dd t=\dttp\dd t',\qquad q_i=q_i(\qp_i,t)
+\end{equation}
+luego,
+\begin{equation}\label{4.2}
+  S(q_i,\qp_i,t)=\int_{t1'=t'(t_1)}^{t_2'=t'(t_2)}\dd t'\dttp L[q_i(q',t),\qd_i(q,\qdp,t'),t(t')]
+\end{equation}
+Por otro lado la acción $S'(q',\qdp,t'$) es dada por
+\begin{equation}\label{4.3}
+  S'(q',\qdp,t')=\int_{t_1'}^{t_2'}\dd t' L'(\qp_i,\qdp_i,t')
+\end{equation}
+Dado que la física no puede ser alterada por un cambio de coordenadas, tenemos
+\begin{equation}\label{4.4}
+  S'(q',\qdp,t')=S(q,\qp,t)
+\end{equation}
+\begin{equation}
+  \int_{t1'}^{t_2'}\dd t' L'(q',\qdp,t')=\int_{t_1'}^{t_2'}\dd t'\dttp L[q_i(q',t),\qd_i(q,\qdp,t'),t(t')]
+\end{equation}
+\begin{equation}
+  \implies L'(q',\qdp,t')=L[q_i(q',t),\qd_i(q,\qdp,t'),t(t')]\dttp
+\end{equation}
+
+\begin{tcolorbox}
+	Una transformación de coordenadas que deja invariante en forma a las EOM es llamada una transformación de simetría.
+\end{tcolorbox}
+Por lo tanto, si $q$ son las coordenadas de un sistema físico descrito por las EOM,
+\begin{equation}
+  \ddot{q}=G(q,\qd,t)
+\end{equation}
+entonces \begin{align}
+  t'&=t'(t)\\
+  q'&=q'(q,t)
+\end{align}
+será una transfrmación de simetría si las EOM transformadas es dada por
+\begin{equation}
+\boxed{  \ddot{q}'=G(q',\qdp,t')}
+\end{equation}
+
+\begin{teor}
+	Si las EOM expresadas en términos de las nuevas variables tiene exactamente la misma forma funcional que las EOM expresadas en las variables antiguas y si ellas deben ser obtenidas a partir del principio de Hamilton, entonces las respectivas funciones de Lagrange deben diferir a lo más en una derivada total.
+	\begin{equation}
+  L'(q',\qdp,t'=L(q',\qdp,t')+\dv{t'}\Omega(\qp,t')
+\end{equation}
+\end{teor}
+
+\subsubsection*{Prueba}
+Dado que las EOM se obtienen a partir del principio de Hamilton
+\begin{equation}
+  \delta S=\delta \int_{t_1}^{t_2}\dd t L(q,\qd,t)=0
+\end{equation}
+\begin{equation}
+  \implies \d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd t' L'(\qp,\qdp,t')\d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd t' L(q',\qdp,t')+\d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd t'\dv{t'}\Omega(q',t')
+\end{equation}
+Dado que \eqref{4.4} es válida, tenemos
+\begin{equation}
+  \int_{(q_1',t_1')}^{(q_2',t_2')}\dd t' L'(q'\qdp,t')=\d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd tL(q,\qd,t)
+\end{equation}
+\begin{equation}
+  \implies \d\int_{(q_1',t_1')}^{(q_2',t_2')} L(q,\qd,t)=\d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd t' L(q,\qdp,t')+\cancel{\eval{\d\Omega(q',t')}_{(q_1',t_1')}^{(q_2',t_2')}}
+\end{equation}
+el último término se cancela debido a que los puntos extremos son fijos,
+\begin{equation}
+  \implies \d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd tL(q,\qd,t)=\d\int_{(q_1',t_1')}^{(q_2',t_2')}\dd t' L(q',\qdp,t')
+\end{equation}
+Si queremos tener una simetría, entocnes debemos imponer dos condiciones
+\begin{enumerate}
+	\item $L'(\qp,\qdp,t')=L(\qp,\qdp,t')+\dv{t'}\Omega(q',t')$
+	\item $S'(\qp,\qdp,t')=S(q,\qd,t)$
+\end{enumerate}
+Estas dos condiciones son el punto de partida para probar el teorema de Noether\footnote{\url{https://es.wikipedia.org/wiki/Emmy_Noether}} .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

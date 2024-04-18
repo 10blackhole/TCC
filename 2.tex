@@ -1,7 +1,7 @@
 \section{Clase 2}
 \begin{enumerate}
 	\item Las ecuaciones de Newton son invariantes en forma bajo las transformaciones de Galileo.
-	\item Las ecuaciones de Newton sn ecuaciones de segundo orden en $\vb*{x}_\alpha$. Es bueno recalcar que \textit{todas las ecuaciones dinámicas de la física fundamental son de segundo orden}. Las ecuaciones de orden mayor al segundo, tienden a tener inestabilidades.
+	\item Las ecuaciones de Newton sn ecuaciones de segundo orden en $\vb*{x}_\alpha$. Es bueno recalcar que \textit{todas las ecuaciones dinámicas de la física fundamental son de segundo orden}. Las ecuaciones de orden mayor al segundo, tienden a tener inestabilidades \cite{Ostrogradsky:1850fid}.
 	\item Si $L=L(q_i,\dot{q}_i,t)$ es la función de Lagrange para un sistema mecánico, entonces la dinámica del sistema es gobernada por las ecuaciones de Euler-Lagrange,
 	\begin{equation}\label{eqs EL}
   [L]_i=\pdv{L}{q_i}-\dv{t}\pdv{L}{\dot{q}_i}=0
@@ -115,6 +115,29 @@ De aquí vemos que para expresar $\dot{q}=\bar{f}(q,p,t)$ es necesario que
 \begin{equation}
   \det W_{nm}=\det \left(\pdv{L}{\dot{q}_n}{q_m}\right)\neq 0
 \end{equation}
+
+
+\subsection{*Transformaciones canónicas}
+Son transformaciones invertibles de la forma (Ref. \cite{Schwichtenberg:2018dri})
+\begin{equation}
+  \hat{q}^j=\hat{q}^j(q,p),\qquad \hat{p}^j=\hat{p}^j(q,p)
+\end{equation}
+que dejan los corchetes fundamentales invariantes.
+
+Antes de continuar, introduzcamos una notación más compacta en la cual colectamos las $2N$ variables del espacio de fase en un único conjunto $(x^\alpha)=(q^1,...,q^N,p_1,...,p_N)$. En esta notación los corchetes fundamentales pueden ser escritos como
+\begin{equation}
+  \{x^\alpha,x^\beta\}=\Gamma^{\alpha \beta},\qquad \mbox{con }\quad \Gamma\equiv \mqty(0_N&1_N\\-1_N&0_N)
+\end{equation}
+en términos de la matriz $\Gamma$, el corchete de Poisson para dos funciones del espacio de fase $A$ y $B$ queda
+\begin{equation}
+  \{A,B\}=\Gamma^{\alpha \beta}\pdv{A}{x\alpha}\pdv{B}{x^\beta}
+\end{equation}
+La condición para que $\hat{x}(x)$ sea una transformación canónica se simplifica a $\{\hat{x}^\alpha,\hat{x}^\beta\}=\Gamma^{\alpha \beta}$
+
+
+
+
+
 
 
 

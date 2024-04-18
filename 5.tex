@@ -1,0 +1,231 @@
+\section{Clase 5}\label{clase:5}
+Distinguimos entre dos tipos de variaciones. La primera es la \textbf{variación $\d$} la cual compara dos coordenadas distintas en tiempos distintos. Es decir, compara las coordenadas $q$ y $\qp$ en los tiempos $t$ y $t'$,
+\begin{equation}
+  \delta q=\qp(t')-q(t),\qquad t'=t+\d t
+\end{equation}
+\begin{equation}
+  \qp(t')=q(t)+\d t
+\end{equation}
+Por otro lado la \textbf{variación $\bar{\delta}$} compara dos coordenadas distintas en el mismo instante. Es decir, compara las coordenadas $q$ y $\qp$ en el mismo instante,
+\begin{equation}
+  \db q=\qp(t)-q(t)
+\end{equation}
+\begin{equation}
+  \qp(t)=q(t)+\db q
+\end{equation}
+\subsection{Relación entre $\d$ y $\db$}
+\begin{align}
+  \db q&=\qp(t)-q(t)+\qp(t')-\qp(t')\\
+  &=(\qp(t')-q(t))+\qp(t)-\qp(t')
+\end{align}
+\begin{equation}\label{5.1.1}
+  \implies \db q=\d q-[\qp(t')-\qp(t)]
+\end{equation}
+Pero
+\begin{equation}
+  \qp(t')=\qp(t+\d t)=\qp(t)+\d t\dv{\qp(t)}{t}
+\end{equation}
+\begin{align}
+  \implies \qp(t')-\qp(t)&=\d t\dv{t}(q(t)+\db q)\\
+  &=\d t\dv{t}q(t)+\cancel{\d t\dv{t}\db q}
+\end{align}
+el ultimo término es despreciable por que es de segundo orden.
+\begin{equation}
+  \implies \qp(t')-\qp(t)=\d t\qd
+\end{equation}
+\begin{equation}
+  \implies\boxed{ \db q=\d q(t)-\d t\qd(t)}
+\end{equation}
+
+\begin{prop}
+	Los operadores $\db$ y $\dv*{t}$ conmutan.
+\end{prop}
+\begin{align}
+  \db \qd&=\qdp(t)-\qd(t)=\dv{t}\qp(t)-\qd(t)\\
+  &=\dv{t}\left(q(t)-\db q\right)-\qd(r)\\
+  &=\cancel{\qd(t)}+\dv{t}\db q-\cancel{\qd(t)}
+\end{align}
+\begin{equation}
+  \implies \boxed{\db\qd=\dv{t}\db q},\qquad\implies  \boxed{\left[\db,\dv{t}\right]=0}
+\end{equation}
+
+\begin{prop}
+	Los operadores $\d$ y $\dv*{t}$ no conmutan.
+\end{prop}
+
+\subsection{Prueba del teorema de Noether
+}
+Hemos visto que
+\begin{itemize}
+	\item \begin{equation}
+  S'(\qp,\qdp,t')=S(q,\qd,t)
+\end{equation}
+
+	\item \begin{equation}\label{5.1}
+  L'(q',\qdp,t')=L[q_i(q',t),\qd_i(q,\qdp,t'),t(t')]\dttp
+\end{equation}
+
+	\item \begin{equation}\label{5.2}
+  L'(\qp,\qdp,t')=L(\qp,\qdp,t')+\dv{t'}\Omega(q',t')
+\end{equation}
+\end{itemize}
+De \eqref{5.1} y \eqref{5.2} vemos
+\begin{equation}
+  L[q(\qp,t'),\qd(\qp\qdp,t'),t(t')]\dttp=L(\qp,\qdp,t')\dv{t'}\Omega(\qp,t')
+\end{equation}
+cambiando a las coordenadas antiguas,
+\begin{equation}
+  L(q,\qd,t)=L[\qp(q,t),\qdp(q\qd,t),t'(t)]\dv{t'}{t}+\dv{t'}\Omega(q'(q,t),t'(t))\dv{t'}{t}
+\end{equation}
+\begin{equation}
+  L(q,\qd,t)=L(\qp\qdp,t')\dv{t'}{t}+\dv{t}\Omega(\qp,t')
+\end{equation}
+en el entendido que
+\begin{equation}
+  \qp=\qp(q,t),\qquad \qdp=\qdp(q,\qd,t),\qquad t'=t'(t)
+\end{equation}
+Dado que $t'=t+\d t$,
+\begin{equation}
+  \dtpt=1+\dv{t}\d t
+\end{equation}
+\begin{equation}
+  L(q,\qd,t)=L(\qp,\qdp,t')\left(1+\dv{t}\d t\right)+\dv{t}\Omega(\qp,t')
+\end{equation}
+\begin{equation}\label{5.flecha}
+  \implies L(q,\qd,t)-L(\qp,\qdp,t')=L(\qp,\qdp,t')\dv{t}\d t+\dv{t}\Omega(\qp,t')
+\end{equation}
+Dado que las transformaciones son continuas, basta estudiar el caso infinitesimal.
+
+ De \eqref{5.flecha},
+\begin{align}
+  -\d L&=L(q,\qd,t)-L(q+\d q,\qd+\d\qd,t+\d t)\\
+  &=L(q+\d q,\qd+\d\qd,t+\d t)\dv{t}\d t+\dv{t}\Omega(q+\d q,t+\d t)
+\end{align}
+Expandiendo el primer término hasta primer orden
+\begin{equation}
+  -\d L=L(q,\qd,t)\dv{t}\d t+\dv{t}\Omega(q+\d q,t+\d t)
+\end{equation}
+Si consideramos el caso límite donde $\d q=0, \d t=0$
+\begin{equation}
+  \d L=0,\qquad \dv{t}\Omega(q,t)=0
+\end{equation}
+Esto nos permite escribir\begin{align}
+  -\d L&=L(q,\qd,t)\dv{t}\d t+\dv{t}\Omega(q+\d q,t+\d t)-\dv{t}\Omega(q,t)\\
+  &=L(q,\qd,t)\dv{t}+\d t\dv{t}[\Omega(q+\d q,t+\d t)-\Omega(q,t)]
+\end{align}
+\begin{equation}\label{5.3}
+  \implies \boxed{-\d L=L(q,\qd,t)\dv{t}\d t+\dv{t}\d \Omega(q,t)}
+\end{equation}
+Reemplazando $\Lag$, tenemos
+\begin{equation}\label{5.4}
+  \d L=\sum_i\left(\pdv{L}{q_i}\d q_i+\pdv{L}{\qd_i}\d \qd_i\right)+\pdv{L}{t}\d t
+\end{equation}
+Reemplazando \eqref{5.4} en \eqref{5.3},
+\begin{equation}\label{5.5}
+  -\sum_i\left(\pdv{L}{q_i}\d q_i+\pdv{L}{\qd_i}\d \qd_i\right)-\pdv{L}{t}\d t=L(q,\qd,t)\dv{t}\d t+\dv{t}\d \Omega(q,t)
+\end{equation}
+
+Estudiaremos ahora el primer término del lado izquierdo. Dado que $\d\qd_i=\dv*{t}\d q_i-\qd_i\dv*{t}\d t$ (eucación \eqref{clase5-4}),
+\begin{align}
+  \pdv{L}{\qd_i}\d \qd_i&=\pdv{L}{\qd_i}\left(\dv{t}\d q_i-\qd_i\dv{t}\d t\right)\\
+  &=\pdv{L}{\qd_i}\dv{t}\d q_i-\pdv{L}{\qd_i}\qd_i\dv{t}\d t
+\end{align}
+\begin{align}
+  \implies \sum_i\pdv{L}{q_i}\d q_i+\pdv{L}{\qd_i}\d \qd_i&=\sum_i\pdv{L}{q_i}\d q_i+\pdv{L}{\qd_i}\dv{t}\d q_i-\pdv{L}{\qd_i}\qd_i\dv{t}\d t\\
+  &=\sum_i\left(\pdv{L}{q_i}+\pdv{L}{\qd_i}\dv{t}\right)\d q_i-\sum_i\pdv{L}{\qd_i}\qd_i\dv{t}\d t
+\end{align}
+Introduciendo en \eqref{5.5},
+\begin{equation}
+  \sum_i\left(\pdv{L}{q_i}+\pdv{L}{\qd_i}\dv{t}\right)\d q_i-\sum_i\pdv{L}{\qd_i}\qd_i\dv{t}\d t+\pdv{L}{t}\d t=-L(q,\qd,t)\dv{t}\d t-\dv{t}\d \Omega(q,t)
+ \end{equation}
+ \begin{equation}
+  \sum_i\left(\pdv{L}{q_i}+\pdv{L}{\qd_i}\dv{t}\right)\d q_i+\left(L(q,\qd,t)-\sum_i\pdv{L}{\qd_i}\qd_i\right)\dv{t}\d t+\pdv{L}{t}\d t=-\dv{t}\d \Omega(q,t)
+\end{equation}
+despues de algo d cálculo se llega a 
+%TODO se podria completar
+\begin{equation}\label{5.6}
+\begin{split}
+  \dv{t}\left[\sum_i\pdv{L}{\qd_i}\d q_i+L\d t-\sum_i\pdv{L}{q_i}\qd_i\d t+\d \Omega\right]=-\sum_i\left(\pdv{L}{q_i}-\dv{t}\pdv{L}{\qd_i}\right)\d q_i \\ +\left(\dv{L}{t}-\pdv{L}{t}\right)\d t-\sum_i\dv{t}\left(\pdv{L}{\qd_i}\qd_i\right)\d t
+ \end{split}
+\end{equation}
+Analicemos los dos últimos términos de \eqref{5.6}. Dado que $\Lag$, se tiene que
+\begin{equation}
+  \dv{L}{t}=\sum_i\left(\pdv{L}{q_i}\qd_i+\pdv{L}{q_i}\ddot{q}_i\right)+\pdv{L}{t}
+\end{equation}
+\begin{equation}
+  \implies \dv{L}{t}-\pdv{L}{t}=\sum_i\left(\pdv{L}{q_i}\qd_i+\pdv{L}{q_i}\ddot{q}_i\right)
+\end{equation}
+y además
+\begin{equation}
+  \sum_i\dv{t}\left(\pdv{L}{q_i}\qd_i\right)=\sum_i\left(\dv{t}\pdv{L}{\qd_i}\right)\qd_i+\pdv{L}{q_i}\ddot{q}_i
+\end{equation}
+\begin{align}
+  \left(\dv{L}{t}-\pdv{L}{t}\right)-\sum_i\dv{t}\l(\pdv{L}{\qd_i}\qd_i\r)&=\sum_i\l(\pdv{L}{q_i}\qd_i+\cancel{\pdv{L}{q_i}\ddot{q}_i}-\l(\dv{t}\pdv{L}{\qd_i}\r)\qd_i-\cancel{\pdv{L}{q_i}\ddot{q_i}}\r)\\
+  &=\sum_i\l(\pdv{L}{q_i}-\dv{t}\pdv{L}{\qd_i}\r)\qd_i\label{5.7}
+\end{align}
+Así, \eqref{5.6} toma la forma
+\begin{equation}
+  \dv{t}\left[\sum_i\pdv{L}{\qd_i}\l(\d q_i-\qd_i\d t\r)+L\d t+\d\Omega\right]=-\sum_i\l(\pdv{L}{q_i}-\dv{t}\pdv{L}{\qd_i}\r)(\d q_i-\qd_i\d t)
+\end{equation}
+Dado que
+\begin{equation}
+  \db q_i=\d q_i-\qd_i\d t
+\end{equation}
+y que
+\begin{equation}
+  [L]_i=\sum_i\l(\EL\r)
+\end{equation}
+tenemos
+\begin{equation}
+  \dv{t}\left[\pdv{L}{\qd_i}\l(\d q_i-\qd_i\d t\r)+L\d t+\d\Omega\right]=-[L]_i\db q_i
+\end{equation}
+
+luego,
+\begin{equation}
+  [L]_i\db q_i+\dv{t}\left[\sum_i\pdv{L}{\qd_i}\db q_i+L\d t+\d\Omega \right]=0
+\end{equation}
+esto implica, que en el espacio de soluciones de las ecuaciones de Euler-Lagrange, se tiene
+\begin{equation}
+  \dv{t}\left[\sum_i\pdv{L}{\qd_i}\db q_i+L\d t+\d\Omega \right]=0
+\end{equation}
+Definiendo la cantidad,
+\begin{equation}
+  J\equiv \sum_i\pdv{L}{\qd_i}\db q_i+L\d t+\d\Omega 
+\end{equation}
+\begin{equation}
+  \implies \dv{J}{t}=0,\implies   J=\text{constante}
+\end{equation}
+Luego, $J$ es una cantidad conservada,
+\begin{equation}
+  \boxed{[L]_i\db q_i+\dv{J}{t}=0}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

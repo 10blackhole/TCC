@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{jheppub} % for details on the use of the package, please see the JINST-author-manual
 \usepackage{lineno}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd,physics,cancel,mathtools}
@@ -23,13 +23,96 @@
 \usepackage{wrapfig} % Text flowing around figures
 \usepackage{lipsum} % Generates meaningless text
 \usepackage{xcolor}
-% \usepackage{biblatex}
-% \addbibresource{sample.bib}
-\hypersetup{colorlinks=true, linkcolor=blue}
+%\usepackage{biblatex}
+%\usepackage[backend=bibtex]{biblatex}
+%\addbibresource{bibliography.bib}
+%\hypersetup{colorlinks=true, linkcolor=blue}
 
-\newtheorem{ej}{Example}[section]
-\newtheorem{sol}{Solution}[section]
+\newtheorem{ej}{Ejemplo}[section]
+\newtheorem{prop}{Propiedad}[section]
 \newtheorem{dem}{Proof}[section]
+\newtheorem{defi}{Definición}[section]
+\newtheorem{teor}{Teorema}[section]
+\newtheorem{prueba}{Prueba}[section]
+
+
+\newcommand{\Lag}{L=L(q_i,\dot{q}_i,t)}
+\def\anillo{$(A,+,\cdot)$}
+\def\campo{$(K,+,\cdot)$}
+\def\espvec{$(M,K,\bullet)$}
+\def\algebra{$(A,K,\bullet)$}
+\def\qp{q'}
+\def\tp{t'}
+\def\qd{\dot{q}}
+\def\qdp{\dot{q}'}
+\def\dttp{\dv{t}{t'}}
+\def\dtpt{\dv{t'}{t}}
+\def\db{\bar{\delta}}
+\def\l({\left(}
+\def\r){\right)}
+\def\EL{\pdv{L}{q_i}-\dv{t}\pdv{L}{\qd_i}}
+
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\G{\Gamma}
+\def\d{\delta}
+%\def\D{\Delta}
+%\def\e{\eta}
+\def\la{\lambda}
+\def\La{\Lambda}
+\def\k{\kappa}
+\def\m{\mu}
+\def\n{\nu}
+%\def\r{\rho}
+\def\p{\rho}
+\def\o{\omega}
+\def\s{\sigma}
+\def\S{\Sigma}
+\def\t{\tau}
+\def\p{\pi}
+\def\f{\phi}
+\def\vf{\varphi}
+\def\ep{\epsilon}
+\def\th{\theta}
+\def\Th{\Theta}
+\def\z{\zeta}
+
+%-----COLORS LIST ------
+\definecolor{azure(colorwheel)}{rgb}{0.0, 0.5, 1.0}
+\definecolor{DarkViolet}{RGB}{148,0,211}
+\definecolor{myDarkBlue}{rgb}{0,0.1,0.7}
+\definecolor{DarkBlue}{RGB}{0,0,153}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{nicered}{rgb}{0.7,0.1,0.1}
+\definecolor{brown}{rgb}{0.5,0.1,0.1}
+\definecolor{nicegreen}{rgb}{0.0,0.3,0.0}
+\definecolor{tealgreen}{rgb}{0.0, 0.51, 0.5}
+\def\red#1{{\color{red} #1}}
+\def\green#1{{\color{green} #1}}
+\def\blue#1{{\color{blue} #1}}
+\def\orange#1{{\color{orange} #1}}
+%----------------------
+\newcommand{\mycolor}{DarkViolet}
+\def\myColor#1{{\color{\mycolor} #1}}
+\definecolor{tclr}{RGB}{148,0,211}
+%----------------------
+\newcommand{\corr}[1]{\textcolor{nicered}{#1}}
+\newcommand{\nick}[1]{\textcolor{olive}{#1}}
+\newcommand{\teo}[1]{\textcolor{azure(colorwheel)}{#1}}
+\newcommand{\chteo}[2]{\corr{\st{#1}} \teo{(#2)}}
+\newcommand{\bako}[1]{\textcolor{DarkViolet}{#1}}
+\newcommand{\than}[1]{\textcolor{magenta}{#1}}
+
+%----------------------
+\usepackage{hyperref}
+\hypersetup{colorlinks,bookmarksopen,
+	bookmarksnumbered,
+	citecolor={nicered},
+	linkcolor={myDarkBlue},
+	urlcolor={tealgreen},
+	pdfstartview=FitH}
 
 
 
@@ -75,8 +158,7 @@
 % E-mail addresses: only for the corresponding author
 \emailAdd{borjadiez1014@gmail.com}
 
-\abstract{Abstract...}
-
+\abstract{Estas notas son una suerte de recopilado de las clases Teoría Clásica de Campos dictadas por el Dr. Patricio Salgado el primer semestre del 2024.}
 
 
 
@@ -87,6 +169,11 @@
 
 \input{1.tex}
 \input{2.tex}
+\input{3.tex}
+\input{4.tex}
+\input{5.tex}
+\input{6.tex}
+\input{7.tex}
 
 
 
@@ -106,6 +193,7 @@
 %% accessory text in footnotes.
 %% (iii) Also, please have only one work for each \bibitem.
 
-
-
+\newpage
+\bibliographystyle{JHEP}
+\bibliography{biblio.bib}
 \end{document}

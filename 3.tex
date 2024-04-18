@@ -1,0 +1,57 @@
+\section{Clase 3}
+\subsection{Simetrías y leyes de conservación}
+La homogeneidad del tiempo nos lleva a la conservación de la energía. Que el tiempo sea homogéneo significa que no hay instantes privilegeados. Los resultados de un experimento nno dependen del instantes en que se lleven a cabo, es decir, si llevamos a cabo un experimento para $t=t$ será tambien el mismo en $t'=t+t_0$. La función de Lagrange (que describe un sistema físico) debe ser invariante bajo un desplazamiento temporal, es decir, $\Lag$ es invariante bajo la transformación $t\to t'=t+t_o$ o $\delta t=t'-t=t_o$. Esto se cumplirá sólo si $\Lag$ no depende expl{icitaente del tiempo, es decir,
+\begin{equation}
+  \pdv{L}{t}=0
+\end{equation}
+Así,
+\begin{equation}\label{3.1}
+  \dv{L}{t}=\pdv{L}{q_i}\dot{q}_i+\pdv{L}{\dot{q}_i}\ddot{q}_i
+\end{equation}
+De la derivada de Euler-Lagrange, sabemos
+\begin{equation}
+  [L]_i=\pdv{L}{q_i}-\dv{t}\pdv{L}{\dot{q}_i}\qquad \Rightarrow\qquad \pdv{L}{q_i}=[L]_i+\dv{t}\pdv{L}{\dot{q}_i}
+\end{equation}
+Reemplazando en \eqref{3.1}
+\begin{align}
+  \dv{L}{t}&=\left([L]_i+\dv{t}\pdv{L}{\dot{q}_i}\right)\dot{q}_i+\pdv{L}{\dot{q}_i}\ddot{q}_i\\
+  &=[L]_i\dot{q}_i+\dv{t}\pdv{L}{\dot{q}_i}\dot{q}_i+\pdv{L}{\dot{q}_i}\ddot{q}_i
+\end{align}
+de donde se obtiene
+\begin{align}
+  [L]_i\dot{q}_i&=\dv{L}{t}-\dv{t}\dot{q}_i\pdv{L}{\dot{q}_i}\\
+  &=-\dv{t}\left(\dot{q}_i\pdv{L}{\dot{q}_i}-L\right)
+\end{align}
+Para trayectorias on-shell, es decir, para el espacio de soluciones de la ecuación de Euler-Lagrange $[L]_i=0$, se tiene
+\begin{equation}
+  \dv{t}\left(\dot{q}_i\pdv{L}{\dot{q}_i}-L\right)=0
+\end{equation}
+Pero sabemos que la función de Hamilton es dada por
+\begin{equation}
+  H=\dot{q}_ip_i-L=E
+\end{equation}
+Luego,
+\begin{equation}
+  \dv{H}{t}=\dv{E}{t}=0
+\end{equation}
+es decir, \textbf{la homogeneidad del tiempo implica la conservación de la energía.}
+
+Por otra parte, la homogeneidad del espacio conduce a la cnservación del momentum lineal. Que el espacio sea homogeneo nos dice que todos los puntos son equivalentes y no hay posiciones privilegiadas en el espacio. Esto implica que la función de Lagrange $\Lag$ debe ser invariante bajo una traslación espacial de la forma
+\begin{equation}
+  q_i\to q'_i=q_i+a_i\qquad \text{ó}\qquad \delta q_i=q'_i-q_i=a_i
+\end{equation}
+Así 
+\begin{equation}
+  \delta_q L=\pdv{L}{q_i}\delta q_i=0
+\end{equation}
+
+%TODO terminar de transcribir esta clase.
+
+
+
+
+
+
+
+
+
