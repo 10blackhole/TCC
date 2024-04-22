@@ -86,8 +86,8 @@ El concepto de grupo está muy relacionado con el concepto de invariancia o de s
 
 \underline{\textbf{Nota histórica}: }
 \begin{itemize}
-	\item El estudio de las simetrías de las ecuaciones algebraicas se hace en el contexto de la teoría de Galois.
-	\item El estudio de las simetrías de las ecuaciones diferenciales se hacen en el contexto de la teoría de Lie.
+	\item El estudio de las simetrías de las ecuaciones algebraicas se hace en el contexto de la teoría de Galois \footnote{\url{https://es.wikipedia.org/wiki/\%C3\%89variste_Galois}}.
+	\item El estudio de las simetrías de las ecuaciones diferenciales se hacen en el contexto de la teoría de Lie \footnote{\url{https://es.wikipedia.org/wiki/Sophus_Lie}} .
 \end{itemize}
 
 Los grupos de Lie son grupos continuos que tienen la propiedad que es suficiente estudiarlos en su forma infinitesimal. En física, los grupos de Lie se introducen como grupos de transformaciones de coordenadas, i.e., como actuando sobre los elementos de una variedad.
@@ -96,7 +96,7 @@ Los grupos de Lie son grupos continuos que tienen la propiedad que es suficiente
 Consideremos la típica rotación en un plano de los ejes coordenados en un ángulo $\th$,
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[scale=0.15]{sistema-coord.jpeg}
+		\includegraphics[scale=0.5]{sistema-coord.pdf}
 %		\caption{Rotación en un plano.}
 	\end{figure}
 La relación entre las coordenadas primadas y las sin primar viene dada por
@@ -130,7 +130,7 @@ Si la transformación $x'=f(x,\theta)$, entonces la unidad es dada por $x'=f(x,0
 	\begin{equation}
   x'^{i}=f^{i}(x',...,x^n;g^1,...,g^r)\equiv f(x,g)
 \end{equation}
-es llamado un grupo de transformaciones $r$-paramétrico si
+es llamado un \textbf{grupo de transformaciones $r$-paramétrico} si
 \begin{enumerate}
 	\item admite el elemento unidad
 \begin{equation}
@@ -149,11 +149,11 @@ entonces
 \end{defi}
 %
 \begin{defi}
-	Un conjunto de transformaciones es un grupo de simetría de una ecuación diferencial
+	Un conjunto de transformaciones es un \textbf{grupo de simetría} de una ecuación diferencial
 	\begin{equation}\label{7.1}
   F(x,x^{(1)},...,x^{(n)})=0,\quad \text{con }x=(x^1,...,x^n)
 \end{equation}
-si la ecuación \eqref{7.1} permanece invariante en fora bajo la acción del grupo,
+si la ecuación \eqref{7.1} permanece invariante en forma bajo la acción del grupo,
 \begin{equation}
   F(x',x'^{(1)},...,x'^{(n)})=0
 \end{equation}
