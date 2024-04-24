@@ -1,0 +1,179 @@
+\section{Clase 9}
+\subsubsection{Grupo unitario $U(n)$}
+Es el grupo de todas las matrices complejas unitarias de $n\times n$. Esto significa que si $A\in U(n)$, entonces $A^\dagger A=1\implies A^\dagger=A$.
+
+\subsubsection{Grupo especial unitario $SU(n)$}
+Si exigimos a las matrices del grupo $U(n)$ que tengan determinante $1$, entonces obtenemos el grupo especial unitario $SU(n)$. Esto significa que si $A\in SU(n)$, entonces $A^\dagger A=1$ y $\det A=1$.
+
+Ejemplos importantes en física son el grupo $SU(2)$ y el grupo $SU(3)$.
+
+También son de gran importantes los grupos $SU(4)$, $SU(5)$ y $SU(6)$.
+
+\underline{\textbf{Nota}}: El grupo $SU(2)\times U(1)$ está relacionado con las fuerzas electrodébiles (unificación del electromagnetismo con las fuerzas nucleares débiles). El grupo $SU(3)\times SU(2)\times U(1)$ está relacionado con la gran-unificación (unificación del electromagnetismo con las fuerzas nucleares débiles y fuertes).
+
+\subsubsection{Grupo ortogonal $O(n,\mathbb{C})$}
+Es el grupo de todas las matrices complejas ortogonales de $n\times n$. Esto significa que si $A\in O(n,\mathbb{C})$ entonces $A^TA=1\implies A^T=A^{-1}$.
+
+\subsubsection{Grupo ortogonal especial $SO(n,\mathbb{C})$}
+Si exigimos que las matrices del grupo $O(n,\mathbb{C})$ tengan determinante $1$, entonces obtenemos el grupo ortogonal especial $SO(n,\mathbb{C})$. Es decir, si $A\in SO(n)$\footnote{Por notación se puede omitir la $\mathbb{C}$.} entonces $A^TA=1$ y $\det A=1$
+
+\subsection{Ejemplo: Generadores y álgebra de $SO(3)$}
+
+\begin{ej}
+	Determine los generadores del grupo ortogonal especial $3$-dimensional $SO(3)$ así como también su álgebra de Lie.
+\end{ej}
+
+\begin{sol}
+	El grupo $SO(3)$ es el grupo de matrices ortogonales de $3\times 3$ y de determinante igual a $1$. La acción de $SO(3)$ sobre $E_3$ (o $\mathbb{R}^3$) es dada por el grupo de transformaciones 
+	\begin{align}\label{9.1}
+  x'=Ax
+\end{align}
+de aquí vemos que el elemento unidad es dado por $A_0=1\implies x'=A_0x=x$. Para lograr tener un elemento unidad nulo definimos 
+\begin{align}
+  a=A-1\implies a_0=A_0-1=1-1=0
+\end{align}
+así, la transformación \eqref{9.1} toma la forma
+\begin{align}
+  x'=f(x,a)=(1+a)x=x+ax
+\end{align}
+\begin{align}
+  \dd x&=\dd a\pdv{f(x,0)}{a}\\
+  &=\dd a x\label{9.2}
+\end{align}
+y recordamos que 
+\begin{equation}\label{9.3}
+  \dd x_i=\sum_\n u_{i\n }\dd a_\n 
+\end{equation}
+Dado que $A^TA=1$, tenemos que en el caso infinitesimal (a primer oden)
+\begin{align} 
+  (1+\dd a^T)(1+\dd a)&=1\\
+  1+\dd a+\dd a^T+\cancel{\dd a^T\dd a}&=1
+\end{align}
+es decir, 
+\begin{equation}
+  \dd a=-\dd a^T
+\end{equation}
+explícitamente tenemos
+\begin{equation}
+  \mqty(\dd a_{11}&\dd a_{12}&\dd a_{13}\\
+  \dd a_{21}&\dd a_{22}&\dd a_{23}\\
+  \dd a_{31}&\dd a_{32}&\dd a_{33})=-\mqty(\dd a_{11}&\dd a_{21}&\dd a_{31}\\
+  \dd a_{12}&\dd a_{22}&\dd a_{32}\\
+  \dd a_{13}&\dd a_{23}&\dd a_{33})
+\end{equation}
+luego,
+\begin{equation}
+  \dd a=\mqty(0&\dd a_{12}&\dd a_{13}\\
+  -\dd a_{12}&0&\dd a_{23}\\
+  -\dd a_{13}&-\dd a_{23}&0)
+\end{equation}
+Definimos
+\begin{equation}
+  \dd a_{12}=\dd a_3,\qquad \dd a_{13}=-\dd a_2,\qquad \dd a_{23}=\dd a_1
+\end{equation}
+así
+\begin{equation}
+  \dd a=\mqty(0&\dd a_{3}&-\dd a_{2}\\
+  -\dd a_{3}&0&\dd a_{1}\\
+  \dd a_{2}&-\dd a_{1}&0)
+\end{equation}
+de \eqref{9.2}
+\begin{align}
+  \mqty(\dd x_1\\\dd x_2\\\dd x_3)=\mqty(0&\dd a_{3}&-\dd a_{2}\\
+  -\dd a_{3}&0&\dd a_{1}\\
+  \dd a_{2}&-\dd a_{1}&0) \mqty( x_1\\ x_2\\x_3)
+\end{align}
+obteniendo
+
+\begin{equation}\label{9.4}
+  \begin{split}
+  \dd x_1&=x_2\dd a_3-x_3\dd a_2\\
+  \dd x_2&=-x_1\dd a_3+x_3\dd a_1\\
+  \dd x_3&=x_1\dd a_2-x_2\dd a_1
+\end{split}
+\end{equation}
+
+De \eqref{9.3}
+\begin{align}
+  \dd x_1&=u_{11}\dd a_1+u_{12}\dd a_2+u_{13}\dd a_3\\
+  \dd x_2&=u_{21}\dd a_1+u_{22}\dd a_2+u_{23}\dd a_3\\
+  \dd x_3&=u_{31}\dd a_1+u_{32}\dd a_2+u_{33}\dd a_3
+\end{align}
+comparando
+\begin{align}
+  u_{11}&=0,\quad u_{12}=-x_3,\quad u_{13}=x_2\\
+   u_{21}&=x_3,\quad u_{22}=0_3,\quad u_{23}=-x_1\\
+    u_{31}&=-x_2,\quad u_{32}=x_1,\quad u_{33}=0
+\end{align}
+Los generadores vienen dados por
+\begin{equation}
+  X_\n =\sum_i \uin \pdv{x_i}
+\end{equation}
+
+\begin{align}
+  X_1&=u_{11}\pdv{x_1}+u_{21}\pdv{x_2}+u_{31}\pdv{x_3}\\
+  &=x_3\pdv{x_2}-x_2\pdv{x_3}\\
+  X_2&=u_{12}\pdv{x_1}+u_{22}\pdv{x_2}+u_{32}\pdv{x_3}\\
+  &=-x_3\pdv{x_1}+x_1\pdv{x_3}\\
+  X_3&=u_{13}\pdv{x_1}+u_{23}\pdv{x_2}+u_{33}\pdv{x_3}\\
+  &=x_2\pdv{x_1}-x_1\pdv{x_2}\\
+\end{align}
+en resumen,
+\begin{tcolorbox}
+\begin{align}
+  X_1
+  &=x_3\pdv{x_2}-x_2\pdv{x_3}\\
+  X_2
+  &=x_1\pdv{x_3}-x_3\pdv{x_1}\\
+  X_3  &=x_2\pdv{x_1}-x_1\pdv{x_2}\\
+\end{align}
+\end{tcolorbox}
+
+El conmutador
+\begin{align*}
+  [X_1,X_2]F&=X_1X_2F-X_2X_1F\\
+  &=\left(x_3\pdv{x_2}-x_2\pdv{x_3}\right)\left(x_1\pdv{F}{x_3}-x_3\pdv{F}{x_1}\right)-\left(x_1\pdv{x_3}-x_3\pdv{x_1}\right)\left(x_3\pdv{F}{x_2}-x_2\pdv{F}{x_3}\right)\\
+  &=x_3\pdv{x_2}\left(x_1\pdv{F}{x_3}\right)-x_3\pdv{x_2}\left(x_3\pdv{F}{x_1}\right)-
+  x_2\pdv{x_3}\left(x_1\pdv{F}{x_3}\right)+x_2\pdv{x_3}\left(x_3\pdv{F}{x_1}\right)\\
+  &-\left[x_1\pdv{x_3}\left(x_3\pdv{F}{x_2}\right)-x_1\pdv{x_3}\left(x_2\pdv{F}{x_3}\right)-x_3\pdv{x_1}\left(x_3\pdv{F}{x_2}\right)+x_3\pdv{x_1}\left(x_2\pdv{F}{x_3}\right)\right]\\
+  &=\left(x_2\pdv{x_1}-x_1\pdv{x_2}\right)F\\
+  &=X_3 F
+\end{align*}
+El cálculo para los demás conmutadores es análogo y se obtiene,
+\begin{align}
+  [X_1,X_2]&=X_3\\
+  [X_3,X_1]&=X_2\\
+  [X_2,X_3]&=X_1
+\end{align}
+o de manera compacta
+\begin{equation}
+  \boxed{[X_i,X_j]=\epsilon_{ijk}X_k}
+\end{equation}
+\end{sol}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

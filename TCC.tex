@@ -1,9 +1,30 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
 \usepackage{jheppub} % for details on the use of the package, please see the JINST-author-manual
+% page formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\arabic{section}. #1}}}
+\renewcommand{\subsectionmark}[1]{}
+\lhead{\textbf{\thepage} \ \ \nouppercase{\rightmark}}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\setlength{\headheight}{14pt}
+
+\linespread{1.03} % give a little extra room
+\setlength{\parindent}{0.2in} % reduce paragraph indent a bit
+\setcounter{secnumdepth}{2} % no numbered subsubsections
+\setcounter{tocdepth}{2} % no subsubsections in ToC
+
 \usepackage{lineno}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd,physics,cancel,mathtools}
 \usepackage{tcolorbox}
 \usepackage{marginnote,tensor}
+\usepackage[spanish]{babel}
 %~~~~~~~~~ Document setup
 % \usepackage[spanish]{babel} % English formatting
 \usepackage[utf8]{inputenc} % Standard encoding
@@ -27,6 +48,7 @@
 %\usepackage[backend=bibtex]{biblatex}
 %\addbibresource{bibliography.bib}
 %\hypersetup{colorlinks=true, linkcolor=blue}
+
 
 \theoremstyle{definition}
 \newtheorem{ej}{Ejemplo}[section]
@@ -126,7 +148,7 @@
 
 % \arxivnumber{1234.56789} % if you have one
 
-\title{\boldmath Teoría Clásica de Campos}
+%\title{\boldmath Teoría Clásica de Campos}
 
 % Collaborations
 
@@ -157,22 +179,40 @@
 %% \affiliation[b]{Institution_2,\\Address, Country}
 %% \affiliation[c]{Institution_3,\\Address, Country}
 
-\author{Borja Diez}
-\affiliation{Universidad Arturo Prat}
-% \affiliation{Another University,\\
-% different-address, Country}
-
-% E-mail addresses: only for the corresponding author
-\emailAdd{borjadiez1014@gmail.com}
-
-\abstract{Estas notas son una suerte de recopilado de las clases Teoría Clásica de Campos dictadas por el Dr. Patricio Salgado el primer semestre del 2024.}
+%\author{Borja Diez}
+%\affiliation{Universidad Arturo Prat}
+%% \affiliation{Another University,\\
+%% different-address, Country}
+%
+%% E-mail addresses: only for the corresponding author
+%\emailAdd{borjadiez1014@gmail.com}
+%
+%\abstract{Estas notas son una suerte de recopilado de las clases Teoría Clásica de Campos dictadas por el Dr. Patricio Salgado el primer semestre del 2024.}
 
 
 
 
 \begin{document}
-\maketitle
-\flushbottom
+% make title page
+\thispagestyle{empty}
+\bigskip \
+\vspace{0.1cm}
+
+\begin{center}
+{\fontsize{22}{22} \selectfont Notas de Clase en}
+\vskip 16pt
+{\fontsize{36}{36} \selectfont \bf \sffamily Teoría Clásica de Campos}
+\vskip 24pt
+{\fontsize{18}{18} \selectfont \rmfamily Borja Diez} 
+\vskip 6pt
+{\fontsize{14}{14} \selectfont \ttfamily borjadiez1014@gmail.com}
+\vskip 24pt
+\end{center}
+
+% make table of contents
+\newpage
+\tableofcontents
+\newpage
 
 \input{1.tex}
 \input{2.tex}
@@ -182,6 +222,7 @@
 \input{6.tex}
 \input{7.tex}
 \input{8.tex}
+\input{9.tex}
 
 
 
