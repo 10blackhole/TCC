@@ -5,7 +5,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\renewcommand{\sectionmark}[1]{\markright{\textsf{\arabic{section}. #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\textsf{#1}}}
 \renewcommand{\subsectionmark}[1]{}
 \lhead{\textbf{\thepage} \ \ \nouppercase{\rightmark}}
 \chead{}
@@ -69,6 +69,7 @@
 \def\qp{q'}
 \def\tp{t'}
 \def\qd{\dot{q}}
+\def\qdd{\ddot{q}}
 \def\qdp{\dot{q}'}
 \def\dttp{\dv{t}{t'}}
 \def\dtpt{\dv{t'}{t}}
@@ -215,14 +216,24 @@
 \newpage
 
 \input{1.tex}
+\newpage
 \input{2.tex}
+\newpage
 \input{3.tex}
+\newpage
 \input{4.tex}
+\newpage
 \input{5.tex}
+\newpage
 \input{6.tex}
+\newpage
 \input{7.tex}
+\newpage
 \input{8.tex}
+\newpage
 \input{9.tex}
+\newpage
+\input{10.tex}
 
 
 

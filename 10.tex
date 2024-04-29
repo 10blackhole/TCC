@@ -1,0 +1,291 @@
+\section{Clase 10}
+\subsection{Generadores de transformaciones infinitesimales
+}
+Consideremos la siguiente transformación de simetría
+\begin{align}
+  q'^k&=q^k+\delta _\epsilon q^k=q^k+\epsilon\eta^k(q,t)\\
+  t'&=t+\delta_\epsilon t=t+\epsilon\xi (t)
+\end{align}
+
+Tenemos transformaciones de simetría uni-paramétricas de parámetro $\epsilon$.
+
+Para calcular los generadores, usamos el método usual
+\begin{align}
+  q'^k&=f^k(q^{i},\epsilon)=q^k+\epsilon \eta^k(q,t),\qquad\implies  \delta q^k=\epsilon\eta^k(q,t)\\
+  t'&=f(t,\epsilon )=t+\epsilon\xi(t),\qquad \implies\delta t=\epsilon\xi(t)
+\end{align}
+Usaremos el siguiente esquema:
+\begin{align}
+  (q^k,\epsilon) &\Leftrightarrow x^{i}\implies x^1=q^k,\, x^2=t\\
+  (f^k(q^{i},\epsilon),f(t,\epsilon))&\Leftrightarrow f^{i}(x^{i},a)
+\end{align}
+Recordemos que el generador viene dado por
+\begin{equation}
+  X_\n =\sum_{i}^2u_{i\n }\pdv{x_i},\qquad \n =1
+\end{equation}
+\begin{equation}
+  X_1=u_{11}\pdv{x_1}+u_{21}\pdv{x_2}
+\end{equation}
+\begin{equation}
+  u_{i\n }=\pdv{f^{i}}{a_\n }
+\end{equation}
+En este caso
+\begin{align}
+  u_{11}&=\pdv{f^k}{\epsilon}=\eta^k(q,t)\\
+  u_{21}&=\pdv{f}{\epsilon}=\xi(t)
+\end{align}
+Así, el generador queda
+\begin{equation}
+  \boxed{X=\xi(q,t)\pdv{t}+\eta^k(q,t)\pdv{q^k}}
+\end{equation}
+Esto implica que
+\begin{align}
+  Xt&=\xi\pdv{t}{t}+\eta^k\pdv{t}{q^k}\\
+  &=\xi 
+\end{align}
+\begin{align}
+  Xq^k&=\xi\pdv{q^k}{t}+\eta^k\pdv{q^k}{q^k}\\
+  &=\eta^k
+\end{align}
+
+Recordemos que una función $F(q,t)$ cambia bajo una transformación de simetría como
+\begin{align}
+  \d F=\epsilon XF=\epsilon\left(\xi\pdv{F}{t}+\eta^k\pdv{F}{q^k}\right)
+\end{align}
+Si la función $F(q,t)$ es generalizada al caso de una función $G(t,q,\qd,\ddot{q},...) $ el correspondiente generador se denota $\bar{X}$ tal que $\d G=\epsilon\bar{X}G$, donde 
+\begin{align}
+  X=\xi(t)\pdv{t}+\eta^k(q,t)\pdv{q^k}+\eta^k_{(1)}(t,q,\dot{q})\pdv{\qd^k}+\eta^k_{(2)}(t,q,\dot{q},\ddot{q})\pdv{\ddot{q}^k}+\cdots 
+\end{align}
+
+
+Hemos visto que
+\begin{align}
+  \d q^k&=\epsilon \eta^k\\
+  \d t&=\epsilon\xi
+\end{align}
+Por otro lado sabemos
+\begin{align}
+  \db q^k&=\d q^k-\qd^k\d t\\
+  &=\epsilon\eta^k-\qd^k\epsilon\xi\\
+  &=\epsilon(\eta^k-\qd^k\xi)\equiv \epsilon \chi ^k
+\end{align}
+donde $\chi^k=\eta^k-\qd^k\xi$.
+
+Recordemos que la corriente de Noether está dada por
+\begin{align}
+  J(t,q,\qd)&=\sum_i\pdv{L}{\qd_i}\db q_i+L\d t+\d\Omega\label{10.J}\\
+  &=\sum_i\pdv{L}{\qd^{i}}\epsilon\chi^{i}+L\epsilon\xi+\epsilon\Omega\\
+  &=\epsilon\left(\sum_i\pdv{L}{\qd^{i}}\chi^{i}+L\xi+\Omega\right)
+\end{align}
+Definimos la carga conservada como
+\begin{align}
+  J(t,q,\qd)&=\epsilon C(t,q,\qd)
+\end{align}
+donde
+\begin{equation}
+\boxed{  C(t,q,\qd)=\sum_i\pdv{L}{\qd^{i}}\chi^{i}+L\xi+\Omega}
+\end{equation}
+Esta carga es válida para transformaciones uni-paramétricas.
+
+Consideremos ahora el caso de un grupo de transformaciones $r$-paramétricas de parámetro $\epsilon_\n $, $\n =1,2,...,r$,
+\begin{align}
+  \d_\epsilon q^k&=\epsilon^\n \eta^k_\n (t,q)\implies q'^k=f^k(q^k,\epsilon_\n )=q^k+\epsilon^\n \eta^k_\n \\
+  \d_\epsilon t&=\epsilon^\n \xi_\n (t,q)\implies t'=f(t,\epsilon_\n )=t+\epsilon^n \xi_\n 
+\end{align}
+En este caso, los generadores son
+\begin{align}
+  X_{\n }=\sum_i^2 u_{i\n }\pdv{x_i},\qquad x_1\Leftrightarrow q^k,\, x_2\Leftrightarrow t
+\end{align}
+donde
+\begin{align}
+  u_{11}&=\pdv{f^k}{\epsilon_\n }=\eta^k_\n \\
+  u_{21}&=\pdv{f}{\epsilon_\n }=\xi_\n 
+\end{align}
+Luego,
+\begin{equation}
+\boxed{  X_\n =\xi_\n \pdv{t}+\eta^k_\n \pdv{q^k}}
+\end{equation}
+Estos generadores tienen la propiedad que el producto antisimétrico de dos de ellos da lugar a un tercer generador, de acuerdo a
+\begin{equation}
+ \boxed{ [X_\m ,X_\n ]=\Upsilon_{\m\n\lambda}X_\lambda}
+\end{equation}
+En el caso que $\Upsilon_{\m\n\lambda}$ sea constante, este producto genera un \textit{álgebra de Lie}.
+
+\subsection{Cargas conservadas}
+La corriente conservada es dada por \eqref{10.J} 
+\begin{equation}
+   J(t,q,\qd)=\sum_i\pdv{L}{\qd_i}\db q_i+L\d t+\d\Omega
+\end{equation}
+donde
+\begin{align}
+  \d t&=\epsilon^\n \xi_n\\
+  \d q^k&=\epsilon^\n \eta^k_\n 
+\end{align}
+de donde se desprende
+\begin{align}
+  \db q^{i}&=\d q^{i}-\qd^{i}\d t\\
+  &=\epsilon^\n \eta^{i}_\n -\qd^{i}\epsilon^\n \xi_\n \\
+  &=\epsilon^\n (\eta^{i}_\n -\qd^{i} \xi_\n )\\
+  &=\epsilon^\n \chi ^k_\n 
+\end{align}
+donde $\chi^k_\n =\eta^{i}_\n -\qd^{i} \xi_\n $. Así,
+\begin{align}
+  J(t,q,\qd)&=\sum_i\pdv{L}{\qd_i}\epsilon^\n \chi^{i}_\n +L\epsilon^\n \xi_\n +\epsilon^\n \Omega_\n \\
+  &=\epsilon^\n \left(\sum_i\pdv{L}{\qd_i} \chi^{i}_\n +L \xi_\n +\Omega_\n \right)\\
+  &\equiv \epsilon^\n C_\n 
+\end{align}
+donde
+\begin{equation}
+  C_\n =\sum_i\pdv{L}{\qd_i} \chi^{i}_\n +L \xi_\n +\Omega_\n 
+\end{equation}
+es la llamada \textbf{carga conservada de Noether}.
+
+Dado que
+\begin{equation}
+  \chi^k_\n =\eta^{i}_\n -\qd^{i} \xi_\n 
+\end{equation}
+tenemos
+\begin{align}
+  C_\n &=\sum_i\pdv{L}{\qd_i} (\eta^{i}_\n -\qd^{i} \xi_\n ) +L \xi_\n +\Omega_\n \\
+  &=\sum_i\pdv{L}{\qd^{i}}\eta^{i}_\n -\sum_i\left(\pdv{L}{\qd^{i}}\qd^{i}-L\right)\xi_\n +\Omega_\n \\
+  &=\sum_i\pdv{L}{\qd^{i}}\eta^{i}_\n -\sum_i\left(p_i\qd^{i}-L\right)\xi_\n +\Omega_\n 
+\end{align}
+\begin{equation}
+  \implies \boxed{C_\n =\sum_i\pdv{L}{\qd^{i}}\eta^{i}_\n -H_c\xi_\n +\Omega_\n }
+\end{equation}
+donde $H_c$ corresponde al \textit{Hamiltoniano canónico}.
+
+\begin{teor}
+	La variación de las coordenadas es dada en función de las cargas de Noether por medio de 
+	\begin{equation}
+  \db q^k=[q^k,\epsilon^\n C_\n ]
+\end{equation}
+donde $[,]$ es el corchete de Poisson.
+\end{teor}
+
+\begin{prueba}
+	Calculemos
+	\begin{align}
+  [q^k,\epsilon^\n C_\n ]&=\left[q^k,\epsilon^\n \left(\sum_i\pdv{L}{\qd^{i}}\eta^{i}_\n -H_c\xi_\n +\Omega_\n \right)\right]\\
+  &=\left[q^k,\epsilon^\n \sum_ip_i\eta^{i}_\n \right]-\left[q^k,\epsilon ^\n H_c\xi_\n \right]+\cancelto{0}{[q^k,\epsilon^\n \Omega_\n ]},\qquad \Omega_\n =\Omega_\n (q,t)\\
+  &=\sum_i\epsilon^\n [q^k,p_i]\eta^{i}_\n -\epsilon^\n [q^k,H_c]\xi_\n \\
+  &=\sum_i\epsilon^\n \delta^k_i\eta^{i}_\n -\epsilon^\n \qd^k\xi_\n \\
+  &=\epsilon^\n \eta^k_\n -\epsilon^\n \qd^k\xi_\n \\
+  &=\epsilon^\n( \eta^k_\n - \qd^k\xi_\n )\\
+  &=\epsilon^\n \chi^k_\n \\
+  &=\db q^k
+\end{align}
+Así,
+\begin{equation}
+  \db q^k=[q^k,\epsilon^\n C_\n ]\qquad \qed
+\end{equation}
+\end{prueba}
+
+
+\begin{teor}
+	Las cargas de Noether satisfacen la siguiente relación de conmutación
+	\begin{equation}\label{10.0}
+  [C_\m,C_\n]=\Upsilon_{\m\n\lambda}C_\lambda + Z_{\m\n }
+\end{equation}
+\end{teor}
+
+\begin{prueba}
+	Hemos visto que $\db q^k=[q^k,\epsilon^\n C_\n ]$. Consideremos el conmutador de dos transformaciones $\db$,
+	\begin{align}
+  \db_1 q^k&=[q^k,\epsilon_1^\n C_\n ]\\
+  \db_2(\db_1 q^k)&=[\db_1q^k,\epsilon^\m_2C_\n ]=[[q^k,\epsilon_1^\n C_\n ],\epsilon_2^\m C_\m ]\\
+  \implies \db_2\db_1 q^k&=\epsilon_1^\n \epsilon_2^\n [[q^k,C_\n ],C_\m ]\label{10.1}
+\end{align}
+Además,
+\begin{align}
+  \db_1(\db_2  q^k)&=[\db_2 q^k,\epsilon^\m _1C_\m ]=[[q^k,\epsilon_2^\n C_\n ]\epsilon_1^\m ,C_\m ]\\
+  &=\epsilon_2^\n \epsilon_1^\m [[q^k,C_\n ],C_\m ]
+\end{align}
+Así,
+\begin{align}
+  \db_2\db_1q^k-\db_1\db_21^k&=\epsilon_1^\n \epsilon_2^\m [[q^k,C_\n ],C_\m] -\epsilon_2^\n \epsilon_1^\n [[q^k,C_\n],C_\m ]\\
+  &=\epsilon_1^\m \epsilon_2^\n \left\{[[q^k,C_\m ],C_\n ]-[[q^k,C_\n ],C_\m ]\right\}
+\end{align}
+De la identidad de Jacobi,
+\begin{equation}
+  [[q^k,C_\m ],C_\n ]+ [[C_\n ,q^k ],C_\m  ]+ [[C_\m ,C_\n  ],q^k ]=0
+\end{equation}
+lo que implica que
+\begin{equation}\label{10.3}
+  \db_2\db_1q^k-\db_1\db_2q^k=\epsilon_1^\m \epsilon_2^\n [q^k,[C_\m,C_\n ]]
+\end{equation}
+Dado que el producto de dos transformaciones debe dar lugar a una tercera transformación
+\begin{equation}
+  [\db_2,\db_1]q^k=\db_3q^k=[q^k,\epsilon^\lambda C_\lambda]
+\end{equation}
+luego, podemos conjeturar que $\epsilon^\lambda\sim \epsilon_1^\m \epsilon_2^\n $, de manera que $[C_\m ,C_\n ]\sim C_\lambda$. Para hacer consistente la conjetura introducimos \eqref{10.0} en \eqref{10.3}
+\begin{align}
+  \epsilon_1^\m \epsilon_2^\n [q^k,[C_\m,C_\n ]]&=\epsilon_1^\m \epsilon_2^\n[q^k, \Upsilon_{\m\n\lambda}C_\lambda+Z_{\m\n }]\\
+  &=\Upsilon_{\m\n\lambda}\epsilon_1^\m \epsilon_2^\n[q^k,C_\lambda]+\epsilon_1^\m \epsilon_2^\n\cancelto{0}{[q^k,Z_{\m\n }]},\qquad \text{($q$ conmuta con $Z$)}
+\end{align}
+\begin{equation}
+  [\db_2,\db_1]q^k=\Upsilon_{\m\n\lambda}\epsilon_1^\m \epsilon_2^\n[q^k,C_\lambda]=\epsilon^\lambda[q^k,C_\lambda]
+\end{equation}
+\begin{equation}
+  \implies \epsilon^\lambda=\Upsilon_{\m\n\lambda }\epsilon_1^\m \epsilon_2^\n
+\end{equation}1
+\end{prueba}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
