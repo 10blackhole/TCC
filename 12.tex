@@ -1,0 +1,314 @@
+\section{Clase 12}
+Hemos visto que las ecuaciones d Newton son invariantes en forma bajo las transformaciones de Galileo. Dado que las estas transformaciones sólo son validas en SRI, los cuales están relacionados por transformaciones de Galileo, se tiene que por medio de elemento mecánicos no es posible determinar si un sistema está en reposo o MRU ya que todos los SRI son equivalentes a los ojos de las transformaciones de Galileo.
+
+Las ecuaciones de Maxwell \textit{no son invariantes} bajo transformaciones de Galileo, lo cual implica que no todos los SRI son equivalentes a los ojos de las ecuaciones de Maxwell. Es decir, existen sistemas de referencia privilegiados para las ecuaciones de Maxwell. Dichas ecuaciones adquieren si forma más simple en el SRI donde fueron escritas por Maxwell. Este SRI es privilegiado con respecto a los SRI que se mueven con respecto al sistema de referencia de Maxwell. Al SRI de Maxwell se le postula como en reposo con respecto al éter.
+
+Por medio de experimentos electromagnéticos (por ejemplo, óptico) podría ser posible determinar si un SRI está en reposo ó en MUR con respecto del sistema del éter.
+
+En este contexto se llevó a cabo el experimento de Michelson-Morley. El resultado de dicho experimento no encontró evidencia del éter ni como saber si un cuerpo estaba en reposo o en MUR.
+
+ Esto implicó que las ecuaciones de Maxwell deberían ser invariantes bajo un grupo de transformaciones. Lorentz encontró un grupo de transformaciones que dejaba invariante las ecuaciones de Maxwell. Dichas transformaciones sólo eran válidas para la electrodinámica.
+ 
+ Einstein postuló que debían existir transformaciones válidas para toda la física y estableció el principio de covariancia general: \textit{toda la física debe ser invariante en forma bajo un conjunto de transformaciones}. Estas transformaciones deberían ser obtenidas a partir de principios fundamentales del espacio y del tiempo.
+ 
+ Einstein postuló que dichos principio eran:
+ \begin{enumerate}
+ 	\item[i)] \textbf{Homogeneidad del tiempo}: todos los instantes son equivalentes.
+ 	\item[ii)] \textbf{Homogeneidad e isotropía del espacio}: todos los puntos y las direcciones son equivalentes.
+ 	\item[iii)] \textbf{Principio de la relatividad}: todos los SRI son equivalentes para \textit{toda} la física. (No sólo para la mecánica).
+ 	\item[iv)] \textbf{Postulado de la constancia de la velocidad de la luz}.
+ \end{enumerate}
+ 
+ A partir de estos principios Einstein encontró que las transformaciones buscadas eran las transformaciones de Lorentz:
+ \begin{align}
+ t'&=\frac{\left(t-\dfrac{v}{c^2}x\right)}{\sqrt{1-v^2/c^2}}\\
+  x'&=\frac{(x-vt)}{\sqrt{1-v^2/c^2}}\\
+y'&=y\\
+z'&=z
+\end{align}
+llamaremos $\g=\frac{1}{\sqrt{1-v^2/c^2}}$ y $x^0=ct$. Escribiendo estas transformaciones como
+\begin{align}
+x'^0&=\g\left(x^0-\frac{v}{c}x^1\right)\\
+  x'^1&=\g\left(x^1-\frac{v}{c}x^0\right)\\
+  x'^2&=x^2\\
+  x'^3&=x^3
+\end{align}
+o de manera equivalente
+\begin{align}
+  x'^0&=\g x^0-\g \frac{v}{c}x^1\\
+  x'^1&=-\g \frac{v}{c}x^0+\g x^1\\
+  x'^2&=x^2\\
+  x'^3&=x^3
+\end{align}
+Escribiendo estas transformaciones en forma matricial, se tiene
+\begin{equation}
+  \underbrace{\mqty(x'^0\\x'^1\\x'^2\\x'^3)}_{x'^\m }=\underbrace{\mqty(\g&-\g\frac{v}{c}&0&0\\
+  -\g\frac{v}{c}&\g&0&0\\
+  0&0&1&0\\0&0&0&1)}_{\Lambda^\m _{~\n }}\underbrace{\mqty(x^0\\x^1\\x^2\\x^3)}_{x^\n }
+\end{equation}
+\begin{equation}
+  \implies \boxed{x'^\m =\Lambda^\m_{~\n }x^\n }
+\end{equation}
+donde en general
+\begin{equation}
+  \Lambda^\m_{~\n }=\mqty(\Lambda^0_{~0}&\Lambda^0_{~1}&\Lambda^0_{~2}&\Lambda^0_{~3}\\\Lambda^1_{~0}&\Lambda^1_{~1}&\Lambda^1_{~2}&\Lambda^1_{~3}\\\Lambda^2_{~0}&\Lambda^2_{~1}&\Lambda^2_{~2}&\Lambda^2_{~3}\\\Lambda^3_{~0}&\Lambda^3_{~1}&\Lambda^3_{~2}&\Lambda^3_{~3})
+\end{equation}
+
+De la Relatividad Especial, sabemos que el principio de constancia de la velocidad de la luz implica que la distancia entre dos puntos del espacio de Minkowski es invariante bajo transformaciones de Lorentz,
+\begin{align}
+  S^2&=x^\m x_\m =\eta_{\m\n }x^\m x^\n \\
+  S'^2&=x'^\m x'_\m =\eta_{\m\n }x'^\m x'^\n 
+\end{align}
+La invariancia de $S^2$ nos dice
+\begin{equation}
+  S'^2=S^2
+\end{equation}
+\begin{equation}
+  \implies \eta_{\m\n }x'^\m x'^\n =\eta_{\m\n }x^\m x^\n
+\end{equation}
+pero
+\begin{equation}
+  x'^\m =\Lambda^\m_{~\n }x^\n 
+\end{equation}
+luego,
+\begin{equation}
+  \implies \eta_{\m\n }\Lambda^\m_{~\a}x^\alpha \Lambda^\n _{~\b }x^\b =\eta_{\a\b  }x^\a  x^\b 
+\end{equation}
+\begin{equation}
+  \implies \eta_{\m\n }\Lambda^\m_{~\a} \Lambda^\n _{~\b }x^\a x^\b =\eta_{\a\b  }x^\a  x^\b 
+\end{equation}
+\begin{equation}
+  \implies\boxed{ \eta_{\m\n }\Lambda^\m_{~\a} \Lambda^\n _{~\b }=\eta_{\a\b  }}
+\end{equation}
+o en forma matricial
+\begin{equation}
+\boxed{  \Lambda^T\eta\Lambda=\eta}
+\end{equation}
+
+\begin{teor}
+	Las matrices $\Lambda^\m_{~\n }$ constituyen un grupo de Lie no-compacto conocido como \textit{grupo de Lorentz} definido como
+	\begin{equation}
+  L:=O(1,3)=\{\Lambda\in GL(4,\mathbb{R})/\Lambda^T\eta\Lambda=\eta\}
+\end{equation}
+el cual tiene asociada un álgebra de Le conocida como el \textit{álgebra de Lorentz}, definida como
+\begin{equation}
+  \mathfrak{o}(1,3)=\{a\in M_{4\times 4}(\mathbb{R})/a^T=-\eta a\eta\}
+\end{equation}
+\end{teor}
+
+\begin{prueba}
+	De la teoría de las álgebras de Lie sabemos que un elemento de un grupo y un elemento del álgebra están relacionados por exponenciación, a saber
+	\begin{equation}
+  \Lambda=e^{ta},\quad \Lambda\in O(1,3),\quad a\in \mathfrak{o}(1,3)
+\end{equation}
+donde $t$ son los parámetros del grupo.
+
+Las matrices $\Lambda$ satisfacen la condición
+\begin{equation}
+  \Lambda^T\eta\Lambda=\eta
+\end{equation}
+\begin{equation}
+  \implies [e^{ta}]^T\eta [e^{ta}]=\eta 
+\end{equation}
+para determinar las condiciones del álgebra debemos remitirnos a la vecindad de la identidad de las $\Lambda$,
+\begin{equation}
+  \Lambda =e^{ta}\implies \Lambda=1\text{ ocurre en } t=0
+\end{equation}
+\begin{align}
+  \implies \dv{t}\eval{\left([e^{ta}]^T\eta [e^{ta}]\right)}_{t=0}&=\dv{t}\eval{\eta}_{t=0}\\
+  \dv{t}\eval{[e^{ta}]^T\eta [e^{ta}]}_{t=0}+\eval{[e^{ta}]^T\eta \dv{t}[e^{ta}]}_{t=0}&=0\\
+  \eval{[ae^{ta}]^T\eta [e^{ta}]}_{t=0}+\eval{[e^{ta}]^T\eta [ae^{ta}]}_{t=0}&=0\\
+  [a]^T\eta +\eta [a]&=0\\
+  a^T\eta +\eta a&=0
+\end{align}
+multiplicando por $(\cdot \eta^{-1}\equiv\eta )$, se tiene
+\begin{align}
+  a^T+\eta a\eta=0
+\end{align}
+\begin{equation}
+  \implies \boxed{a^T=-\eta a\eta} \qed 
+\end{equation}
+\end{prueba}
+
+\begin{teor}
+	Los constraints
+	\begin{equation}
+  \det\Lambda=\pm 1\quad \text{y}\quad |\Lambda^0_{~0}|\geq 1
+\end{equation}
+definen $4$ partes desconectadas en el espacio de los parámetros del grupo de Lorentz.
+\end{teor}
+
+\begin{prueba}
+	Sabemos que las matrices de Lorentz satisfacen la condición
+	\begin{equation}
+  \Lambda^T\eta \Lambda=\eta
+\end{equation}
+\begin{align}
+  \implies \det (\Lambda^T\eta)&=\det\eta \\
+  (\det\Lambda^T)\underbrace{(\det\eta)}_{-1}(\det\Lambda)&=\underbrace{\det\eta}_{-1} \\
+  (\det\Lambda)^2&=1
+\end{align}
+\begin{equation}
+  \implies \boxed{\det\Lambda=\pm 1}
+\end{equation}
+Por otro lado, dado que
+\begin{equation}
+  \eta_{\a\b }=\eta_{\m\n}\Lambda^\m_{~\alpha}\Lambda^\n_{~\b }
+\end{equation}
+\begin{equation}
+  \implies \eta_{00 }=\eta_{\m\n}\Lambda^\m_{~0}\Lambda^\n_{~0 }=\eta_{00}\Lambda^0_{~0}\Lambda^0_{~0 }+\eta_{ii}\Lambda^{i}_{~0}\Lambda^{i}_{~0 }
+\end{equation}
+\begin{equation}
+  \implies 1=(\Lambda^0_{~0})^2-(\Lambda^{i}_{~0})^2
+\end{equation}
+\begin{equation}
+  \implies (\Lambda^0_{~0})^2=1+(\Lambda^{i}_{~0})^2
+\end{equation}
+\begin{equation}
+  \implies |\Lambda^0_{~0}|\geq 1 \qed 
+\end{equation}
+\end{prueba}
+
+Estas condiciones permiten clasificar las transformaciones de Lorentz. 
+\begin{enumerate}
+	\item \textbf{Grupo de Lorentz completo}:
+	\begin{equation}
+  L:=O(1,3)=\{\Lambda\in GL(4,\mathbb{R})/\Lambda^T\eta\Lambda=\eta \}
+\end{equation}
+\item \textbf{Grupo de transformaciones de Lorentz propias}:
+ \begin{equation}
+  L_+:=SO(1,3)=\{\Lambda\in O(1,3)/\det\Lambda=+1\}
+\end{equation}
+es un subgrupo de $O(1,3)$.
+\item \textbf{Transformaciones de Lorentz impropias:}
+\begin{equation}
+  L_-=\{\Lambda\in O(1,3)/\det\Lambda=-1\}
+\end{equation}
+no es un subgrupo de $O(1,3)$.
+\item \textbf{Transformaciones de Lorentz ortocronas:}
+\begin{equation}
+  L^\uparrow =\{\Lambda\in O(1,3)/\Lambda^0_{~0}\geq 1\}
+\end{equation}
+es un subgrupo de $O(1,3)$.
+\item \textbf{Transformaciones de Lorentz no-ortocronas:}
+\begin{equation}
+  L^\downarrow =\{\Lambda\in O(1,3)/\Lambda^0_{~0}\leq 1\}
+\end{equation}
+es un subgrupo de $O(1,3)$.
+\item \textbf{Grupo de Lorentz restringido o grupo de Lorentz propio ortocrono:}
+ \begin{equation}
+  L^\uparrow_+ =\{\Lambda\in O(1,3)/\det\Lambda=+1\,  \text{  y  }\, \Lambda^0_{~0}\geq 1\}
+\end{equation}
+\end{enumerate}
+
+\subsection{Generadores del grupo de Lorentz}
+En la vecindad de la identidad $\mathbb{I}_{SO(1,3)}\in L^\uparrow_+ $ podemos escribir
+\begin{equation}
+  \Lambda=\mathbb{I}_{4\times 4}+\omega \implies \Lambda^\m_{~\n }=\delta^\m_\n +\omega^\m_{~\n }
+\end{equation}
+donde $\omn$ son parámetros infinitesimales del grupo de Lorentz y además debe satisfacer
+\begin{equation}
+ \eta_{\m\n }\Lambda^\m_{~\a} \Lambda^\n _{~\b }=\eta_{\a\b  }
+\end{equation}
+Luego,
+\begin{align}
+  \eta_{\m\n }\left(\delta^\m_\a +\omega^\m_{~\a }\right)\left(\delta^\n_\b  +\omega^\n_{~\b  }\right)&=\eta_{\a\b }\\
+  \left(\eta_{\m\n}\delta^\m_\a+\eta_{\m\n }\omega^\m_{~\a }\right)\left(\delta^\n_\b  +\omega^\n_{~\b  }\right)&=\eta_{\a\b }\\
+  \eta_{\m\n}\delta^\m_\a\delta^\n_\b +\eta_{\m\n}\delta^\m_\a\omega^\n_{~b}+\eta_{\m\n }\omega^\m_{~\a }\delta^\n_\b+\cancelto{0}{\eta_{\m\n }\omega^\m_{~\a }\omega^\n_{~\b}}&=\eta_{\a\b }\\
+  \cancel{\eta_{\a\b }}+\eta_{\a\m }\omega^\n _{~\b }+\eta_{\m\b }\omega^\m_{~\a}&=\cancel{\eta_{\a\b }}\\
+  \omega_{\a\b }+\omega_{\b\a}&=0
+\end{align}
+\begin{equation}
+  \implies \boxed{\omega_{\a\b}=-\omega_{\b\a }}
+\end{equation}
+Es decir, los parámetros infinitesimales del grupo de Lorentz son antisimétricos.
+\begin{equation}
+  \implies x'^\m =\Lmn x^\n =(\delta^\m_\n x^\n+\omn x^\n )=x^\m +\omn x^\n 
+\end{equation}
+\begin{equation}\label{12.1}
+  \implies\boxed{ \delta x^\m =\omn x^\n }
+\end{equation}
+Las matrices $\Lmn\in L^\uparrow_+$ y las matrices $\omn$ pertenecen al álgebra. Los elementos del grupo y los del álgebra están relacionados por
+\begin{equation}
+  \Lambda=e^\omega \Longrightarrow \Lmn =(e^\omega )^\m_{~\n }
+\end{equation}
+Si $M_{\rho\s }$ son una base del espacio de los parámetros del grupo, entonces
+\begin{equation}
+  \omega=-\frac{i}{2}\omega^{\rho\s }M_{\rho\s }
+\end{equation}
+\begin{equation}
+  \implies \Lmn =\left(e^{-\frac{i}{2}\omega^{\rho\s }M_{\rho\s }}\right)^\m_{~\n }
+\end{equation}
+así, de \eqref{12.1}
+\begin{align}
+  \delta x^\m &=\Lmn x^\n-x^\m \\
+  &=\left(e^{-\frac{i}{2}\omega^{\rho\s }M_{\rho\s }}\right)^\m_{~\n }x^\n -x^\m \\
+  &=\left(\delta^\m_\n -\frac{i}{2}\omega^{\rho\s }(M_{\rho\s })^\m_{~\n }\right)x^\n -x^\m \\
+  &=-\frac{i}{2}\omega^{\rho\s }(M_{\rho\s })^\m_{~\n }x^\n \\
+  &=\omn x^\n 
+\end{align}
+\begin{equation}
+  \implies \boxed{\omn =-\frac{i}{2}\omega^{\rho\s }(M_{\rho\s })^\m_{~\n }}
+\end{equation}
+cuya solución por inspección es
+\begin{equation}
+	\boxed{(M_{\rho\sigma })^\m_{~\n }=i\left(\eta_{\sigma\n }\delta^\m_\rho-\eta_{\rho\sigma}\delta^\m_\sigma \right)}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
