@@ -1,0 +1,138 @@
+\section{Clase 13}
+Hemos visto que  álgebra de Lorentz viene dada por
+\begin{equation}
+  [M_{\m\n},M_{\rho\s }]=-i(\eta_{\m\rho}M_{\n\s }-\eta_{\m\s }M_{\n\rho }-\eta_{\n\rho}M_{\m\s }+\eta_{\n\s }M_{\m\rho})
+\end{equation}
+
+\subsection{Generadores de las rotaciones espaciales y Boosts}
+Podemos hacer la siguiente descomposición de los generadores del grupo de Lorentz $M_{\m\n }:M_{ij},M_{0i}$.
+
+Definimos 
+\begin{align}
+  J_i&=\epsilon_{ijk}M_{jk},\qquad \text{generadores de rotaciones}\\
+  K_i&=M_{i0}=-M_{0i},\qquad \text{generadores de boosts}
+\end{align}
+de manera que
+\begin{equation}
+  M_{\m\n }=\mqty(M_{00}&M_{01}&M_{02}&M_{03}\\
+  M_{10}&M_{11}&M_{12}&M_{13}\\
+  M_{20}&M_{21}&M_{22}&M_{23}\\
+  M_{30}&M_{31}&M_{32}&M_{33})=
+  \mqty(0&-K_1&-K_2&-K_3\\
+  K_1&0&J_3&-J_2\\
+  K_2&-J_3&0&J_1\\
+  K_3&J_2&-J_1&0)
+\end{equation}
+
+Consideremos el caso $\m=0,\n=i, \rho=0,\sigma=j$,
+\begin{align}
+  [M_{0i},M_{0j}]&=-i(\eta_{00}M_{ij }-\eta_{0j }M_{i0 }-\eta_{i0}M_{0j}+\eta_{ij }M_{00})\\
+  [-K_{i},-K_j]&=-i\eta_{00}M_{ij}\\
+\end{align}
+\begin{equation}
+\implies \boxed{   [K_{i},K_j]=-i\epsilon_{ijk}J_k}
+\end{equation}
+Ahora consideremos $\m=0,\n=i,\rho=k,\sigma=l$,
+\begin{align}
+  [M_{0i},M_{kl }]&=-i(\eta_{0k}M_{il}-\eta_{0l }M_{ik }-\eta_{ik}M_{0l }+\eta_{il }M_{0k})\\
+  [-K_i,\epsilon_{klm}J_m]&=-i(\eta_{ik}(-K_l)+\eta_{il}(-K_k))
+\end{align}
+pero $\eta_{ik}=-\delta_{ik}$, así
+\begin{align}
+  -\epsilon_{klm}[K_i,J_m]&=-i(-\delta_{ik}(-K_l)-\delta_{il}(-K_k))\\
+  \epsilon_{klm}[K_i,J_m]&=-i(\delta_{ik}(-K_l)-\delta_{il}(-K_k))
+\end{align}
+\begin{equation}
+  \vdots 
+\end{equation}
+\begin{equation}
+	\boxed{ [K_i,J_j]=i\epsilon_{ijk}K_k}
+\end{equation}
+
+Haciendo algo similar, se puede calcular la relación de conmutación cuando $\m=i,\n=j,\rho=k,\s=l$ y se obtiene que el álgebra que satisfacen los generadores de boost y rotaciones es
+\begin{tcolorbox}
+\begin{equation}\label{13.algebraLorentz}
+\begin{split}
+  [K_i,K_j]&=-i\epsilon_{ijk}J_k\\
+  [K_i,J_j]&=i\epsilon_{ijk}K_k\\
+  [J_i,J_j]&=i\epsilon_{ijk}J_k
+\end{split}
+\end{equation}
+\end{tcolorbox}
+
+Si definimos nuevos generadores
+\begin{align}
+  S_i=\frac{1}{2}(J_i+iK_i),\qquad T_i=\frac{1}{2}(J_i-K_i)
+\end{align}
+Entonces \eqref{13.algebraLorentz} toma la forma
+\begin{align}
+  [S_i,S_j]&=\epsilon_{ijk}S_k\\
+  [T_i,T_j]&=\epsilon_{ijk}T_k\\
+  [T_i,S_j]&=0
+\end{align}
+y es conocida como el álgebra comlexificada de Lorentz.
+
+\subsection{Grupo de Poincare}
+Sabemos que el grupo de Lorentz deja invariante la distancia entre dos puntos del espacio de Minkowski,
+\begin{equation}
+  S^2=\eta_{\m\n }x^\m x^\n 
+\end{equation}
+También sabemos que el grupo de traslaciones en el espacio de Minkowski deja invariante a $S^2$,
+\begin{equation}
+  x^\m \to x'^\m =x^\m +a^\m 
+\end{equation}
+Esto conduce a la definición del grupo de transformaciones de Poincare:
+\begin{equation}
+  x^\m \to x'^\m =\Lmn x^\n +a^\m 
+\end{equation}
+
+Esta definición permite definir la ley de composición (multiplicación) entre los elementos del grupo de Poincare.
+
+\begin{align}
+  x'^\m &=(\Lambda_1)^\m _{~\n } x^\n +a_1^\m\\
+  x''^\m &=(\Lambda_2)^\m _{~\n } x'^\n +a_2^\m
+\end{align}
+Así, 
+\begin{equation}
+ x''^\m = (\Lambda_2)^\m_{~\n }((\Lambda_1)^\n_{~\alpha} x^\alpha +a_1^\n )+a_2^\m 
+\end{equation}
+\begin{equation}
+  x''^\m =(\Lambda_2)^\m_{~\n }(\Lambda_1)^\n_{~\a }x^\alpha +(\Lambda_2)^\m_{~\n }a_1^\n +a_2^\m 
+\end{equation}
+Si denotamos a un elemento del grupo de Poincare como $(\Lambda,a)$ entonces la ley de composición interna del grupo es:
+\begin{equation}
+  \boxed{(\Lambda_2,a_2)\cdot (\Lambda_1,a_1)=(\Lambda_2\Lambda_1,\Lambda_2a_1+a_2)}
+\end{equation}
+
+El elemento unidad del grupo $P_+^\uparrow$,
+\begin{equation}
+  x'^\m =\Lmn x^\n+ a^\m ,\qquad \mathbb{I}\equiv (1,0)
+\end{equation}
+El inverso del elemento $(\Lambda,a)$ es definido como $(\Lambda^{-1},-\Lambda^{-1}a)$. En efecto
+\begin{equation}
+  (\Lambda,a)\cdot (\Lambda^{-1},-\Lambda^{-1}a)=(\Lambda\Lambda^{-1},-\Lambda\Lambda^{-1}a+a)=(1,-a+a)=(1,0)
+\end{equation}
+y tambien
+\begin{equation}
+  (\Lambda^{-1},-\Lambda^{-1}a)\cdot (\Lambda,a)=(\Lambda^{-1}\Lambda,\Lambda^{-1}a+(-\Lambda^{-1}a))=(1,0)
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
