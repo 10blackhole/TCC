@@ -1,1 +1,273 @@
 \section{Clase 17}
+\subsection{Hamiltoniano en teoría clásica de campos}
+Recordemos que
+\begin{equation}
+  S=\int\dd^3x\dd t\L (\psi,\partial_i\psi,\partial_t\psi,x)
+\end{equation}
+\begin{equation}
+  \db x=0
+\end{equation}
+\begin{equation}
+  \db\L=\pdv{\L }{\psi}\db\psi+\pdv{\L }{(\partial_i\psi)}\db (\partial_i\psi)+\pdv{\L }{(\partial_t\psi)}\db(\partial_t\psi)
+\end{equation}
+\begin{equation}
+ \boxed{ \db\L=\left(\pdv{\L }{\psi}-\partial_i\pdv{\L }{(\partial_i\psi)}-\partial_t\pdv{\L }{(\partial_t\psi)}\right)\db\psi+\partial_i\left(\pdv{\L }{(\partial_i\psi)}\db\psi\right)+\partial_t\left(\pdv{\L }{(\partial_t\psi)}\db\psi\right)}
+\end{equation}
+Usando que $\db S=\int\dd^3\dd t\db\L =0$ y que $\eval{\db \psi}_{\rm  borde}=0$, se tiene
+\begin{align}
+  \pdv{\L }{\psi}-\partial_i\pdv{\L }{(\partial_i\psi)}-\partial_t\pdv{\L }{(\partial_t\psi)}&=0\\
+ \implies \Aboxed{ \pdv{\L }{\psi}-\partial_\m \left(\pdv{\L }{(\partial_\m \psi)}\right) &=0}
+\end{align}
+Introducimos la derivada funcional
+\begin{align}
+  \frac{\d \L }{\d \psi}&=\pdv{\L }{\psi}-\partial_i\pdv{\L }{(\partial_i\psi)}\\
+  \frac{\d \L }{\d \dot{\psi}}&=\pdv{\L }{\dot{\psi}}\equiv \pdv{\L }{(\partial_t\psi)}
+\end{align}
+Luego, las ecuaciones de movimiento quedan
+\begin{equation}
+\boxed{  \pdv{\d \L }{\d\psi}-\dv{t}\frac{\d  \L }{\d \dot{\psi}}=0}
+\end{equation}
+
+\subsection{Formalismo de Hamilton}
+El primer paso es definir el Hamiltoniano para lo cual necesitamos definir el momentum,
+\begin{equation}
+  \pi (\vec{x},t)=\frac{\d\L }{\d \dot{\psi}}\equiv\pdv{\L }{\dot{\psi}}
+\end{equation}
+luego, las ecuaciones de movimiento quedan
+\begin{equation}
+  \frac{\d \L }{\d\psi}-\dv{t}\pi(\vec{x},t)=0
+\end{equation}
+\begin{equation}
+  \implies \dot{\pi}(\vec{x},t)=\frac{\d \L }{\d \psi}=\pdv{\L }{\psi}-\partial_i\pdv{\L }{(\partial_i\psi)}
+\end{equation}
+
+\begin{defi}
+	Se define la \textit{densidad Hamiltoniana} como
+	\begin{equation}
+  \mathcal{H}(\vec{x},t)=\pi(\vec{x},t)\dot{\psi}(\vec{x},t)-\L 
+\end{equation}
+de manera que el Hamiltoniano viene dado por
+\begin{equation}
+  H=\int\dd^3x\mathcal{H}(\vec{x},t)
+\end{equation}
+\end{defi}
+Las ecuaciones de movimiento en términos de la densidad Hamiltoniana quedan
+\begin{align}
+  \dot{\psi}\xt &=\frac{\d H }{\d\p }=\pdv{\mathcal{H}}{\p }-\partial_i\pdv{\mathcal{H}}{(\partial_i\pi )}\\
+  \dot{\p }\xt &=-\frac{\d H}{\d \psi}=-\left(\pdv{\mathcal{H}}{\psi}-\partial_i\pdv{\mathcal{H}}{(\partial_i\psi)}\right)
+\end{align}
+
+\subsection{Paréntesis de Poisson}
+\begin{defi}
+Sea $F=F(\psi,\p )$ y $G=G(\psi,\p )$. Se define el \textit{corchete de Poisson}, como
+\begin{equation}
+  [F,G]=\int\dd^3x\left(\frac{\d F}{\d \psi\xt }\frac{\d G}{\d \p\xt }-\frac{\d F}{\d\p\xt}\frac{\d G}{\d \psi\xt }\right)
+\end{equation}
+\end{defi}
+
+Por otro lado,
+\begin{align}
+  \dot{F}(t)&=\int\dd^3x\left(\frac{\d F}{\d \psi}\dot{\psi}+\frac{\d F}{\d\p }\dot{\p }\right)\\
+  &=\int\dd^3x\left(\frac{\d F}{\d \psi}\frac{\d H}{\d \p}-\frac{\d F}{\d \p}\frac{\d H}{\d \psi}\right)\\
+  &=[F,H]
+\end{align}
+es decir,
+\begin{equation}
+\boxed{  \dot{F}(t)=[F,H]}
+\end{equation}
+Si hay dependencia explícita del tiempo, lo anterior queda
+\begin{equation}
+  \dot{F}(t)=\pdv{F}{t}+ [F,H]
+\end{equation}
+
+\begin{ej}
+	\begin{align}
+  \dot{\psi}\xt &=[\psi\xt ,H]=\frac{\d H}{\d \p }\label{17.1}\\
+  \dot{\p }\xt &=[\p\xt,H]=-\frac{\d H}{\d \psi }\label{17.2}
+\end{align}
+\end{ej}
+
+Debe ser notado que podemos escribir $\psi\xt $ ó $\p\xt $ como una funcional
+\begin{align}
+  \psi\xt&=\int\dd^3x\d^{(3)}(\vec{x}-\vec{x}')\psi\xpt\\
+  \p \xt&=\int\dd^3x\d^{(3)}(\vec{x}-\vec{x}')\p \xpt 
+\end{align}
+lo cual implica que
+\begin{align}
+  \frac{\d \psi\xt }{\d \psi\xpt }&=\dxxp \\
+  \frac{\d \p \xt }{\d \p \xpt }&=\dxxp\\
+  \frac{\d \psi\xt }{\d \p\xpt }&=\frac{\d \p \xt }{\d \psi\xpt }=0
+\end{align}
+
+Con esto, podemos probar \eqref{17.1} y \eqref{17.2}. En efecto,
+\begin{align}
+  \dot{\psi}\xt&=[\psi\xt,H]\\
+  &=\int\dd^3x'\left(\frac{\d \psi\xt }{\d\psi\xpt}\frac{\d H}{\d\p \xpt }-\cancelto{0}{\frac{\d \psi\xt}{\d \p\xpt}}\frac{\d H}{\d \psi\xpt }\right)\\
+  &=\int\dd^3x'\dxxp\frac{\d H}{\d\p\xpt }\\
+  &=\frac{\d H}{\d\p\xt }\qquad\checkmark
+\end{align}}
+De manera similar, se prueba \eqref{17.2}.
+
+\subsection{Crochete de Poisson fundamental}
+\begin{align}
+  [\psi\xt,\p\xpt ]&=\int\dd^3x''\left(\right)\left(\frac{\d\psi\xt }{\d \psi\xppt }\frac{\d\p\xpt }{\d\p\xppt }-\cancelto{0}{\frac{\d\psi\xt }{\d\p\xppt}}\frac{\d\p\xpt }{\d\psi\xppt }\right)\\
+  &=\int\dd^3x''\dxxpp\delta^{(3)}(\vec{x}',\vec{x}'')\\
+  &=\dxxp 
+\end{align}
+\begin{equation}
+  \implies \boxed{ [\psi\xt,\p\xpt ]=\dxxp }
+\end{equation}
+De manera similar 
+\begin{equation}
+  \boxed{[\psi\xt,\psi\xpt]=[\p\xt,\p\xpt ]=0}
+\end{equation}
+
+\subsection{Tensor energía momentum}
+El tensor energía momentum se define como
+\begin{align}
+  T^\m_{~\n }&=\pdv{\L }{(\partial_\m \psi)}\partial_\n \psi-\delta^\m_\n \L 
+\end{align}
+De aquí, vemos que
+\begin{align}
+  T^0_{~0 }&=\pdv{\L }{(\partial_0 \psi)}\partial_0 \psi-\delta^0_0 \L \\
+  &=\pdv{\L }{\dot{\psi}}\dot{\psi}-\L\\
+  &=\p\dot{\psi}-\L \\
+  &=\mathcal{H}
+\end{align}
+\begin{equation}
+  \implies  \boxed{T^0_{~0 }=\mathcal{H}}
+\end{equation}
+y además,
+\begin{align}
+  T^0_{~i }&=\pdv{\L }{(\partial_0 \psi)}\partial_i \psi-\delta^0_i \L \\
+  &=\pdv{\L }{\dot{\psi}}\partial_i\psi
+\end{align}
+\begin{equation}
+  \implies\boxed{ T^0_{~i }=\p \partial_i\psi}
+\end{equation}
+Además, sabemos que
+\begin{equation}
+  P^\m =\int\dd^3xT^{0\m }
+\end{equation}
+lo que implica que
+\begin{equation}
+ \boxed{ P^0=\int\dd^3xT^{00}=\int\dd^3x\mathcal{H}=H}
+\end{equation}
+y
+\begin{align}
+  P^{i}=\int\dd^3xT^{0i}=\int\dd^3x\p\xt\partial^{i}\psi\xt 
+\end{align}
+\begin{equation}
+  \implies\boxed{ P^{i}=-\int\dd^3x\p\xt\partial_i\psi\xt}
+\end{equation}
+
+Consideremos ahora
+\begin{equation}
+  \boxed{[\psi\xt,P^0]=[\psi\xt,H]=\dot{\psi}\xt }
+\end{equation}
+\begin{align}
+  [\psi\xt ,P^{i}\xpt ]=&=\int\dd^3x''\frac{\d\psi\xt }{\d\psi\xppt }\frac{\d P^{i}\xpt }{\d\p\xppt }\\
+  &=\int\dd^3x''\dxxpp\frac{\d P^{i}\xpt }{\d\p\xppt }\\
+  &=\frac{\d P^{i}\xpt }{\d\p \xt }\\
+  &=-\frac{\d }{\d\p\xt }\int\dd^3x'\p\xpt\partial_i\psi\xpt \\
+  &=-\int\dd^3x'\frac{\d \p\xpt}{\d\p\xt }\partial_i\psi\xpt \\
+  &=-\int\dd^3x'\dxxp\partial_i\psi\xt 
+\end{align}
+\begin{equation}
+  \implies \boxed{[\psi\xt ,P^{i}\xpt ]=-\partial_i\psi\xt }
+\end{equation}
+
+\subsection{Transformaciones de simetría}
+Hemos visto las siguientes transformaciones:
+\begin{itemize}
+	\item $\db\psi=\psi'(x)-\psi(x)$: compara dos campos en un mismo punto.
+	\item $\d\psi=\psi'(x')-\psi(x)$: Compara dos campos distintos en dos puntos distintos.
+	\item $\d_s\psi=\psi(x')-\psi(x)$: Compara un campo en dos puntos distintos.
+\end{itemize}
+Así, tenemos
+\begin{align}
+  \d_sS=\int_{\Omega'}\dd^4x'\L(x')-\int_\Omega \dd^4x\L(x)
+\end{align}
+La covariancia de $\L$ implica que $\L'(x')=\L(x')$. Luego,
+\begin{align}
+  \d_sS&=\int_{\Omega'}\dd^4x'\L(x')-\int_\Omega \dd^4x\L(x),\qquad \d\L=\L'(x')-\L(x)\\
+  &=\int_{\Omega'}\dd^4x'(\L +\d\L )-\int_\Omega \dd^4x\L(x)\\
+  &=\int_\Omega\dd^4x(1+\partial_\m\d x^\m )(\L+\d\L )-\int_\Omega \dd^4x\L(x)\\
+  &=\int_\Omega\dd^4x\left[\d\L +(\partial_\m\d x^\m )\L \right]
+\end{align}
+pero $\d\L =\db\L +(\partial_\m\L )\d x^\m $,
+\begin{align}
+  \d_sS&=\int_\Omega\dd^4x\left(\db\L +(\partial_\m\L )\d x^\m +(\partial_\m \d x^\m )\L \right)\\
+  &=\int_\Omega\dd^4x\left(\db\L +\partial_\m(\L \d x^\m )\right)
+\end{align}
+pero
+\begin{equation}
+  \db\L =[\L ]_\a \db\psi^\a +\partial_\m \left(\pdv{\L }{(\partial_\m \psi^\a )}\db\psi^\a \right)
+\end{equation}
+luego,
+\begin{align}
+  \d_sS&=\int_\Omega\dd^4x\left([\L ]_\a \db\psi^\a +\partial_\m \left(\pdv{\L }{(\partial_\m \psi^\a )}\db\psi^\a \right) +\partial_\m(\L \d x^\m )\right)\\
+  &=\int_\Omega\dd^4x\left[[\L ]_\a \db\psi^\a +\partial_\m \left(\pdv{\L }{(\partial_\m\psi)}\db\psi^\a +\L\d x^\m \right)\right]
+\end{align}
+Recordando que $\d x^\m =\epsilon\xi^\m $ y $\d\psi^\a =\epsilon\eta^\a $ y que
+\begin{align}
+  \db\psi^\a &=\d\psi^\a -\partial_\m \psi^\a \d x^\m \\
+  &=\epsilon\xi^\a -\partial_\m \psi^\a \epsilon\xi^\m \\
+  &=\epsilon(\eta^\a -\partial_\m \psi^\a \xi^\m )\\
+  &=\epsilon\chi ^\a 
+\end{align}
+donde $\chi^\a =\eta^\a -\partial_\m \psi^\a \xi^\m $. Luego,
+\begin{align}
+  \d_sS&=\int_\Omega\dd^4x\left[[\L ]_\a \epsilon(\eta^\a -\partial_\m \psi^\a \xi^\m )+\partial_\m \left(\epsilon\chi^{\a}\pdv{\L }{(\partial_\m \psi^\a )}+\epsilon\L \xi^\m \right)\right]\\
+  &=\epsilon\int_\Omega\dd^4x\left[[\L ]_\a (\eta^\a -\partial_\m \psi^\a \xi^\m )+\partial_\m \left(\chi^\a \pdv{\L }{(\partial_\m \partial^\a )}+\L \xi^\a \right)\right]
+\end{align}
+A partir de aquí se formulan los dos teoremas de Noether.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
