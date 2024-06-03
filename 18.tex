@@ -1,0 +1,340 @@
+\section{Clase 18}
+Teníamos que
+\begin{equation}
+  \d S=\epsilon\int_\Omega\dd^4x\left[[\L ]_\a (\eta^\a -\partial_\m \psi^\a \xi^\m )+\partial_\m \left(\chi^\a \pdv{\L }{(\partial_\m \partial^\a )}+\L \xi^\m  \right)\right]
+\end{equation}
+De aquí vemos:
+\begin{teor}\label{teo1}
+	Sea $\xi_r^\m =\xi_r^\m (\psi,\partial \psi,x)$, $\eta_r^\a  =\eta_r^\a  (\psi,\partial \psi,x)$ funciones continuas. Si $\epsilon^r$, $r=1,...,N$ son parámetros constantes tales que
+	\begin{align}
+  \d x^\m &=\epsilon^r\xi_r^\m (\psi,\partial\psi ,x)\\
+  \d \psi^\a  &=\epsilon^r\eta_r^\m (\psi,\partial\psi ,x)
+\end{align}
+entonces existen las siguientes $N$ identidades
+\begin{equation}
+  (\eta_r^\a -\partial_\m \psi^\a \xi_r^\m )[\L ]_a =\nabla_\m \left(\chi_r^\a \pdv{\L }{(\partial_\m \psi^\a )}+\L (x)\xi_r^\m \right)
+\end{equation}
+por lo cual
+\begin{equation}
+  J_\m =\chi_r^\a \pdv{\L }{(\partial_\m  \psi^\a )}+\L \xi_r^\m 
+\end{equation}
+es una cantidad conservada on-shell.
+\end{teor}
+
+\begin{teor}\label{teo1}
+	Sean $\hat{\xi}_r^\m $, $\hat{\eta}_r^\a $ operadores. Si $\epsilon^r, r=1,..,N$ son funciones continuas, tales que
+	\begin{align}
+  \d x^\m &=\epsilon^r\hat{\xi}_r^\m \\
+  \d\psi^\a &=\epsilon^r\hat{\eta}_r^\a 
+\end{align}
+entonces existen $N$ identidades de la forma
+\begin{equation}
+  \hat{\eta}_r^{*\a}[\L ]_\a -\hat{\xi}_r^{*\m }(\partial_\m \psi^\a [\L ]_\a )=0
+\end{equation}
+donde $*$ indica el adjunto del operador.
+\end{teor}
+
+\subsection{Corrientes y cargas}
+En el Teorema \ref{teo1} se establece que
+	\begin{align}
+  \d x^\m &=\epsilon^r\xi_r^\m (\psi,\partial\psi ,x)\\
+  \d \psi^\a  &=\epsilon^r\eta_r^\m (\psi,\partial\psi ,x)
+\end{align}
+donde $\epsilon^r$ son parámetros constantes. Por simplicidad consideremos las siguientes transformaciones
+\begin{equation}
+  \d x^\m =\epsilon^rA_m^r(x),\qquad \d \psi^\a =\epsilon^r B_r^\a (x)
+\end{equation}
+de manera que
+\begin{align}
+  \db \psi^\a &=\d\psi^\a -\partial\psi^\a \d x^\m\\& =\epsilon^rB_r^\a (x)-\partial_\m\psi^\a \epsilon^r A_r^\m (x)\\
+  &=\epsilon^r(B_r^\a -\partial_\m\psi^\a A_r^\m )\\
+  &=\epsilon^r\chi_r^\a 
+\end{align}
+pero
+\begin{equation}
+  \d S=\int\dd^4x\left[[\L ]_\a \db\psi^\a +\partial_\m \left(\pdv{\L }{(\partial_\m\psi)}\db\psi^\a +\L(x)\d x^\m \right)\right]
+\end{equation}
+luego,
+\begin{align}
+  \d \L &=[\L ]_\a \db\psi^\a +\partial_\m \left(\pdv{\L }{(\partial_\m\psi)}\db\psi^\a +\L(x)\d x^\m +\Sigma^\m  \right)\\
+  &=[L]_\a \db\psi^\a +\partial_\m J^\m 
+\end{align}
+donde 
+\begin{equation}
+  J^\m =\pdv{\L }{(\partial_\m\psi)}\db\psi^\a +\L(x)\d x^\m +\Sigma^\m 
+\end{equation}
+
+Definimos el \textit{pseudomomentum} $\pi ^{\a\m }=\pdv{\L }{(\partial_\m \psi^\a )}$, de manera que
+\begin{equation}
+    J^\m =\pi ^{\a \m} \db\psi^\a +\L\d x^\m +\Sigma^\m 
+\end{equation}
+
+Dado que $\db\psi^\a =\d\psi^\a -\partial_\n \psi^\a \d x^\n $, se tiene
+\begin{align}
+    J^\m &=\pi ^{\a \m} \db\psi^\a -\pdv{\L }{(\partial_\m \psi^\a )}\partial_\n \psi^\a \d x^\n +\L \d x^\m +\Sigma^\m 
+\end{align}
+\begin{equation}
+  \implies \boxed{J^\m =\pi^{\a\m }\d \psi^\a -T^{\m }_{~\n }\d x^\n +\Sigma^\m }
+\end{equation}
+donde
+\begin{align}
+  T^{\m }_{~\n }&=\pdv{\L }{(\partial_\m\psi^\a )}\partial_\n \psi^\a -\delta^\m_\n \L\\
+  &= \pi^{\a\m }\partial_\n \psi^\a -\d^\m_\n\L 
+\end{align}
+Dado que $\d\psi^\a =\epsilon^rB_r^\a $, $\d x^\n =\epsilon^r\xi_r\n $ y $\Sigma^m =\epsilon\sigma_r^\m $, se tiene
+\begin{align}
+  J^\m &=\epsilon^r\pi^{\a\m }B_r^\a -T^\m _{~\n }\epsilon^r\xi_r^\n +\epsilon^r\sigma_r^\m \\
+  &=\epsilon^r \left(\pi^{\a\m }B_r^\a -T^\m _{~\n }\xi_r^\m +\sigma_r^\m \right)\\
+  &=\epsilon^rJ_r^\m 
+\end{align}
+
+
+
+
+Integrando sobre el $3$-espacio la ley de conservación $\partial_\m J^\m =0$, se tiene
+\begin{align}
+  \int\dd^3x\partial_\m J^\m &=0\\
+  \int\dd^3x\partial_0 J^0+\int\dd^3x\partial_iJ^{i}&=0\\
+  \implies \int\dd^3x\partial_0 J^0&=-\int\dd^3x\partial_iJ^{i}\\
+  &=-\int\dd^2x J^{i}\dd S_i
+\end{align}
+asumiendo que los campos se anulan en el infinito,
+\begin{equation}
+  \partial_0\int\dd^3xJ^0=0
+\end{equation}
+luego, la carga
+\begin{equation}
+  C=\int\dd^3xJ^0
+\end{equation}
+se conserva.
+
+\begin{teor}
+	La variación $\db$ de los campos $\psi^\a $ pueden ser expresadas en función de las cargas
+	\begin{equation}
+  \db\psi^\a =[\psi^\a ,\epsilon^rC_r]
+\end{equation}
+\end{teor}
+
+\begin{teor}
+	Las cargas de Noether satisfacen la relación de conmutación
+	\begin{equation}
+  [C_r,C_s]=f_{rst}C_t+\gamma_{rs}
+\end{equation}
+\end{teor}
+
+\subsection{Simetrías de Poincaré y leyes de conservación}
+\textbf{a) Invariancia bajo traslaciones}: La homogeneidad del espacio-tiempo implica invariancia bajo traslaciones,
+\begin{equation}
+  x'^\m =x^\m +\epsilon^\m \implies \d x^\m =\epsilon^\m 
+\end{equation}
+
+Esta homogeneidad implica que los campos no cambian bajo traslaciones
+\begin{equation}
+  \psi'(x')=\psi(x)\implies \d\psi^\a (x)=0
+\end{equation}
+por lo cual, la corriente
+\begin{equation}
+  J^\m =\pi^{\a\m }\d \psi^\a -T^{\m }_{~\n }\d x^\n
+\end{equation}
+toma la forma
+\begin{align}
+  J^\m =-T^{\m }_{~\n }\d x^\n=-T^{\m }_{~\n }\epsilon^r 
+\end{align}
+\begin{equation}
+  \implies \partial_m J^\m =0\implies \boxed{\partial_\m T^\m _{~\n }=0}
+\end{equation}
+Integrando sobre el volumen espacial
+\begin{equation}
+  \int\dd^3x\partial_\m T^\m _{~\n }=0
+\end{equation}
+\begin{equation}
+  \implies \int\dd^3x \partial_0T^0 _{~\n }=0
+\end{equation}
+\begin{equation}
+  \implies \dv{x^0}P_\n =0
+\end{equation}
+donde
+\begin{equation}
+  \boxed{P_\n =\int\dd^3x T^0 _{~\n }=0}
+\end{equation}
+
+\textbf{b) Invariacia bajo rotaciones de Lorentz}: La isotropía del espacio-tiempo implica invariancia bajo rotaciones espaciales y boosts de Lorentz.
+
+Bajo transformaciones de Lorentz
+\begin{equation}
+  x'^\m =\Lmn x^\n 
+\end{equation}
+donde $\Lmn$ son elemento del grupo de Lie-Lorentz, lo que implica que basta estudiarlas transformaciones infinitesimales.
+Sabemos que bajo $\Lmn=\delta^\m_\n +\omn $,
+\begin{equation}
+  \d x^\m =\omn x^\n \equiv \omega^{\m\n }x_\n 
+\end{equation}
+\begin{equation}
+  \d\psi_r=\frac{1}{2}\omega^{\m\n }(J_{\m\n })_{rs}\psi_s
+\end{equation}
+
+Consideremos estas transformaciones en la corriente
+\begin{equation}
+  J_\m =\pdv{\L }{(\partial^\m \psi_r)}\d\psi_r-T_{\m\n}\d x^\n 
+\end{equation}
+con
+\begin{equation}
+  T_{\m\n }=\pdv{\L }{(\partial^\m \psi_r)}\psi_r-\eta_{\m\n }\L 
+\end{equation}
+así,
+\begin{align}
+  J_\m &=\pdv{\L }{(\partial^\m \psi_r)}\frac{1}{2}\omega^{\m\lambda}(J_{\n\lambda})\psi_s-T_{\m\n }\omega^{\n\lambda}x_\lambda
+\end{align}
+pero
+\begin{align}
+  T_{\m\n }\omega^{\n\lambda}&=\frac{1}{2}T_{\m\n }\omega^{\n\lambda}x_\lambda +\frac{1}{2}T_{\m\n }\omega^{\n\lambda}x_\lambda\\
+  &=\frac{1}{2}T_{\m\n }\omega^{\n\lambda}x_\lambda +\frac{1}{2}T_{\m\lambda }\omega^{\lambda\n }x_\n \\
+  &=\frac{1}{2}\omega^{\n\lambda}(T_{\m\n }x_\lambda-T_{\m\lambda}x_\n )
+\end{align}
+luego,
+\begin{align}
+  J_\m &=\pdv{\L }{(\partial^\m \psi_r)}\frac{1}{2}\omega^{\n\lambda}(J_{\n\lambda})_{rs}\psi_r+\frac{1}{2}\omega^{\n\lambda}(T_{\m\n }x_\lambda-T_{\m\lambda}x_\n )\\
+  &=\frac{1}{2}\omega^{\n\lambda}\left(x_\n T_{\m\lambda}-x_\lambda T_{\m\n }+\pdv{\L }{(\partial^\m \psi_r)}\left(J_{\n\lambda}\right)_{rs}\psi_s\right)\\
+  &=\frac{1}{2}\omega^{\n\lambda}M_{\m\n\lambda}
+\end{align}
+donde
+\begin{equation}
+ \boxed{ M_{\m\n\lambda}=x_\n T_{\m\lambda}-x_\lambda T_{\m\n }+\pdv{\L }{(\partial^\m \psi_r)}\left(J_{\n\lambda}\right)_{rs}\psi_s}
+\end{equation}
+%conocido como el \textit{tensor corriente}.
+
+Así,
+\begin{align}
+  C=\int\dd^3x J_0=\frac{1}{2}\omega^{\n\lambda}\int\dd^3xM_{0\n\lambda}=\frac{1}{2}\omega^{\n\lambda}M_{\n\lambda}
+\end{align}
+donde
+\begin{equation}
+  M_{\n\lambda }=\int\dd^3xM_{0\n\lambda}
+\end{equation}
+luego,
+\begin{equation}
+  M_{\n\lambda}=\int\dd^3x\left(x_\n T_{0\lambda}-x_\lambda T_{0\n }+\pdv{\L }{(\partial^0\psi_r)}\left(J_{\n\lambda}\right)_{rs}\psi_s\right)
+\end{equation}
+Consideremos solo la parte espacial $\n =n,\lambda=l$
+\begin{equation}
+  M_{nl}=\int\dd^3x\left(x_\n T_{0l}-x_l T_{0n }+\pdv{\L }{(\partial^0\psi_r)}\left(J_{nl}\right)_{rs}\psi_s\right)
+\end{equation}
+Escribiendo
+\begin{equation}
+  M_{nl}=L_{nl}+S_{nl}
+\end{equation}
+donde
+\begin{align}
+  L_{nl}&=\int\dd^3x(x_nT_{0l}-x_lT_{0n})\\
+  S_{nl}&=\int\dd^3x\pdv{\L }{(\partial^0 \psi_r)}\left(J_{nl}\right)_{rs}\psi_s
+\end{align}
+
+Dado que
+\begin{equation}
+  T_{\m\n }=\pdv{\L }{(\partial^\m \psi_r)}\partial_\n \psi_r-\eta_{\m\n }\L 
+\end{equation}
+\begin{equation}
+ \implies T_{0l}=\pdv{\L }{(\partial^0 \psi_r)}\partial_l\psi_r-\cancelto{0}{\eta_{0l}\L }
+\end{equation}
+\begin{equation}
+  \implies L_{nl}=\int\dd^3x\left(x_n\pdv{\L }{(\partial^0 \psi_r)}\partial_l\psi_r-x_l\pdv{\L }{(\psi^0 \psi_r)}\partial_n\psi_r\right)
+\end{equation}
+donde se obtiene el \textit{momentum orbital} dado por
+\begin{equation}
+  L_{nl}=\int\dd^3x\pdv{\L }{(\partial^0\psi_r)}\left(x_n\partial_l-x_l\partial_n\right)\psi_r
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
