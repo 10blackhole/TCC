@@ -1,0 +1,296 @@
+\section{Clase 20}
+Sea $\M$ una variedad dotada de una métrica $g_{\m\n }$ que pertenece a una clase $[g]$ de métricas tal que en el punto $P$ de coordenada $x$ se tiene que 
+\begin{itemize}
+	\item  En $P$ el vector $\xi ^\m$ tiene norma $l_0$
+	\item En $Q$ el vector $\xi ^\m$ tiene norma $l$
+\end{itemize}
+La métrica en $P$ es $g_{\m\n }$ y en $Q$ es $\bar{g}_{\m\n }$. Lo que implica que
+\begin{align}
+  l_0^2&=g_{\a\b }\xi^\a \xi^\b \\
+  l^2&=\bar{g}_{\a\b }\xi^\a \xi^\b 
+\end{align}
+Bajo traslación paralela, $\xi^\m $ cambia de dirección de modo que
+\begin{equation}
+  \dd \xi ^\m =\G^\m _{\a\b }\dd x^\a \xi^\b 
+\end{equation}
+y además cambia su norma de acuerod a 
+\begin{equation}
+  \dd l=\varphi_\b \dd x^\b l
+\end{equation}
+\begin{align}
+  \implies\frac{\dd l}{l}&=\varphi_\b \dd x^\b \\
+  \int_{l_0}^l\frac{\dd l}{l}&=\int_C\varphi_\b \dd x^\b \\
+  \ln\left(\frac{l}{l_0}\right)&=\int_C\varphi_\b \dd x^\b \\
+  l&=e^{\int_C\varphi_\b \dd x^\b }l_0
+\end{align}
+\begin{equation}
+  \implies \boxed{l^2=e^{2\int_C\varphi_\b \dd x^\b }l^2_0}
+\end{equation}
+\begin{equation}
+  \implies \bar{g}_{\m\n }=e^{2\int_C \varphi_\b \dd x^\b }g_{\m\n }
+\end{equation}
+llamamos $\chi=\int_C\varphi_\b \dd x^\b $, conocido como el \textit{factor de escala de Weyl}, de manera que
+\begin{equation}
+  \boxed{l=e^{\chi }l_0\implies \bar{g}_{\m\n }=e^{2\chi }g_{\m\n }}
+\end{equation}
+\begin{equation}
+\boxed{  \bar{g}=e^{2\chi }g}
+\end{equation}
+Dado que $l^2=g_{\m\n }\xi^\m \xi^\n $ se tiene
+\begin{equation}
+  \dd l^2=\dd (g_{\m\n }\xi^\m\xi^\n )
+\end{equation}
+\begin{equation}
+  \implies \nabla_\g g_{\a\b }=2g_{\a\b }\varphi_\g 
+\end{equation}
+\begin{equation}
+\boxed{  \nabla g=2\varphi\otimes g}
+\end{equation}
+Así, se tiene que $\forall x\in\M $,
+\begin{align}
+  \bar{g}&=e^{2\chi }g\\
+  \nabla g&=2\varphi\otimes g
+\end{align}
+y también
+\begin{equation}
+  \nabla \bar{g}=2\bar{\varphi}\otimes \bar{g}
+\end{equation}
+\begin{align}
+  \implies \nabla\bar{g}&=\nabla(e^{2\chi }g)=2\dd\chi e^{2\chi }g+e^{2\chi }\nabla g\\
+  \nabla \bar{g}&=2\dd\chi\otimes\bar{g}+e^{2\chi }2\varphi\otimes g=2\dd \chi \otimes\bar{g}+2\varphi\otimes \bar{g}\\
+  \nabla\bar{g}&=2(\varphi+\dd\chi )\otimes\bar{g}=2\bar{\varphi}\otimes\bar{g}\\
+  \implies \bar{\varphi}&=\varphi+\dd\chi 
+\end{align}
+o
+\begin{equation}
+\boxed{  \bar{\varphi}_\m =\varphi_\m +\partial_\m \chi }
+\end{equation}
+
+Weyl interpretó este resultado como el equivalente a la transformación del potencial electromagnético
+\begin{equation}
+  A_\m \to A'_\m =A_\m +\partial_\m \chi 
+\end{equation}
+y postuló que la conexión $\varphi_\m$ era una conexión de la cual podría obtenerse la electrodinámica.
+
+De todas las posibles conexiones $\varphi_\m$, solo una elegida como $\varphi_\m =\frac{e}{\g }A_\m$ hacía contacto con la física. Esto implica que
+\begin{equation}
+  l=e^{\int_C\varphi_\b \dd x^\b }l_0=e^{\frac{e}{\g }\int_C A_\m\dd x^\m }l_0
+\end{equation}
+\begin{equation}
+   \boxed{l=e^{\frac{e}{\g }\int_C A_\m\dd x^\m }l_0}
+\end{equation}
+Este resultado fue en el que Einstein basó su lapidaria crítica a la teoría de Weyl.
+
+Einstein escribió:
+\begin{quote}
+	Si consideramos un sistema monoatómico y lo trasladamos desde el punto $P$ al punto $Q$, deberíamos entonces tener lo que sigue:
+	\begin{itemize}
+		\item En el punto $P$, la longitud de onda de la línea espectral principal sería $\lambda_0=l_0$.
+		\item En el punto $Q$, la longitud de onda de la línea espectral principal sería $\lambda=l$.
+	\end{itemize}
+	Esto implica que $\lambda=e^{\frac{e}{\g }\int A_\m\dd x^\m }\lambda_0$. Si el sistema atómico fuera sodio, entonces en $P$ veríamos la línea de longitud $\lambda_0$ de color amarillo pero en el punto $Q$ podría ser verde, lo cual es falso.
+\end{quote}
+
+\subsection{Schrodinger 1922}
+En el estudio de sistemas atómicos periódicos llevamos a cabo por Schrodinger en 1922 aparecieron los primeros indicios de que la teoría de Weyl podría ser realidad en mecánica cuántica. Schrodinger mostró que el factor de escala de Weyl era cuantizable para sistemas periódicos usando la cuantización de Sommerfeld-Wilson,
+\begin{equation}
+  \oint p\dd q=n h=2\p n\hbar
+\end{equation}
+
+Esto fue mostrado en 5 ejemplos.
+
+Estas ideas son mejor entendidas usando los resultados de F. London de 1927, el cual usó la teoría de Hamilton-Jacobi. De esta teoría sabemos que 
+\begin{equation}
+  \vec{p}=\nabla S\qquad E=-\pdv{S}{t}
+\end{equation}
+donde $S$ es la función principal de Hamilton.
+
+Por otro lado
+\begin{align}
+  S&=\int \dd S=\int \dd x^\m \partial_\m S=\int\dd x^{i}\partial_i S-\dd t\partial_0 S\\
+  &=\int\nabla S\cdot \dd\vec{x}-\int\dd t\pdv{S}{t}=\int\nabla S\cdot\dd\vec{x}+\int E\dd t\\
+  &=\int\nabla S\cdot\dd\vec{x}+Et
+\end{align}
+\begin{equation}
+  \implies \boxed{S-Et=\int\nabla S\cdot\dd\vec{x}}
+\end{equation}
+
+Sabemos que el momentum para una partícula en un campo electromagnético es
+\begin{equation}
+  p_\m =\partial_\m S-e A_\m 
+\end{equation}
+\begin{equation}
+  \dd x^\m p_\m =\dd x^\m \partial_\m S-e\dd x^\m A_\m 
+\end{equation}
+\begin{equation}
+  \dd x^\m p_\m =\dd S-eA_\m \dd x^\m 
+\end{equation}
+\begin{equation}
+  S=\int\dd S=e\int A_\m \dd x^\m +\int p_\m \dd x^\m 
+\end{equation}
+\begin{align}
+  S&=e\int A_\m \dd x^\m +\frac{1}{m_0 }\int p_\m m_0\dv{x^\m }{\t }\dd\t \\
+  &=e\int A_\m \dd x^\m +\frac{1}{m_0}\int p_\m p^\m \dd\t \\
+  &=e\int A_\m \dd x^\m +\frac{1}{m_0 }\int m_0^2c^2\dd\t \\
+  &=e\int A_\m \dd x^\m +\int m_0c^2\dd \t =e\int A_\m \dd x^\m +\int E_0\dd\t \\
+  &=e\int A_\m \dd x^\m + E_0\t  
+\end{align}
+\begin{equation}
+\boxed{  S-E_0\t =e\int A_\m \dd x^\m }
+\end{equation}
+
+\begin{equation}
+  \implies e\int A_\m \dd x^\m =\int\nabla S\cdot\dd\vec{x}
+\end{equation}
+Esto implica que
+\begin{align}
+  l&=e^{\frac{e}{\g }\int A_\m\dd x^\m }l_0\\
+  &=e^{\frac{1}{\g }\int\nabla S\cdot \dd\vec{x}}l_0\\
+  &=e^{\frac{1}{\g }\int\vec{p}\cdot\dd\vec{x}}l_0
+\end{align}
+y usando la cuantización de Sommerfeld-Wilson, tenemos
+\begin{equation}
+\boxed{  l=e^{\frac{2\p n\hbar}{\g }}l_0}
+\end{equation}
+Schrodinger postuló que $\g=-i\hbar$, de manera que
+\begin{equation}
+  e^{\frac{2\p n\hbar }{-i\hbar}}l_0=e^{i2\p n}l_0\implies l=l_0
+\end{equation}
+Lo que implica que para sistemas atómicos periódicos, \textit{la objeción de Einstein no es válida.}
+
+En 1927, London retomó el problema y usando los resultados de Schrodinger de 1922 y de los trabajos de De-Broglie obtuvo la siguiente conclusión: La onda mecánica (onda de materia) viene dada por 
+\begin{equation}
+  \Psi =|\Psi |e^{\frac{i}{\hbar}(S-Et)}
+\end{equation}
+
+Así,
+\begin{equation}
+\boxed{  \frac{\Psi}{|\Psi |}=e^{\frac{ie}{\hbar}\int_C A_\m\dd x^\m }}
+\end{equation}
+Aquí, $e^{\frac{ie}{\hbar}\int_C A_\m\dd x^\m }$ corresponde a la fase local de la onda de De-Broglie.
+
+Por otro lado sabemos que 
+\begin{equation}
+  l=e^{\frac{e}{\g }\int_C A_\m \dd x^\m }l_0
+\end{equation}
+\begin{equation}
+  \implies \frac{l}{l_0 }=e^{\frac{e}{\g }\int_C A_\m \dd x^\m }
+\end{equation}
+Aquí, $e^{\frac{e}{\g }\int_C A_\m \dd x^\m }$ corresponde al factor de escala de Weyl.
+
+Usando la conjetura de Schrodinger, donde $\g =-i\hbar$, se tiene
+\begin{equation}
+\boxed{  \frac{l}{l_0 }=e^{\frac{ie}{\hbar}\int_C A_\m \dd x^\m }}
+\end{equation}
+
+\subsection{Weyl 1929}
+El principal resultado de Weyl en 1929 fue la obtención de la electrodinámica a partir del principio de gauge. De la mecánica cuántica sabemos que la probabilidad de encontrar una partícula en un volumen $\Omega$ es dada por
+\begin{equation}
+  P_\Psi(\Omega)=\int |\Psi(x) |^2\dd^3x
+\end{equation}
+esta probabilidad (que es la que se mide) es invariante bajo la transformación $\Psi(x)\to \Psi'(x)=e^{i\a }\Psi(x)$, donde $\a \in\mathbb{R}$, debido a que
+\begin{equation}
+  |\Psi(x)|=\Psi(x)\Psi^*(x)=\Psi'(x)\Psi'^*(x)
+\end{equation}
+Esto implica que existe una libertad de gauge en la probabilidad, es decir, $P_\Psi(x)$ no cambia bajo diferentes elecciones de $\Psi(x)$. Existe una libertad en la elección de la fase de la funcón de onda, del mismo estilo que existe una libertad en la elección del potencial en la teoría electromagnética.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
