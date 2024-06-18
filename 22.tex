@@ -1,0 +1,242 @@
+\section{Clase 22}
+Habíamos encontrado que
+\begin{equation}
+  \pdv{\rho }{t}+\nabla\cdot\vec{J}=0
+\end{equation}
+Integrando sobre todo el espacio
+\begin{equation}
+  \int_V\left(\pdv{\rho }{t}+\nabla\cdot\vec{J}\right)\dd^3x=0
+\end{equation}
+\begin{equation}
+  \int_V\pdv{\rho }{t}\dd^3x+\int_V\nabla\cdot\vec{J}\dd^3x=0
+\end{equation}
+\begin{equation}
+  \implies \pdv{t}\int_V \rho\dd^3x=-\int_V\nabla\cdot\vec{J}\dd^3x=-\int_S\vec{J}\cdot \dd\vec{S}=0
+\end{equation}
+\begin{equation}
+  \implies \int_V\rho\dd^3x=\rm cte.
+\end{equation}
+\begin{equation}
+  \implies \rho=\frac{i\hbar}{2m_0c^2}\left(\psi^*\pdv{\psi}{t}-\psi\pdv{\psi^*}{t}\right)
+\end{equation}
+podría ser una densidad de probabilidad.
+
+Dado que la ecuación de Klein-Gordon es una ecuación con segundas derivadas temporales, su solución requiere que se conozca la función $\psi\xt $ y su primera derivada temporal $\pdv*{\psi\xt}{t}$. Tanto la función $\psi$ como su derivada $\pdv*{\psi}{t}$ pueden tomar cualquier valor, se tiene que $\rho$ puede ser positiva, negativa o nula, es decir, $\rho$ no es definida postiva. Luego, no puede ser interpretada como una densidad de probabilidad. Por esta razón Schrodinger tomó el límite no-relativista de la ecuación de Klein-Gordon, obteniendo la conocida ecuación de Schrodinger,
+\begin{equation}
+  i\pdv{\psi}{t}=\hat{H}\psi,
+\end{equation}
+donde, para el caso de la partícula libre,
+\begin{equation}
+  \hat{H}=-\frac{\hbar^2}{2m}\nabla^2.
+\end{equation}
+
+Esto condujo a Dirac a pensar que la correcta ecuación relativista debería ser de primer orden en el tiempo.
+
+\subsection{Ecuación de Dirac}
+Para partículas de altas energías es válida la teoría especial de la relatividad, donde
+\begin{equation}
+  E^2=p^2c^2+m_0^2c^4,
+\end{equation}
+donde se obtiene usando la prescripción
+\begin{equation}
+  E\to \hat{E},\qquad H\to \hat{H},\qquad \text{con}\quad  \hat{H}\psi=\hat{E}\psi,
+\end{equation}
+se obtiene la \textit{ecuación de Klein-Gordon}
+\begin{equation}\label{22.2}
+\boxed{  -\hbar^2\pdv[2]{\psi}{t}=-\hbar^2c^2\nabla^2\psi+m_0^2c^4\psi=\hat{H}^2\psi.}
+\end{equation}
+\begin{equation}
+  \implies \hat{H}^2=\hat{p}^2c^2+m_0^2c^4
+\end{equation}
+\begin{equation}
+  \implies \boxed{\hat{H}^2=-\hbar^2c^2\nabla^2+m_0^2c^4}
+\end{equation}
+Dirac postuló que para tener una ecuación tipo Schrodinger
+\begin{equation}
+  i\hbar \pdv{\psi}{t}=\hat{H}\psi
+\end{equation}
+se debería escribir
+\begin{equation}
+  i\hbar\pdv{\psi}{t}=\sqrt{-\hbar^2c^2\nabla^2+m_0^2c^4}\psi 
+\end{equation}
+y postuló
+\begin{equation}\label{22.1}
+   i\hbar\pdv{\psi}{t}=\frac{\hbar c}{i}\left(\a_1\pdv{x^1}+\a_2\pdv{x^2}+\a_3\pdv{x^3}\right)\psi+\b m_0c^2
+\end{equation}
+\begin{equation}
+  \implies \hat{H}=\frac{\hbar c}{i}\a_i\pdv{x^{i}}=\frac{\hbar c}{i}\left(\a_1\pdv{x^1}+\a_2\pdv{x^2}+\a_3\pdv{x^3}\right)\psi+\b m_0c^2
+\end{equation}
+\begin{align}
+  \hat{H}\psi &=\frac{\hbar c}{i}\vec{\a }\cdot\nabla \psi+\b m_0c^2\psi\\
+  &=c\vec{\a }\cdot\vec{p}\psi+\b m_0c^2\psi
+\end{align}
+
+De acuerdo con Heisenberg, $\hat{H}$ es un operador (una matriz), lo que implica que tanto $\vec{\a }$ como $\b$ deben ser matrices. Luego, la función $\psi$ deber ser una especia de vector columna
+\begin{equation}
+  \psi=\mqty(\psi_1\xt \\
+  \psi_2\xt \\
+  \vdots\\
+  \psi_N\xt),
+\end{equation}
+el cual es llamado espinor de Dirac, en analogía al espinor que aparece en la eucación de Pauli.
+
+Notemos que los coeficientes $\a_i $ y $\b$ deben ser matrices, ya que si fueran números, el Hamiltoniano $\hat{H}$ no sería invariante bajo rotaciones espaciales.
+
+Para encontrar la estructura algebraíca de las matrices $\a_i$ y $\b$, debemos estudiar la compatibilidad de \eqref{22.1} con \eqref{22.2}.
+\begin{equation}\label{22.3}
+  i\hbar\pdv{\psi}{t}=\left(\frac{\hbar c}{i}\sum_k\a_k\partial_k+\b m_0c^2\right)\psi
+\end{equation}
+consideremos la acción de \eqref{22.3} sobre si misma,
+\begin{align}
+  \nonumber i\hbar\pdv{t}\left(i\hbar\pdv{\psi}{t}\right)&=\left[\frac{\hbar c}{i}\sum_j\a_j\partial_j+\m m_0c^2\right]\left[\frac{\hbar c}{i}\sum_i\a_i\partial_i+\m m_0c^2\right]\\
+ \nonumber -\hbar^2\pdv[2]{\psi}{t}&=\frac{\hbar^2c^2}{i^2}\sum_{i,j}\a_j\partial_j(\a_i\partial_i\psi)+\frac{\hbar c}{i}\sum_j\a_j\partial_j(\b m_0^2c^2\psi)+ \b m_0c^2\frac{\hbar c}{i}\sum_i\a_i\partial_i\psi +\b^2m_0^2c^4\psi\\
+  \nonumber &=-\hbar^2c^2\sum_{i,j}\a_j\a_i\partial_j\partial_i\psi+\frac{\hbar m_0c^3}{i}\sum_j\a_j\b \partial_j \psi+\frac{\hbar m_0c^3}{i}\sum_i\b\a_i\partial_i\psi+\b^2m_0^2c^4\psi\\
+  &=-\hbar c^2\sum_{i,j}\frac{1}{2}(\a_j\a_i+\a_i\a_j)\partial_i\partial_j\psi+\frac{\hbar^2m_0c^3}{i}\sum_i(\a_i\b +\b \a_i)\partial_i\psi +\b^2m_0^2c^4\psi\label{22.4 }
+\end{align}
+De \eqref{22.4 } y \eqref{22.2} vemos que coinciden sólo si
+\begin{align*}
+  \frac{1}{2}(\a_i\a_j+\a_j\a_i)&=\d_{ij}\\
+  \a_i\b +\b \a_i&=0\\
+  \b^2&=1\\
+  \a_i ^2&=1
+\end{align*}
+De aquí,
+\begin{equation}\label{22.5}
+\begin{split}
+  \{\a_i,\a_j\}&=\a_i\a_j+\a_j\a_i=2\d_{ij}\\
+  \{\a_i,\b \}&=\a_i\b \b \a_i=0\\
+  \b^2&=1\\
+  \a_i^2&=1
+\end{split}
+\end{equation}
+
+Dado que $\hat{H}=\frac{\hbar c}{i}\partial_i\partial_i+\b m_0c^2$ es un operador hermítico, luego, $\a_i$ y $\b$ son hermíticos, es decir, $\a_i^\dagger=\a_i$ y $\b^\dagger=\b $. Esto implica que $\a_i$ y $\b$ tienen eigevalores reales.
+
+\subsubsection{Consecuencias de las relaciones de conmutación \eqref{22.5}:}
+\begin{enumerate}
+	\item La traza de las matrices $\a_i$ y $\b$ son nulas. En efecto
+	\begin{align}
+  \a_i\b+\b a_i&=0\qquad /\cdot\b \\
+  \a_i\b ^2+\b \a_i\b &=0\\
+  \a_i&=-\b \a_i\b \\
+  \Tr(\a_i )&=-\Tr(\b\a_i\b)\\
+  &=-\Tr(\b^2\a_i)\\
+  &=-\Tr(\a_i)
+\end{align}
+\begin{equation}
+  \implies \Tr(\a_i )=0
+\end{equation}
+De manera similar, multiplicando por $\a_i$, se tiene
+\begin{equation}
+   \Tr(\b  )=0
+\end{equation}
+\item Los eigenvalores de las matrics $\a_i$ y $\b$ son $\pm 1$. En efecto, dado que los eigenvalores de una matriz son independiente de la representación, podemos escribir la matriz $\a_i$ en la eigen-representación, es decir, 
+\begin{equation}
+  \a_i=\mqty(A_1&0&\cdots & 0\\
+  0&A_2&\cdots &0\\
+  \vdots\\
+  0&0&\cdots &A_N)
+\end{equation}
+
+\begin{equation}
+ \implies  \a_i^2=\mqty(A_1^2&0&\cdots & 0\\
+  0&A_2^2&\cdots &0\\
+  \vdots\\
+  0&0&\cdots &A_N^2)
+\end{equation}
+pero sabemos que
+\begin{equation}
+  \a_i^2=\id =\mqty(1&0&\cdots & 0\\
+  0&1&\cdots &0\\
+  \vdots\\
+  0&0&\cdots &1)
+\end{equation}
+\begin{equation}
+  \implies A_k^2=1
+\end{equation}
+\begin{equation}
+  \implies \boxed{A_k=\pm 1}
+\end{equation}
+De manera similar para $\b$.
+\end{enumerate}
+
+Dado que la traza de una matriz es la suma de sus eigenvalores, las matrices $\a_i$ y $\b$ deben ser de dimensión par. La dimensión menor es $N=2$ que se excluye debido a que corresponde al caso de las matrices de Pauli más la identidad, y debdo a que no satisfacen la relación \eqref{22.5}.
+
+La menor dimensión a estudiar será $N=4$.
+
+\subsection{Repesentación de Dirac}
+Las matrices $\a_i$ y $\b$ pueden ser representadas en función de las matrices de Pauli y de la identidad:
+\begin{equation}
+  \b =\mqty(\id&0\\
+  0&-\id )
+\end{equation}
+\begin{equation}
+  \a_i=\mqty(0&\s_i\\
+  \s_i&0)
+\end{equation}
+Verifiquemos la propiedad $\a_i\a_j+\a_j\a_i=2\d_{ij}$. En efecto,
+\begin{align}
+  \a_i\a_j+\a_j\a_i&=\mqty(0&\s_i\\\s_i&0)\mqty(0&\s_j\\\s_j&0)+\mqty(0&\s_j\\\s_j&0)\mqty(0&\s_i\\\s_i&0)\\
+  &=\mqty(\s_i\s_j+\s_j\s_i&&0\\\\0&&\s_i\s_j+\s_j\s_i)\\
+  &=\mqty(2\d_{ij}&&0\\\\0&&2\d_{ij})
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

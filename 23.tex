@@ -1,0 +1,265 @@
+\section{Clase 23}
+\subsection{Cuadri-corriente y ley de conservación}
+Consideremos la ecuación de Dirac y su conjugada
+\begin{equation}
+  i\hbar\pdv{\psi}{t}=\frac{\hbar c}{i}\sum_k\a_k\pdv{\psi}{x^k }+\b m_0c^2\psi\qquad /\psi^\dagger\cdot
+\end{equation}
+\begin{equation}
+  -i\hbar\pdv{\psi^\dagger}{t}=\frac{\hbar c}{-i}\sum_k\a_k\pdv{\psi^\dagger}{x^k }+m_0c^2\psi^\dagger\b^\dagger\qquad /\cdot\psi
+\end{equation}
+\begin{equation}\label{23.a}
+  \implies i\hbar\psi^\dagger \pdv{\psi}{t}=\frac{\hbar c}{i}\sum_k\psi^\dagger \a_k\pdv{\psi}{x^k }+m_0c^2\psi^\dagger \b\psi
+\end{equation}
+\begin{equation}\label{23.b}
+  \implies -i\hbar\pdv{\psi^\dagger}{t}\psi=-\frac{\hbar c}{i}\sum_k\pdv{\psi^\dagger}{x^k }\a_k\psi+m_0c^2\psi^\dagger \b\psi
+\end{equation}
+Restando \eqref{23.b} de \eqref{23.a} tenemos
+\begin{equation}
+  i\hbar\left(\psi^\dagger\pdv{\psi}{t}+\pdv{\psi^\dagger}{t}\psi\right)=\frac{\hbar c}{i}\left(\sum_k\psi^\dagger \a_k\pdv{\psi}{x^k}+\pdv{\psi^\dagger}{x^k}\a_k\psi\right)
+\end{equation}
+\begin{equation}
+  i\hbar\pdv{t}(\psi^\dagger\psi)=\frac{\hbar c}{i}\sum_k\pdv{x^k}(\psi^\dagger\a_k\psi)
+\end{equation}
+\begin{equation}
+   i\hbar\pdv{t}(\psi^\dagger\psi)=-i\hbar\sum_k\pdv{x^k}(c\psi^\dagger\a_k\psi)=0
+\end{equation}
+Podemos escribir
+\begin{equation}
+  \pdv{\rho}{t}+\nabla\cdot\vec{J}=0
+\end{equation}
+donde
+\begin{equation}
+  \rho=\psi^\dagger\psi,\qquad \vec{J}=c\psi^\dagger\vec{\a }\psi
+\end{equation}
+Integrando en el espacio,
+\begin{equation}
+  \int_V\pdv{\rho}{t}\dd^3x+\int_V\nabla\cdot\vec{J}\dd^3x=0
+\end{equation}
+\begin{equation}
+  \pdv{t}\int_V\rho\dd^3x=-\int_V\nabla\cdot\vec{J}\dd^3x=-\int_V\vec{J}\cdot\dd\vec{S}=0
+\end{equation}
+\begin{equation}
+  \implies \pdv{t}\int_V\rho\dd^3x=0
+\end{equation}
+Es decir, $\rho$ se puede interpretar como una densidad de probabilidad definida positiva.
+\begin{equation}
+  \rho=\psi^\dagger\psi=\mqty(\psi_1^*&\psi_2^*&\cdots \psi_N^*)\mqty(\psi_1\\\psi_2\\\vdots\\\psi_N)
+\end{equation}
+\begin{equation}
+  \rho=|\psi_1|^2+|\psi_2|^2+\cdot +|\psi_N|^2>0
+\end{equation}
+
+\subsection{Ecuación de Dirac en notación $4$-dimensional}
+Consideremos la ecuación de Dirac
+\begin{equation}
+  i\hbar\pdv{\psi}{t}=\frac{\hbar c}{i}\left(\a_1\pdv{x^1}+\a_2\pdv{x^2}+\a_3\pdv{x^3}\right)\psi+\b m_0c^2\psi
+\end{equation}
+\begin{equation}
+  i\hbar\pdv{\psi}{t}=-i\hbar \left(c\a_1\pdv{x^1}+c\a_2\pdv{x^2}+c\a_3\pdv{x^3}\right)\psi+\b m_0c^2\psi\qquad /\frac{\b }{c}
+\end{equation}
+\begin{equation}
+  i\hbar\b\pdv{\psi}{(ct)}=-i\hbar\left(\b\a_1\pdv{x^1}+\b\a_2\pdv{x^2}+\b\a_3\pdv{x^3}\right)\psi+\b^2m_0c\psi
+\end{equation}
+\begin{equation}
+  i\hbar\left[\b\pdv{x^0}+\b\a_1\pdv{x^1}+\b\a_2\pdv{x^2}+\b\a_3\pdv{x^3}-m_0c\psi\right]=0
+\end{equation}
+Definimos $\gamma^0=\b $ y $\gamma^{i}=\b\a^{i}$. Luego, lo anterior queda
+\begin{equation}
+  i\hbar\left[\gamma^0\pdv{x^0}+\gamma^1\pdv{x^1}+\gamma^2\pdv{x^2}+\gamma^3\pdv{x^3}\right]\psi-m_0c\psi=0
+\end{equation}
+\begin{equation}
+ \boxed{ i\hbar\gamma^m \partial_\m \psi-m_0c\psi=0}
+\end{equation}
+conocida como la \textit{ecuación de Dirac} en notación relativista. Usando la notación de Feymann
+\begin{align}
+  \slashed{A}=\gamma^\m A_\m \implies \gamma^\m \partial_\m =\slashed{\partial}
+\end{align}
+\begin{equation}
+  i\hbar\slashed{\partial}\psi-m_0c\psi=0
+\end{equation}
+\begin{equation}
+  \left(i\hbar\slashed{\partial}-m_0c\right)\psi=0
+\end{equation}
+En notación de coordenadas naturales $\hbar=1,c=1$, se tiene
+\begin{equation}
+  (i\slashed{\partial}-m_0)\psi=0
+\end{equation}
+\begin{equation}
+  (i\gamma^\m \partial_\m -m_0)\psi=0
+\end{equation}
+Si $m=m_0$,
+\begin{equation}\label{23.dirac}
+\boxed{  (i\gamma^\m \partial_\m -m)\psi=0}
+\end{equation}
+La ecuación de Dirac \eqref{23.dirac} puede ser obtenida a partir del llamado \textit{Lagrangeano de Dirac}
+\begin{equation}\label{23.LagDirac}
+  \mathcal{L} _0=\bar{\psi}(i\gamma^\m \partial_\m -m)\psi
+\end{equation}
+donde $\bar{\psi}=\psi^\dagger \gamma^0$.
+
+\begin{obs}
+	Los anticonmutadores de $\a_i$, $\b$ en notación cuadri-dimensional dan lugar al álgebra de Clifford. En efecto, primero
+	\begin{equation}
+  \gamma^0\gamma^0+\gamma^0\gamma^0 =\b^2+\b^2=2=2\d_{0}
+\end{equation}
+\begin{equation}\label{23.1}
+\boxed{   \gamma^0\gamma^0+\gamma^0\gamma^0=2\d_{00}=2g^{00}}
+\end{equation}
+Segundo
+\begin{equation}
+  \gamma^{i}\gamma^0+\gamma^0\gamma^{i} =\b\a_i\b +\b \b \a_i=\a_i\b^2+\b^2\a_i=-\a_i+\a_i=0
+\end{equation}
+\begin{equation}\label{23.2}
+\boxed{  \gamma^{i}\gamma^0+\gamma^0\gamma^{i}=0}
+\end{equation}
+Y tercero
+\begin{align}
+  \gamma^{i}\gamma^j+\gamma^j\gamma^{i}&=\b\a_i\b\a_j+\b\a_j\b\a_i\\
+  &=-\a_i\b^2\a_j-\a_j\b^2\a_i\\
+  &=-(\a_i\a_j+\a_j\a_i)\\
+  &=-2\d_{ij}
+\end{align}
+\begin{equation}\label{23.3}
+\boxed{  \gamma^{i}\gamma^j+\gamma^j\gamma^{i}=-2\d_{ij}=-2g^{ij}}
+\end{equation}
+De \eqref{23.1}, \eqref{23.2} y \eqref{23.3} podemos escribir
+\begin{equation}
+\boxed{  \gamma^\m \gamma^\n +\gamma^\n \gamma^\m =2g^{\m\n }\equiv 2\eta^{\m\n }}
+\end{equation}
+la cual corresponde al \textit{álgebra de Clifford.}
+\end{obs}
+
+\subsection{Electrodinámica cuántica a partir del principio de gauge}
+Consideremos el Lagrangeano de Dirac \eqref{23.LagDirac}
+\begin{equation}
+  \mathcal{L} _0=\bar{\psi}(x)\left(i\gamma^\m \partial_\m -m\right)\psi(x)
+\end{equation}
+Bajo una transformación $U(1)$ global, los campos $\psi$ transforman como
+\begin{equation}
+  \psi(x)\to \psi'(x)=e^{i\a }\psi(x),\qquad \a\in\mathbb{R}
+\end{equation}
+¿Cómo transforma $\bar{\psi}(x)$? Sabemos que $\bar{\psi}(x)=\psi^\dagger(x)\gamma^0 $, lo que implica que
+\begin{align}
+  \bar{\psi}'(x)=\psi'^\dagger(x)\gamma^0 &=(\psi')^\dagger\gamma^0 \\
+  &=(e^{i\a })^\dagger \gamma^0 \\
+  &=\psi^\dagger e^{-i\a }\gamma^0 \\
+  &=\psi^\dagger \gamma^0 e^{-i\a }\\
+  &=\bar{\psi}e^{-i\a }
+\end{align}
+Así, para el caso de $U(1)$ global, se tiene \footnote{Para el caso de $U(1)$ local se debe tener cuidado con la conmutación entre los objetos que dependen de las coordenadas.}
+\begin{equation}
+  \psi\to \psi'=e^{i\a }\psi
+\end{equation}
+\begin{equation}
+  \bar{\psi}\to \bar{\psi}'=\bar{\psi}e^{-i\a }
+\end{equation}
+
+\begin{teor}
+	El Lagrangeano de Dirac es unvariante bajo $U(1)$ global.
+\end{teor}
+\begin{prueba}
+	\begin{equation}
+  \L'_0 =\bar{\psi}'i\gamma^\m\partial_\m \psi'-m\bar{\psi}'\psi'
+\end{equation}
+Veamos como queda el segundo término:
+\begin{equation}
+  m\bar{\psi}'\psi'=m\bar{\psi}e^{-i\a }e^{i\a }\psi=m\bar{\psi}\psi \quad \checkmark
+\end{equation}
+Ahora el primero:
+\begin{align}
+  i\bar{\psi}'\gamma^\m \partial_\m \psi'&=i\bar{\psi}e^{-i\a }\gamma^\m \partial_\m (e^{i\a }\psi),\quad \a\in\mathbb{R}\\
+  &=i\bar{\psi}e^{-i\a }e^{i\a }\gamma^\m \partial_m \psi\\
+  &=i\bar{\psi}\gamma^\m \partial_\m \psi\qquad \checkmark \qed 
+\end{align}
+Notemos que para el caso de $U(1)$ local, esto último ya no se cumple, debido a que $\a$ sería una función de las coordenadas.
+\end{prueba}
+
+¿Cuál es la razón de la invariancia? La razón es que la derivada de un campo es también un campo, por lo cual debe transformar como un campo, es decir,
+\begin{equation}
+  (\partial_\m \psi)'=e^{i\a }(\partial_\m \psi)
+\end{equation}
+\begin{align}
+  \partial'_\m \psi'&=e^{i\a }(\partial_\m \psi)\\
+  \partial'_\m e^{i\a }\psi&=e^{i\a }\partial_\m \psi\\
+  \partial'_\m e^{i\a }&=e^{i\a }\partial_\m \\
+\implies \Aboxed{ \partial'_\m &=e^{i\a }\partial_\m e^{-i\a }}
+\end{align}
+Es por eso que en el caso de $U(1)$ global $\partial_\m =\partial'_\m $, pero para el caso local esto ya no es cierto.
+
+La idea fundamental de Weyl fue pasar de transformaciones globales a locales, es decir, pasar de $U(1)_{\rm global}$  a $U(1)_{\rm local}$. 
+
+Para el caso de $U(1)$ local, se tiene
+\begin{equation}
+  \psi(x)\to \psi'(x)=e^{i\a (x)}\psi(x)
+\end{equation}
+\begin{equation}
+  \bar{\psi}(x)\to \bar{\psi}'=\bar{\psi}(x)e^{-i\a (x)}
+\end{equation}
+Consideremos de nuevo el Lagrangeano de Dirac \eqref{23.LagDirac},
+\begin{align}
+  \L'_0&=\bar{\psi}'(i\gamma^\m \partial_\m -m)\psi'\\
+  &=i\bar{\psi}'\gamma^\m \partial_\m \psi'-m\bar{\psi}'\psi'
+\end{align}
+Con el segundo término hay problema, como fue mostrado anteriormente. Sin embargo, con el primero ya no
+\begin{align}
+  i\bar{\psi}'\gamma^\m \partial_\m \psi'&=i\bar{\psi}e^{-i\a (x)}\gamma^\m \partial_\m (e^{i\a (x)}\psi)\\
+  &=i\bar{\psi}e^{-i\a (x)}\gamma^\m \left[e^{i\a (x)}\partial_\m \psi+i(\partial_\m \a(x))e^{i\a (x)}\psi\right]\\
+  &=i\bar{\psi}e^{-i\a (x)}\gamma^\m e^{i\a (x)}\left[\partial_m\psi +i (\partial_\m \a(x))\psi\right]\\
+  &=i\bar{\psi}\gamma^\m \left[\partial_\m +i\partial_\m \a (x)\right]\psi
+\end{align}
+Lo que implica que
+\begin{align}
+  \L'_0 &=i\bar{\psi}\gamma^\m \partial_\m \psi-\bar{\psi}\gamma^\m \psi\partial_\m \a(x)-m\bar{\psi}\psi\\
+  &=\bar{\psi}(i\gamma^\m \partial_\m -m)\psi-\bar{\psi}\gamma^\m \psi\partial_\m \a(x)
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

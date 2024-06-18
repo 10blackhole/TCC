@@ -1,0 +1,356 @@
+\section{Clase 21}
+Hasta ahora tenemos:
+\begin{enumerate}
+	\item Electrodinámica, con su simetría de gauge. Esto implica que las ecuaciones de Maxwell son invariantes bajo
+	\begin{equation}\label{21.1}
+	\begin{split}
+  \vec{A}&\to \vec{A}'=\vec{A}+\nabla\chi \\
+  V&\to V'=V-\pdv{\chi}{t}
+  \end{split} 
+\end{equation}
+\item La mecánica cuántica es invariante bajo la transformación
+ \begin{equation}\label{21.2}
+  \psi\to \psi'=\psi e^{i\a }
+\end{equation}
+El conjunto de las transformaciones \eqref{21.2} forman el grupo abeliano unitario $U(1)$. ($U(1)$ global).
+
+\item De acuerdo a Weyl, Schrodinger y London, las simetría debería ser locales. Es decir, deberiamos generalizar  la transformaciones \eqref{21.2} al caso local
+\begin{equation}\label{21.3}
+  \psi\to \psi'=\psi e^{i\a(x) }
+\end{equation}
+El conjunto de las transformaciones \eqref{21.3} constituyen el grupo $U(1)$ local.
+
+
+\end{enumerate}
+\underline{Pregunta:} ¿Existe alguna relación entre las transformaciones \eqref{21.1} y \eqref{21.3} ?
+
+Consideremos la ecuación de Schrodinger para una partícula en un campo electromagnético. La partícula material representada por la onda de materia de De-Broglie es descrita por la ecuación de Schrodinger. El campo electromagnético es decrito por las ecuaciones de Maxwell. ¿Son compatibles las ecuaciones de Maxwell con la mecánica cuántica?
+
+La ecuación de Schrodinger para la partícula libre es 
+\begin{equation}
+  -\frac{\hbar^2}{2m}\nabla^2\psi =i\hbar\pdv{\psi}{t}
+\end{equation}
+Para $\hbar=1$,
+\begin{equation}
+  -\frac{1}{2m}\nabla^2\psi=i\pdv{\psi}{t}
+\end{equation}
+\begin{equation}\label{21.Sc}
+  \frac{1}{2m}(-i\nabla)^2\psi=i\pdv{\psi}{t}
+\end{equation}
+Para obtener la ecuación de Schrodinger para una partícula en un campo electromagnético basta con sustituir:
+\begin{equation}
+  -i\nabla\to -i\nabla -q\vec{A}=-i\left(\nabla-iq\vec{A}\right)
+\end{equation}
+\begin{equation}
+  i\pdv{t}\to i\pdv{t}-qV=i\left(\pdv{t}+iqV\right)
+\end{equation}
+Luego, \eqref{21.Sc} queda
+\begin{equation}\label{21.Sc2}
+  \frac{1}{2m}\left[-i(\nabla-iq\vec{A})\right]^2\psi\xt =
+  i\left(\pdv{t}+iqV\right)\psi\xt 
+\end{equation}
+Definiendo:
+\begin{align}
+  \vec{D}&=\nabla -iq\vec{A}\\
+  D^0&=\pdv{t}+iqV
+\end{align}
+
+\eqref{21.Sc2} queda
+\begin{equation}\label{21.4}
+  \boxed{\frac{1}{2m}(-i\vec{D})^2\psi\xt =iD^0\psi\xt }
+\end{equation}
+Esta ecuación describe a una partícula en un campo electromagnético.
+
+Estudiemos la invariancia de \eqref{21.4} bajo de gauge \eqref{21.1}, 
+\begin{equation}
+  \frac{1}{2m}\left[-i(\nabla-iq\vec{A}')\right]^2\psi\xt =i\left(\pdv{t}+iqV'\right)\psi\xt 
+\end{equation}
+\begin{equation}\label{21.5}
+  \frac{1}{2m}\left[-i(\nabla-iq\vec{A}-iq\nabla\chi )\right]^2\psi\xt =i\left(\pdv{t}+iqV-iq\pdv{\chi }{t}\right)\psi\xt 
+\end{equation}
+
+La ecuación \eqref{21.5} muestra una aparente incompatibilidad entre la electrodinámica y la mecánica cuántica.
+
+\begin{teor}
+	La ecuación de Schrodinger que describe una partícula de carga $q$ en un campo electromagnético
+	\begin{equation}
+  \frac{1}{2m}\left[-i(\nabla-iq\vec{A})\right]^2\psi\xt =
+  i\left(\pdv{t}+iqV\right)\psi\xt 
+\end{equation}
+es invariante bajo las transformaciones
+	\begin{equation}
+	\begin{split}
+  \vec{A}&\to \vec{A}'=\vec{A}+\nabla\chi \\
+  V&\to V'=V-\pdv{\chi}{t}\\
+  \psi\xt &\to \psi'\xt =e^{iq\chi\xt }\psi\xt 
+  \end{split} 
+\end{equation}
+\end{teor}
+
+\begin{prueba}
+	Sabemos que una partícula en un campo electromagnético es regida por la ecuación 
+	\begin{equation}
+  \frac{1}{2m}(-i\vec{D})^2\psi\xt =iD^0\psi\xt 
+\end{equation}
+Esta ecuación se puede reescribir como
+\begin{equation}\label{21.6}
+  \frac{1}{2m}(-i\vec{D}')^2\psi'\xt =iD'^0\psi'\xt 
+\end{equation}
+Para el lado izquerdo, se tiene
+\begin{align}
+  -i\vec{D}'\psi'&=-i(\nabla-iq\vec{A}')\psi'\\
+  &=(-i\nabla-q\vec{A}-q\nabla\chi )(e^{iq\chi }\psi)\\
+  &=-i\nabla(e^{iq\chi }\psi)-q\vec{A}e^{iq\chi }\psi-q\nabla\chi e^{iq\chi }\psi\\
+  &=-i^2q\nabla\chi e^{iq\chi }\psi-ie^{iq\chi }\nabla\psi -q\vec{A}e^{iq\chi }\psi	-q\nabla\chi e^{iq\chi }\psi\\
+  &=-ie^{iq\chi }\nabla\psi-q\vec{A}e^{iq\chi }\psi\\
+  &=e^{iq\chi }(-i\nabla-q\vec{A})\psi\\
+  &=e^{iq\chi }(-i(\nabla-iq\vec{A}))\psi
+\end{align}
+Es decir,
+\begin{equation}\label{21.7}
+  \boxed{-i\vec{D}'\psi'=e^{iq\chi }(-i\vec{D})\psi}
+\end{equation}
+
+Para el lado derecho de \eqref{21.6} se tiene
+\begin{align}
+  iD'^0\psi'\xt &=i\left(\pdv{t}+iqV'\right)\psi'\\
+  &=i\left(\pdv{t}+iqV-iq\pdv{\chi}{t}\right)(e^{iq\chi }\psi)\\
+  &=i\pdv{t}(e^{iq\chi }\psi )-qVe^{iq\chi }\psi +q\pdv{\chi}{t}e^{iq\chi }\psi\\
+  &=i^2q\pdv{\chi}{t}e^{iq\chi }\psi +ie^{iq\chi }\pdv{\psi}{t}-qVe^{iq\chi }\psi+q\pdv{\chi }{t}e^{iq\chi }\psi\\
+  &=ie^{iq\chi }\pdv{\psi}{t}-qVe^{iq\chi }\psi \\
+  &=e^{iq\chi }\left(i\pdv{t}-qV\right)\psi \\
+  &=e^{iq\chi }\left[i\left(\pdv{t}+iqV\right)\right]\psi
+\end{align}
+De manera que
+\begin{equation}\label{21.8}
+\boxed{   iD'^0\psi' =e^{iq\chi }(iD^0\psi )}
+\end{equation}
+
+De \eqref{21.4} y \eqref{21.8}, 
+\begin{align}\label{21.9}
+  iD^0\psi'=e^{iq\chi }\left(\frac{1}{2m}(-i\vec{D})^2\psi \right)
+\end{align}
+De \eqref{21.6} y \eqref{21.9},
+\begin{align}\label{21.10}
+  \frac{1}{2m}(-i\vec{D}')^2\psi=e^{iq\chi }\left(\frac{1}{2m}(-i\vec{D})^2\psi\right)
+\end{align}
+Luego,
+\begin{equation}
+  e^{iq\chi }\left(\frac{1}{2m}(-i\vec{D})^2\psi \right)=e^{iq\chi }(iD^0\psi )
+\end{equation}
+\begin{equation}
+  \implies \frac{1}{2m}(-i\vec{D})^2\psi =iD^0 \psi \qquad \qed 
+\end{equation}
+\end{prueba}
+
+\subsection{Electrodinámica a partir del principio de gauge}
+Antes de estudiar esto estudiaremos:
+\begin{itemize}
+	\item La ecuación de Schrodinger
+	\item La ecuación de Klein-Gordon
+	\item La ecuación de Dirac
+\end{itemize}
+
+\subsection{La ecuación de Schrodinger}
+El Hamiltoniano para una partícula libre es
+\begin{equation}
+H=  \frac{p^2}{2m}
+\end{equation}
+donde $H=E$.
+
+El paso a la mecánica cuántica es $H\to \hat{H}$, $E\to \hat{E}$. Así, se tiene
+\begin{equation}
+  \hat{H}=\frac{\hat{p}}{2m}
+\end{equation}
+donde $\hat{p}=-i\hbar\nabla$ y $\hat{E}=i\hbar\pdv{t}$. Luego,
+\begin{align}
+  \hat{H}&=\frac{1}{2m}\hat{p}\cdot\hat{p}\\
+  &=\frac{1}{2m}(-i\hbar\nabla)(-i\hbar\nabla)\\
+  &=-\frac{\hbar^2}{2m}\nabla^2
+\end{align}
+\begin{equation}
+  \implies \hat{H}\psi=\hat{E}\psi\implies \boxed{-\frac{\hbar^2}{2m}\nabla^2\psi=i\hbar\pdv{\psi}{t}}
+\end{equation}
+Esta ecuación no es invariante de Lorentz, luego, no es válida para partículas con alta energía, es decir, con alta velocidad\footnote{En átomos livianos $v\sim 10^3$ km/s mientras que en átomos pesados $v\sim 10^5$ km/s.}.
+
+\subsection{Ecuación de Klein-Gordon}
+También conocida como \textit{ecuación de Schrodinger relativista}. 
+
+De la teoría Especial de la Relatividad sabemos que
+\begin{equation}
+  p^\m =\left(\frac{E}{c},\vec{p}\right),\qquad p_\m =\left(\frac{E}{c},-\vec{p}\right)
+\end{equation}
+y además
+\begin{equation}
+  p_\m p^\m =m_0^2c^2
+\end{equation}
+Así,
+\begin{align}
+  p_\m p^\m &=\left(\frac{E}{c},-\vec{p}\right)\left(\frac{E}{c},\vec{p}\right)\\
+  &=\frac{E^2}{c^2}-p^2
+\end{align}
+\begin{equation}
+  \implies \frac{E^2}{c^2}-p^2=m_0^2c^2
+\end{equation}
+\begin{equation}\label{21.E2}
+  \implies \boxed{E^2=p^2c^2+m_0^2c^4}
+\end{equation}
+El paso a la mecánica cuántica:
+\begin{equation}
+  \hat{p}_\m =i\hbar \partial_\m ,\qquad \hat{p}^\m =i\hbar\partial^\m 
+\end{equation}
+\begin{align}
+  \hat{p}_\m =\left(\frac{\hat{E}}{c}-\hat{\vec{p}}\right)=\left(\frac{i\hbar}{c}\pdv{t},i\hbar\nabla\right)=i\hbar\left(\pdv{x^0},\nabla \right)\
+\end{align}
+\begin{equation}
+  \hat{p}_\m =i\hbar\partial_\m =i\hbar\left(\pdv{x^0},\nabla \right)
+\end{equation}
+\begin{equation}
+  \hat{p}^\m =i\hbar\partial^\m =i\hbar\left(\pdv{x^0},-\nabla \right)
+\end{equation}
+\begin{equation}
+  \implies \hat{p}_\m \hat{p}^\m \psi =m_0^2c^2\psi=(i\hbar\partial_\m )(i\hbar\partial^\m )\psi 
+\end{equation}
+de manera que la ecuación de Klein-Gordon queda
+\begin{equation}\label{21.KG}
+  \boxed{\partial_\m \partial^\m \psi+\frac{m_0^2c^2}{\hbar^2}\psi=0}
+\end{equation}
+
+Notemos que podemos llegar a esta ecuación de otra manera. Consideremos \eqref{21.E2}
+\begin{equation}
+  E^2=p^2c^2+m_0^2c^4
+\end{equation}
+Promoviendo a operadores,
+\begin{equation}
+  \hat{E}^2=\hat{p}^2c^2+m_0^2c^4
+\end{equation}
+\begin{equation}
+  \left(i\hbar\pdv{t}\right)\left(i\hbar\pdv{t}\right)\psi=c^2(-i\hbar\nabla)(-i\hbar\nabla)\psi +m_0^2c^4\psi 
+\end{equation}
+\begin{equation}
+  -\hbar^2\pdv[2]{\psi}{t}=-\hbar^2c^2\nabla^2\psi +m_0^2c^4\psi
+\end{equation}
+\begin{equation}
+  \frac{1}{c^2}\pdv[2]{\psi}{t}=\nabla^2\psi-\frac{m_0^2c^4}{\hbar^2c^2}
+\end{equation}
+\begin{equation}
+  \implies\boxed{\partial_\m \partial^\m \psi+\frac{m_0^2c^2}{\hbar^2}\psi=0}
+\end{equation}
+Obteniendo nuevamente \eqref{21.KG}.
+
+Consideremos ahora la densidad y corriente de probabilidad de la ecuación de Klein-Gordon y su compleja comjugada:
+\begin{align}
+  \partial_\m \partial^\m \psi+\frac{m_0^2c^2}{\hbar^2}\psi &=0\\
+  \partial_\m \partial^\m \psi^*+\frac{m_0^2c^2}{\hbar^2}\psi^*&=0
+\end{align}
+
+\begin{align}
+  \frac{\hbar}{m_0}\partial_\m \partial^\m \psi+\frac{m_0c^2}{\hbar}\psi & =0 \qquad /\frac{i}{2}\psi^*\cdot ()\\
+  \frac{\hbar}{m_0}\partial_\m \partial^\m \psi^*+\frac{m_0c^2}{\hbar}\psi^* & =0\qquad /\frac{i}{2}\psi\cdot ()
+\end{align}
+\begin{align}
+  \frac{i\hbar}{2m_0}\psi^*\partial_\m \partial^\m \psi +\frac{im_0c^2}{2\hbar}\psi\psi^*&=0\label{21.11}\\
+  \frac{i\hbar}{2m_0}\psi\partial_\m \partial^\m \psi^* +\frac{im_0c^2}{2\hbar}\psi^*\psi&=0\label{21.22}
+\end{align}
+Restando \eqref{21.22} de \eqref{21.11},
+\begin{align}
+  \frac{i\hbar}{2m_0}\left(\psi^*\partial_\m \partial^\m \psi-\psi\partial_\m \partial^\m \psi^*\right)&=0\\
+  \frac{i\hbar}{2m_0}\left[\partial_\m (\psi^*\partial^\m \psi)-\partial_\m\psi^*\partial^\m \psi-\partial_\m (\psi\partial^\m \psi^*)+\partial_\m \psi\partial^\m \psi^*\right]&=0\\
+  \partial_\m \left[\frac{i\hbar}{2m_0}(\psi^*\partial^\m \psi-\psi\partial^\m \psi^*)\right]&=0\\
+  \partial_\m J^\m &=0
+\end{align}
+con
+\begin{equation}
+  J^\m =\frac{i\hbar}{2m_0}(\psi^*\partial^\m \psi-\psi\partial^\m \psi^*)
+\end{equation}
+
+Recordando que
+\begin{equation}
+  \partial_\m =\left(\frac{1}{c}\pdv{t},\nabla\right),\qquad \partial^\m =\left(\frac{1}{c}\pdv{t},-\nabla\right)
+\end{equation}
+tenemos
+\begin{align}
+  \left(\frac{1}{c}\pdv{t},\nabla\right)\left[\frac{i\hbar}{2m_0}\left(\psi^*\left(\frac{1}{c}\pdv{t},-\nabla\right) \psi-\psi\left(\frac{1}{c}\pdv{t},-\nabla\right) \psi^*\right)\right]&=0\\
+  \left(\frac{1}{c}\pdv{t},\nabla\right)\left[\frac{i\hbar}{2m_0c}\left(\psi^*\pdv{\psi}{t}-\psi\pdv{\psi^*}{t}\right),-\frac{i\hbar}{2m_0}\left(\psi^*\nabla\psi-\psi\nabla\psi^*\right)\right]&=0\\
+  \pdv{t}\left[\frac{i\hbar}{2m_0c^2}\left(\psi^*\pdv{\psi}{t}-\psi\pdv{\psi^*}{t}\right)\right]+\nabla\left[-\frac{i\hbar}{2m_0}\left(\psi^*\nabla\psi-\psi\nabla\psi^*\right)\right]&=0
+\end{align}
+lo que implica que
+\begin{equation}
+  \pdv{\rho }{t}+\nabla\cdot\vec{J}=0
+\end{equation}
+donde
+\begin{align}
+  \rho&=\frac{i\hbar}{2m_0c^2}\left(\psi^*\pdv{\psi}{t}-\psi\pdv{\psi^*}{t}\right)\\
+  \vec{J}&=-\frac{i\hbar}{2m_0}\left(\psi^*\nabla\psi-\psi\nabla\psi^*\right)
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
