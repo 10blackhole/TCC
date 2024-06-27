@@ -1,1 +1,176 @@
 \section{Clase 24}
+El Lagrangeano $\L_0=\bar{\psi}i\g^\m \partial_\m \psi-m\bar{\psi}\psi$ \textit{no} es invariante bajo $U(1)$ local
+\begin{equation}
+  \psi'(x)=e^{i\a(x)}\psi(x)
+\end{equation}
+\begin{equation}
+  \bar{\psi}'(x)=\bar{\psi}(x)e^{-i\a(x)}
+\end{equation}
+En efecto,
+$\L'=i\bar{\psi}'\g^\m (\partial_\m \psi)'-m\bar{\psi}'\psi'$ no es invariante bejo $U(1)$ local debido a que $(\partial_\m \psi)'$ no transforma como $\psi'$
+\begin{equation}
+  (\partial_\m \psi)'=e^{i\a(x)}(\partial_\m +i\partial_\m \a(x))\psi(x)
+\end{equation}
+La solución al problema es introducir una derivada tal que la derivada del campo transforme como el campo. Sea $D_\m $ dicha derivada:
+\begin{equation}\label{24.1}
+  (D_\m \psi)'=e^{i\a(x)}D_\m \psi
+\end{equation}
+la cual obliga a escribir el Lagrangeano como
+\begin{align}
+  \L_0&=\bar{\psi}(i\g^\m D_\m -m)\psi\\
+  &=i\bar{\psi}\g^\m D_\m \psi-m\bar{\psi}\psi
+\end{align}
+\begin{equation}
+  \implies \L'=\bar{\psi}'\g^\m (D_\m\psi)'-m\bar{\psi}'\psi'=\L_0
+\end{equation}
+
+¿Cómo definimos la derivada $D_\m $? La respuesta es que dado que
+\begin{enumerate}
+	\item $\partial_\m '=e^{i\a(x)}(\partial_\m +i\partial_\m \a(x))e^{-i\a(x)}$
+	\item De \eqref{24.1} $D_\m '=e^{i\a(x)}D_\m e^{-i\a(x)}$
+\end{enumerate}
+podemos postular
+\begin{equation}
+  \boxed{D_\m =\partial_\m +iA_\m }
+\end{equation}
+es decir, para recuperar la invariancia, introducimos un nuevo campo $A_\m$ llamado \textit{campo de gauge, potencial de gauge, o campo compensante}, cuya ley de transformación debe ser encontrada.
+
+\begin{teor}
+	Bajo una transformación $U(1)$ local, el nuevo campo potencial de gauge transforma como
+	\begin{equation}
+  A_\m '=A_\m -\partial_\m \a(x)
+\end{equation}
+\end{teor}
+
+\begin{prueba}
+	Sabemos que
+	\begin{equation}
+  \partial_\m =e^{i\a(x)}(\partial_\m +i\partial_\m \a(x))e^{-i\a(x)}
+\end{equation}
+\begin{equation}
+  D_\m '=e^{i\a(x)}D_\m e^{-i\a(x)}
+\end{equation}
+\begin{equation}
+  \implies \partial_\m '+iA_\m '=e^{i\a(x)}(\partial_\m +iA_\m )e^{-i\a(x)}
+\end{equation}
+\begin{equation}
+  e^{i\a(x)}(\partial_\m +i\partial_\m \a(x))e^{-i\a(x)}+iA_\m '=e^{i\a(x)}(\partial_\m +iA_\m )e^{-i\a(x)}
+\end{equation}
+\begin{equation}
+  \cancel{e^{i\a(x)}\partial_\m e^{-i\a(x)}}+e^{i\a(x)}[i\partial_\m \a(x)]e^{-i\a(x)}+iA_\m '=\cancel{e^{i\a(x)}\partial_\m e^{-i\a(x)}}+e^{i\a(x)}(iA_\m )e^{-i\a(x)}
+\end{equation}
+\begin{equation}
+  i\partial_\m \a(x)+iA_\m '=iA_\m 
+\end{equation}
+\begin{equation}
+  \implies \boxed{A_\m '=A_\m -\partial_\m \a(x)}\qquad \Box 
+\end{equation}
+\end{prueba}
+Así entonces, el Lagrangeando $\L_0$ invariante bajo $U(1)$ local y bajo $A_\m '=A_\m -\partial_\m \a(x)$ es
+\begin{equation}
+  \L =i\bar{\psi}\g^\m D_\m \psi-m\bar{\psi}\psi,\qquad D_\m =\partial_\m +iA_\m 
+\end{equation}
+\begin{align}
+  \L =&i\bar{\psi}\g ^\m (\partial_\m +iA_\m )\psi-m\bar{\psi}\psi\\
+  &=i\bar{\psi}\g^\m \partial_\m \psi-\bar{\psi}\g^\m A_\m \psi-m\bar{\psi}\psi
+\end{align}
+\begin{equation}
+\boxed{  \L =\bar{\psi}(i\g^\m \psi_\m -m)\psi-\bar{\psi}\g^\m \psi A_\m }
+\end{equation}
+Este Lagrangenao muestra la interacción del campo compensante $A_\m $ con la materia $\psi$. Sin embargo, no aparece el término cinético correspondiente al campo $A_\m $. Para obtener dicho término seguimos el procedimiento introducido en la teoría general de la Relatividad,
+\begin{equation}
+  [D_\m ,D_\n ]\psi=iF_{\m\n }
+\end{equation}
+Calculemos el conmutador:
+\begin{align*}
+  [D_\m ,D_\n ]\psi&=D_\m D_\m \psi-D_\n D_\m \psi\\
+  &=(\partial_\m +iA_\m )(\partial_\n  +iA_\n  )\psi -(\partial_\n  +iA_\n  )(\partial_\m +iA_\m )\psi\\
+  &=\cancel{\partial_\m \partial\n \psi}+i\partial_\m (A_\n \psi)+iA_\m \partial_\n \psi-\cancel{A_\m A_\n \psi}-\cancel{\partial_\n \partial_\m \psi}-i\partial_\n (A_\m \psi)-iA_\n \partial_\m \psi+\cancel{A_\n A_\m \psi}\\
+  &=i(\partial_\m A_\n )\psi+iA_\m \psi_\n \psi+iA_\m \partial_\n \psi-i(\partial_\n A_\m )\psi-iA_\n \partial_\m \psi-iA_n\partial_\m \psi\\
+  &=i(\partial_\m A_\n -\partial_\n A_\mathcal)\psi\\
+  &=iF_{\m\n }\psi
+\end{align*}
+\begin{equation}
+  \implies \boxed{F_{\m\n}=\partial_\m A_\n -\partial_\n A_\m }
+\end{equation}
+El Lagrangeano que corresponde al campo $A_\m $ es
+\begin{equation}
+  \L_F=-\frac{1}{4}F_{\m\n}F^{\m\n }
+\end{equation}
+Así entonces, tenemos que el Lagrangeano invariante bajo las transformaciones
+\begin{equation}
+  \psi'=e^{i\a (x)}\psi,\qquad \bar{\psi}'=\bar{\psi}e^{-i\a (x)},\qquad A_\m'=A_\m -\partial_\m \a(x)
+\end{equation}
+es dado por
+\begin{equation}
+ \boxed{ \L_{\rm QED}=-\frac{1}{4}F_{\m\n }F^{\m\n }+\bar{\psi}(i\g^\m \partial_\m -m)\psi-\bar{\psi}\g^\m \psi A_\m }
+\end{equation}
+
+\subsection{Teorías de Yang-Milss}
+\underline{1954}: Postularon que las fuerzas nucleares fuertes podrían ser estudiadas como la teoría de campos análoga a la teoría de la Electrodinámica. También postularon que del mismo modo que la simetría local $U(1)$ que describe la QED, la simetría de las fuerzas nucleares fuertes era la simetría $SU(2)$.
+
+\underline{1932}: Heisenberg postuló que el protón y el neutrón son dos estados de una misma partícula llamada \textit{nucleón}.
+
+Sabemos que los núcleos atómicos están compuestos de protones y neutrones. Los protones tienen carga eléctrica positiva, es decir, se repelen eléctricamente.
+
+¿Cómo es posible que los núcleo permanezcan estables? La respuesta es que existe una fuerza atractiva entre protones y protones, entre protones y netrones, y entre neutrones y neutrones, de tal intensirdad que impide la desintegración del núcleo debido a la repulsión eléctrica. Esta fuerza es de muy poco alcance $\sim 10^{-15}$ m. A distancias mayores decae violentamente.
+
+¿Cómo identificar a los ojos de la física nuclear protones y neutroes?
+Así como el electrón tiene dos esados identificados por el spin: spin $+1/2$ up ($\uparrow$) y spin $-1/2$ down ($\downarrow$), Heisenberg definió un número cuántico para los núcleo atómicos llamado \textit{isospin}. Así, un núcleo con $Z$ protones y $N$ neutrones tiene como tercera comopoentes del isospin a
+\begin{equation}
+  I_3=\frac{Z-N}{2}
+\end{equation}
+Por lo tanto, para el protón $I_3=+1/2$, mientras que para el neutrón $I_3=-1/2$.
+
+La diferenca entre las masa del protón y del neutrón se debe sólo a la interacción electromagnética. Luego, a los ojos de la fuerza nuclear ellos son indistinguibles, salvo por la tercera componente del isospin.
+
+Las masas del proón, neutrón y del electrón son
+\begin{align}
+  m_p&\approx 1.6726\times 10^{-27} \text{kg}\\
+  m_N&\approx 1.6749\times 10^{-27} \text{kg}\\
+  m_p&\approx 9.1\times 10^{-31} \text{kg}
+\end{align}
+respectivamete.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
