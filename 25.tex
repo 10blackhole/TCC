@@ -1,0 +1,411 @@
+\section{Clase 25}
+En la clase pasada vimos que las fuerzas nucleares no dependen de la carga eléctrica de los nucleones. Es decir, un nucleón puede tener isospin up (protón) o isospin down (neutrón), cada uno con su respectiva función de onda $\psi_p$ y $\psi_n $. La función de onda del nucleón es
+\begin{equation}
+  \psi =\mqty(\psi_p\\\psi_n)
+\end{equation}
+
+No estamos considerando la interacción electromagnética. La interacción nuclear \textit{no} distingue un protón de un neutrón, luego, la interacción nuclear es invariante bajo el inetrcambio de un protón por un neutrón.
+
+
+De acuerdo con el principio de superposición de la mecánica cuántica:
+\begin{align}
+  \psi_p'&=\a \psi_+ +\b\psi_n\\
+  \psi_n'&=\g  \psi_+ +\d \psi_n
+\end{align}
+Entonces, ¿cómo trasforma el nucleón?,
+\begin{align}
+  \mqty(\psi_p'\\ \psi_n')=\mqty(\a&\b \\\g&\d )\mqty(\psi_p\\\psi_n)
+\end{align}
+Si llamamaos 
+\begin{equation}
+  U=\mqty(\a&\b \\\g&\d )
+\end{equation}
+entonces
+\begin{equation}
+\boxed{  \psi'=U\psi}
+\end{equation}
+Las transformaciones son invariantes bajo las transformacion $\psi'=U\psi$ donde $U$ es una matriz compleja de $2\times 2$.
+
+¿Cómo afecta a la matriz $U$ la mecánica cuántica? Sabemos que en mecánica cuánica la probabilidad se consrerva, es decir,
+\begin{equation}
+  |\psi'|^2=|\psi|^2
+\end{equation}
+donde $\psi'=U\psi$, pero
+\begin{align}
+  |\psi'|^2=\bra{\psi'}\ket{\psi'}=\braket{\psi}=|\psi|^2
+\end{align}
+\begin{equation}
+  \implies \braket{U\psi}=\braket{\psi}
+\end{equation}
+\begin{equation}
+  \implies \bra{\psi}U^\dagger U\ket{\psi}=\braket{\psi}
+\end{equation}
+\begin{equation}\label{25.1}
+  \implies U^\dagger U=\id 
+\end{equation}
+Es decir, la matriz $U$ es una matriz unitaria,
+\begin{equation}
+  U^\dagger=U^{-1}
+\end{equation}
+De \eqref{25.1} vemos que $\det(U^\dagger U)=\det(\id )$
+\begin{equation}
+  \implies \det U^\dagger \det U=1 \implies (\det U)^2=1
+\end{equation}
+\begin{equation}
+  \implies \det U=+1
+\end{equation}
+Es decir, tenemos el grupo $SU(2)$. Tambien sabemos del álgebra lineal, que una matriz unitaria se puede exponenciar con una matriz hermítica,
+\begin{equation}
+  U=e^{i\a }\qquad \text{donde } \a=\a^\dagger
+\end{equation}
+es decir, $\a$ es hermítica. Esto implica que
+\begin{equation}
+  \det U=\det (e^{i\a })=1
+\end{equation}
+Pero el álgebra lineal nos enseña que si $A$ es una matriz, entonces $\det e^{A}=e^{\Tr A}$, lo que implica que
+\begin{align}
+  \det U=\det e^{i\a }=e^{\Tr (i\a )}=1
+\end{align}
+\begin{equation}
+  \implies \boxed{\Tr \a =0}
+\end{equation}
+
+Si $\{T_a\}$ son una base para las matrices hermíticas $\a$, entonces $\a=\a^{a}T_a$,
+\begin{equation}
+  \implies \boxed{U=e^{i\a }=e^{i\a^{a}T_a}}
+\end{equation}
+Estos resultados son válidos en general para el grupo $SU(N)$.
+
+En el caso $N=2$, las matrices bases $\{T_a\}$ vienen dadas por las matrices de Pauli. En el caso $N=3$, los $\{T_a\}$ son las matrices de Gell-Mann.
+
+Las bases $\{T_a\}$ son bases, en general, no-coordenadas \footnote{Las bases coordenadas conmutan.}, por lo cual satisfacen las relaciones de conmutación
+\begin{equation}
+  [T_a,T_b]=if_{ab}^{~~c}T_c
+\end{equation}
+
+\subsection{Teoría de Yang-Mills}
+Consideremos ahora el grupo $SU(N)$ cuya álgebra de Lie asociada $su(N)$ tiene como generadores a la bae $\{T_a\}$ que satisface la relación de conmitación
+\begin{equation}
+  [T_a,T_b]=if_{ab}^{~~c}T_c
+\end{equation}
+Si $U\in SU(N)$ entonces $U=e^{i\a }\equiv e^{i\a ^{a}T_a}$.
+
+Una función de onda nuclear transforma bajo $SU(N)$ global como
+\begin{align}
+  \psi&\to \psi'=U\psi\\
+  \bar{\psi}&\to \bar{\psi}'=\bar{\psi}U^\dagger
+\end{align}
+Consideremos el Lagrangeano
+\begin{equation}
+  \boxed{\L_0=i\bar{\psi}\g^\m \partial_\m \psi}
+\end{equation}
+
+\begin{teor}
+	El Lagrangeano $\L_0$ es invariante bajo el grupo de transformaciones $SU(N)$ global
+	\begin{align}
+  \psi&\to \psi=U\psi\\
+  \bar{\psi}&\to \bar{\psi}'=\bar{\psi}U^\dagger
+\end{align}
+donde $U^\dagger U=UU^\dagger=\id$, $U=e^{i\a }\equiv e^{i\a^{a}T_a}$, donde $\a^{a}=$ constante.
+\end{teor}
+
+\begin{prueba}
+	\begin{align}
+  \L_0'&=i\bar{\psi}'\g^\m \partial_\m \psi'\\&=i\bar{\psi}U^\dagger \g^\m \partial_\m (U\psi)\\
+  &=i\bar{\psi}U^\dagger U\g^\m\partial_\m \psi\\
+  &=i\bar{\psi}\g^\m \partial_\m \psi\\
+  &=\L_0\qquad \checkmark 
+\end{align}
+\end{prueba}
+
+Esto ocurre debido a que
+\begin{equation}
+  \L_0'=i\bar{\psi}'\g^\m (\partial_\m \psi)'=i(\bar{\psi}U^\dagger)(\g^\m U \partial_\m \psi)
+\end{equation}
+es decir, la invariancia se debe a que
+\begin{equation}
+  (\partial_\m \psi)'=U\partial_\m \psi\rightarrow \partial_\m '\psi'=U\partial_\m \psi
+\end{equation}
+\begin{equation}
+  \implies \boxed{\partial_\m '=U\partial_\m U^\dagger}
+\end{equation}
+
+La idea implementada por Weyl y luego por Yang-Mills es pasar de $SU(N)$ global a $SU(N)$ local. 
+
+$SU(N)$ local es dado por
+\begin{align}
+  \psi&\to \psi'=U(x)\psi\\
+  \bar{\psi}&\to \bar{\psi}'=\bar{\psi }U^\dagger (x)
+\end{align}
+donde $U^\dagger U=UU^\dagger =\id $,
+\begin{equation}
+  U=e^{i\a (x)}=e^{i\a^{a}(x)T_a}
+\end{equation}
+
+Estudiemos ahora el comportamiento de $\L_0=i\bar{\psi}\g^\m \partial_\m \psi$ bajo $SU(N)$ local,
+\begin{align}
+  \L_0'&=i\bar{\psi}'\g^\m \partial_\m \psi'\\
+  &=i\bar{\psi}U^\dagger (x )\g^\m \partial_\m (U(x)\psi)
+\end{align}
+pero $\partial_\m (U(x)\psi)=U(x)\partial_\m \psi+[\partial_\m U(x)]\psi$, con $\partial_\m U(x)=\partial_\m e^{i\a(x)}=e^{i\a(x)}i\partial_\m \a(x)=U(x)i\partial_\m \a (x)$. Esto implica que
+\begin{align}
+  \L_0'&=i\bar{\psi}U^\dagger (x )\g^\m \partial_\m (U(x)\psi)\\
+  &=i\bar{\psi}U^\dagger(x )\g^\m [U(x)\partial_\m \psi+U(x)i\partial_\m \a(x)\psi]
+\end{align}
+\begin{equation}\label{25.2}
+  \implies \boxed{\L_0'=i\bar{\psi}U^\dagger(x)\g^\m U(x)[\partial_\m +i\partial_\m \a (x)]\psi}
+\end{equation}
+Es decir, $\L_0$ no es invariante bajo $SU(N)$ local. El siguiente paso es restaurar la invariancia de $\L_0$.
+
+Escribiendo
+\begin{equation}\label{25.3}
+  \L_0'=i\bar{\psi}'\g^\m (\partial_\m \psi)'
+\end{equation}
+comparando \eqref{25.2} con \eqref{25.3}
+\begin{equation}
+  \bar{\psi}=\bar{\psi}U^\dagger
+\end{equation}
+\begin{align}
+  (\partial_\m \psi)'&=U(x)[\partial_\m +i\partial_\m \a(x)]\psi\\
+  \partial_\m '\psi '&=U(x)[\partial_\m +i\partial_\m \a (x)]\psi
+\end{align}
+\begin{equation}
+ \boxed{ \partial_\m '=U(x)[\partial_\m +i\partial_\m \a(x)]U^\dagger(x)}
+\end{equation}
+Para restaurar la invariancia es necesario definir una nueva derivada $D_\m $ que bajo $SU(N)$ local, transforme como 
+\begin{equation}
+  D_\m \to D_\m '=U(x)D_\m U^\dagger (x)
+\end{equation}
+Por lo que el Lagrangeano invariante debe venir dado por
+\begin{equation}
+  \L_0=i\bar{\psi}\g^\m D_\m \psi
+\end{equation}
+¿Cómo definimos la derivada $D_\m $? Teniendo en cuenta que
+\begin{equation}\label{25.star}
+  \partial_\m '=U(x)[\partial_\m +i\partial_\m \a(x)]U^\dagger (x)
+\end{equation}
+y que
+\begin{equation}\label{25.4}
+  D_\m '=U(x)D_\m U(x)^\dagger
+\end{equation}
+definimos $D_\m =\partial_\m +iA_\m $ donde $A_\m$ debe transformar bajo $SU(N)$ local respetando la ley de transformación \eqref{25.4}.
+
+\begin{teor}
+	Bajo una transformación $SU(N)$ local, el campo potencial de gauge $A_\m $ transforma como 
+	\begin{equation}
+  A_\m \to A_\m '=UA_\m U^\dagger+i[\partial_\m U]U^\dagger,\qquad U=U(x)
+\end{equation}
+o bien
+\begin{equation}
+  A_\m \to A_\m '=UA_\m U^\dagger -iU[\partial_\m U^\dagger ]
+\end{equation}
+\end{teor}
+
+\begin{prueba}
+	De \eqref{25.4},
+	\begin{align}
+  \partial_\m '+iA_\m '&=U[\partial_\m +iA_\m ]U^\dagger
+\end{align}
+Usando \eqref{25.star} podemos escribir 
+\begin{align}
+  U[\partial_\m +i\partial_\m \a ]U^\dagger +iA_\m'&=U[\partial_\m +iA_\m ]U^\dagger \\
+  \cancel{U\partial_\m U^\dagger} +i(U\partial_\m \a )U^\dagger+iA_\m'&=\cancel{U\partial_\m U^\dagger} +iUA_\m U^\dagger\\
+  iA_\m '&=iUA_\m U^\dagger -i(U\partial_\m \a )U^\dagger \\
+  A_\m '&=UA_\m U^\dagger -(U\partial_\m \a )U^\dagger
+\end{align}
+pero $\partial_\m U=\partial_\m e^{i\a }i\partial_\m \a =i(U\partial_\m \a )$. Luego,
+\begin{align}
+ \Aboxed{ A_\m '&=UA_\m U^\dagger +i(\psi_\m U)U^\dagger }\qquad \checkmark
+\end{align}
+Pero, $\partial_\m (UU^\dagger)=(\partial_\m U)U^\dagger +U(\partial_\m U^\dagger)=0$, de manera que
+\begin{align}
+  (\partial_\m )U^\dagger =-U(\partial_\m U^\dagger)
+\end{align}
+\begin{equation}
+ \implies \boxed{A_\m '=UA_\m U^\dagger -iU(\partial_\m U^\dagger )}\qquad \checkmark
+\end{equation}
+\end{prueba}
+
+Así entonces el Lagrangeano invariante bajo $SU(N)$ local será
+\begin{equation}
+  \L=i\bar{\psi}\g^\m D_\m \psi=i\bar{\psi}\gamma^\m (\partial_\m +iA_\m )\psi
+\end{equation}
+\begin{equation}\label{25.6}
+  \L=i\bar{\psi}\g^\m \partial_\m \psi-\bar{\psi}\g^\m \psi A_\m 
+\end{equation}
+donde $A_\m =A_\m ^{a}T_a$.
+
+ Pero los $T_a$ son los generadores de $SU(N)$ que son $N^2-1$ generadores, lo que implica que para restaurar la invariancia es necesario introducir $N^2-1$ campos de gauge $A_\m$ (uno por cada generador).
+ 
+ El Lagrangeano \eqref{25.6} contiene $N^2-1$ campos compensantes pero no se observan términos cinéticos. Siguiendo el método usual obtenemos el término cinético,
+ \begin{equation}
+  [D_\m ,D_\n ]\psi	=iF_{\m\n }\psi
+\end{equation}
+Bajo $SU(N)$ local,
+\begin{align}
+  [D_\m ',D_\n ']\psi&=iF_{\m\n }'\psi
+\end{align}
+pero
+\begin{align}
+  [D_\m ',D_\n ']&=[UD_\m U^\dagger ,UD_\n U^\dagger ]\\
+  &=UD_\m U^\dagger UD_\n U^\dagger -UD_\n U^\dagger UD_\m U^\dagger \\
+  &=U(D_\m D_\n -D_\n D_\m )U^\dagger \\
+  &=U[D_\m ,D_\n ]U^\dagger\\
+  &=U(iF_{\m\n })U^\dagger\\
+  &=iF_{\m\n }'
+\end{align}
+\begin{equation}
+  \implies \boxed{F_{\m\n }'=UF_{\m\n }U^\dagger }
+\end{equation}
+es decir, $F_{\m\n }$ es un invariante de gauge.
+
+Veamos cual es su forma
+\begin{align*}
+  iF_{\m\n }\psi &=[D_\m ,D_\n ]\psi\\
+  &=(\partial_\m +iA_\m\ )(\partial_\n \psi+i\partial_\n \psi)-(\partial_\n +i\partial_\n )(\partial_\m\psi +iA_\m \psi)\\
+  &=\partial_\m \partial_\n \psi +i(\partial_\m A_\n  )\psi+iA_\n \psi_\m \psi+iA_\m \psi_\n \psi-A_\m A_\n \psi -\partial_\n \partial_\m \psi-i(\partial_\n A_\m )\psi-iA_\m \psi_\n \psi +A_\n A_\m \psi\\
+  &=i(\partial_\m A_\n -\partial_\n  A_\m )\psi -(A_\m A_\n -A_\n A_\m )\psi
+\end{align*}
+\begin{equation}
+  \implies iF_{\m\n }=i(\partial_\m A_\n -\partial_\n A_\m )-[A_\m ,A_\n ]\
+\end{equation}
+\begin{equation}
+  \implies \boxed{F_{\m\n }=\partial_\m A_\n -\partial_\n A_\m +i[A_\m ,A_\n ]}
+\end{equation}
+
+Notemos que el conmutador no es cero debido a que
+\begin{align}
+  A_\m &=A_\m ^{a}T_a\\
+  A_\n  &=A_\n ^bT_b\\
+  A_\m A_\n &=A_\m ^{a}A_\n ^b T_aT_b\\
+  A_\n A_\m &=A_\n ^bA_\m ^{a}T_bT_a\\
+  [T_a,T_b]&=if_{ab}^{~~c}T_c
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
